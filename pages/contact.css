@@ -1,0 +1,160 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fbfa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar {
+    background: white;
+    
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: 2px solid rgb(218, 221, 215);
+    /* border-color: #0a944b;
+    border: 2px; */
+    
+}
+
+.navbar .first {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.logo-icon {
+    font-size: 29px;
+}
+
+.logo-text .green {
+    color: #22c55e;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #22c55e;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-input {
+    padding: 8px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 21px;
+    cursor: pointer;
+    
+}
+.support-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color:rgb(233, 238, 244) ;
+}
+
+.support-section h2 {
+  font-size: 2.2rem;
+  color: #69dc80;
+  margin-bottom: 10px;
+}
+
+.support-section p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.support-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.support-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  width: 250px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #0a944b;
+  margin-bottom: 10px;
+}
+
+.support-card h3 {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.support-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.contact-link {
+  display: block;
+  color: #0a944b;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.time {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+}
