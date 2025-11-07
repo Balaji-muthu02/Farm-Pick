@@ -7,9 +7,86 @@
 
 body {
   background: #fafafa;
-  padding: 40px;
+  /* padding: 40px; */
 }
 
+
+
+.navbar {
+    background: white;
+    /* width: 100%; */
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: 2px solid rgb(218, 221, 215);
+    /* border-color: #0a944b;
+    border: 2px; */
+    
+}
+
+.navbar .first {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.logo-icon {
+    font-size: 29px;
+}
+
+.logo-text .green {
+    color: #22c55e;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #22c55e;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-input {
+    padding: 8px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 21px;
+    cursor: pointer;
+    
+}
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -19,7 +96,9 @@ body {
   /* justify-content: center;
   align-items: center;
   text-align: center; */
-  margin: auto;
+  /* margin: auto; */
+  margin-top: 50px;
+  margin-left: 8%;
 }
 
 .card {
@@ -40,12 +119,14 @@ body {
   width: 100%;
   height: 230px;
   object-fit: cover;
+  /* border: none;
+  border-bottom-color: #ffb400; */
 }
 
 .buy-btn {
   position: absolute;
   top: 250px;
-  left: 250px;
+  left: 290px;
   background: #15de6f;
   color: #fff;
   border: none;
@@ -97,5 +178,5 @@ body {
 }
 
 .cart-btn:hover {
-  background: #e0e0e0;
+  background: #cef3d0;
 }
