@@ -1,85 +1,116 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
 body {
-  background: #D0F0EC ;
-  color: #333;
-  min-height: 100vh;
+    /* Uses the font from your main site's global CSS */
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    color: #333; /* Dark text for readability */
+    background: #f0fff0; /* Very light background for contrast */
+    margin: 0;
+    padding: 0;
+    /* Center the container vertically and horizontally on the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
- 
-.signup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 70px);
+
+/* --- Container (The Card) --- */
+.container {
+    background-color: #ffffff; /* White card background */
+    padding: 35px 45px;
+    border-radius: 12px;
+    /* Main green for a subtle, brand-aligned shadow */
+    box-shadow: 0 10px 20px rgba(46, 139, 87, 0.2); 
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
-.signup-box {
-  background: #fff;
-  width: 380px;
-  padding: 35px;
-  border-radius: 16px;
-  text-align: center;
-  /* margin-top: 200px; */
+
+.container:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
 }
-.signup-box h1 {
-  margin-bottom: 8px;
-  color: #111;
+
+/* --- Heading --- */
+.container h2 {
+    color: #2e8b57; /* Medium Sea Green (Primary Green) */
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 700;
 }
-.subtitle {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 25px;
-  /* align-items: center; */
+
+/* --- Form Group & Labels --- */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
 }
-.input-group {
-  text-align: left;
-  margin-bottom: 15px;
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #388e3c; /* Darker Green for labels */
+    font-size: 0.95em;
 }
-.input-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
+
+/* --- Input Fields --- */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c8e6c9; /* Light green border */
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
-.input-group input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  /* color: beige; */
- 
+
+input:focus {
+    border-color: #3cb371; /* Highlight border on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(60, 179, 113, 0.4); /* Green glow on focus */
 }
- 
-.button {
-  width: 100%;
-  padding: 12px;
-  background: #2E9A92;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
- 
+
+/* --- Button (The CTA) --- */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #2e8b57; /* Primary Green for the main action */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.1s;
 }
-.button:hover {
-  background: #2E9A92;
+
+.btn:hover {
+    background-color: #3cb371; /* Brighter Green on hover */
 }
-.signin {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #555;
+
+.btn:active {
+    transform: scale(0.99); /* Press effect */
 }
-.signin a {
-  color: #2E9A92;
-  text-decoration: none;
-  font-weight: 500;
+
+/* --- Links Section --- */
+.links {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #e0f2f1; /* Very subtle top border to separate links */
+    font-size: 0.9em;
 }
-.signin a:hover {
-  text-decoration: underline;
+
+.links a {
+    color: #2e8b57; /* Green link text */
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.3s;
 }
-.button a{
-  text-decoration: none;
+
+.links a:hover {
+    color: #1b5e20; /* Dark green on hover */
+    text-decoration: underline;
 }

@@ -117,6 +117,119 @@
     </div>
   </section>
 
+  <!-- Step Control Radios -->
+<input type="radio" name="step" id="step1" checked hidden>
+<input type="radio" name="step" id="step2" hidden>
+<input type="radio" name="step" id="step3" hidden>
+<input type="radio" name="step" id="step4" hidden>
+
+<!-- Step 1 -->
+<div class="step" id="form1">
+  <h2>Seller Application - Step 1 of 4</h2>
+  <div class="form-group">
+    <label>Business/Farm Name</label>
+    <input type="text" placeholder="Your farm or business name">
+  </div>
+  <div class="form-group">
+    <label>Contact Person</label>
+    <input type="text" placeholder="Primary contact name">
+  </div>
+  <div class="form-group">
+    <label>Email Address</label>
+    <input type="email" placeholder="business@example.com">
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label>
+    <input type="tel" placeholder="+1 (555) 123-4567">
+  </div>
+  <div class="form-group">
+    <label>Business Location</label>
+    <input type="text" placeholder="City, State, Country">
+  </div>
+  <div class="nav-buttons">
+    <label for="step2" class="btn">Next</label>
+  </div>
+</div>
+
+<!-- Step 2 -->
+<div class="step" id="form2">
+  <h2>Seller Application - Step 2 of 4</h2>
+  <div class="form-group">
+    <label>Tell us about your business</label>
+    <textarea placeholder="Describe your farm, products, and farming practices"></textarea>
+  </div>
+  <div class="form-group">
+    <label>What certifications do you have?</label><br>
+    <label><input type="checkbox"> USDA Organic</label><br>
+    <label><input type="checkbox"> Fair Trade</label><br>
+    <label><input type="checkbox"> Biodynamic</label><br>
+    <label><input type="checkbox"> Non-GMO</label><br>
+    <label><input type="checkbox"> Rainforest Alliance</label><br>
+    <label><input type="checkbox"> Local Organic</label>
+  </div>
+  <div class="nav-buttons">
+    <label for="step1" class="btn">Previous</label>
+    <label for="step3" class="btn">Next</label>
+  </div>
+</div>
+
+<!-- Step 3 -->
+<div class="step" id="form3">
+  <h2>Seller Application - Step 3 of 4</h2>
+  <div class="form-group">
+    <label>Upload Business License</label>
+    <input type="file">
+  </div>
+  <div class="form-group">
+    <label>Upload Organic Certification</label>
+    <input type="file">
+  </div>
+  <div class="form-group">
+    <label>Upload Insurance Certificate</label>
+    <input type="file">
+  </div>
+  <div class="form-group">
+    <label>Upload high-quality photos of products</label>
+    <input type="file" multiple>
+  </div>
+  <div class="photo-tips">
+    <strong>Photo Tips:</strong>
+    <ul>
+      <li>Use natural lighting</li>
+      <li>Show product clearly</li>
+      <li>Include your farm/workspace</li>
+      <li>Avoid heavy filters</li>
+    </ul>
+  </div>
+  <div class="nav-buttons">
+    <label for="step2" class="btn">Previous</label>
+    <label for="step4" class="btn">Next</label>
+  </div>
+</div>
+
+<!-- Step 4 -->
+<div class="step" id="form4">
+  <h2>Seller Application - Step 4 of 4</h2>
+  <div class="agreement-summary">
+    <ul>
+      <li>Commission: 15% on all sales (industry-leading low rate)</li>
+      <li>Payment: Weekly payments via bank transfer</li>
+      <li>Quality Standards: Maintain a 4-star rating</li>
+      <li>Shipping: Orders must be fulfilled within 2–3 business days</li>
+      <li>Returns: Accept returns for damaged or incorrect items</li>
+      <li>Communication: Respond to customer inquiries within 24 hours</li>
+      <li>Organic Standards: All products must maintain organic certification</li>
+    </ul>
+  </div>
+  <label><input type="checkbox"> I agree to the Terms of Service and Seller Agreement</label>
+  <p>I understand that my application will be reviewed and I will be contacted within 2–3 business days.</p>
+  <div class="nav-buttons">
+    <label for="step3" class="btn">Previous</label>
+    <button type="submit" class="btn submit">Submit Application</button>
+  </div>
+</div>
+
+
     </main>
 
 
