@@ -1,0 +1,203 @@
+   
+       
+        .color-primary { color: #10B981; } 
+        .color-dark { color: #1f2937; }    
+        
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; 
+            min-height: 100vh;
+            color: #1f2937;
+        }
+
+    
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        .logo span {
+            margin-left: 0.25rem;
+        }
+
+        /* --- MAIN CONTAINER (Card) --- */
+        .container {
+            width: 95%;
+            max-width: 850px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- HEADINGS --- */
+        h1 {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            transition: color 0.2s;
+        }
+        /* .back-link:hover { color: #10B981; } */
+        .back-link svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 5px;
+        }
+
+        /* --- FORM ELEMENTS --- */
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #4b5563;
+            font-size: 0.875rem;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]), select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus:not([type="radio"]):not([type="checkbox"]), select:focus {
+            outline: none;
+            border-color: #10B981;
+            box-shadow: 0 0 0 1px #10B981;
+        }
+
+       
+        .form-group-row {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 20px;
+        }
+        .form-group-row > div {
+            flex: 1 1 100%; 
+        }
+        
+       
+        
+        /* --- DELIVERY/PAYMENT OPTIONS --- */
+        .option-group {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: border-color 0.2s, background-color 0.2s;
+            cursor: pointer;
+        }
+        .option-group:hover {
+            border-color: #10B981;
+        }
+
+        .delivery-option-checked {
+            border-color: #10B981 !important;
+            background-color: #e6f7f0; /* Light green background for checked state */
+        }
+        
+        /* Layout for Delivery Option Text/Price */
+        .delivery-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .option-text-container {
+            margin-left: 10px;
+        }
+        .option-text-container span {
+            font-weight: normal;
+        }
+        .option-text-container .price {
+            font-weight: bold;
+        }
+
+        /* Simple Radio/Checkbox (relying on browser default look) */
+        .option-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            font-weight: normal; 
+            font-size: 1rem;
+        }
+        .option-label input {
+            width: auto;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+
+        /* --- BUTTON --- */
+        .btn-container {
+            text-align: center; 
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #10B981;
+            color: #ffffff;
+            border: none;
+            padding: 12px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+            transition: background-color 0.2s;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn:hover {
+            background-color: #059669; /* Darker green */
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1f2937;
+            color: #e5e7eb;
+            padding: 40px 25px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        footer p {
+            margin: 0;
+        }
+        
+    

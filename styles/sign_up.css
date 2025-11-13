@@ -1,24 +1,24 @@
 body {
-    /* Uses the font from your main site's global CSS */
+  
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
-    color: #333; /* Dark text for readability */
-    background: #f0fff0; /* Very light background for contrast */
+    color: #333; 
+    background: #f0fff0; 
     margin: 0;
     padding: 0;
-    /* Center the container vertically and horizontally on the page */
+   
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-/* --- Container (The Card) --- */
+
 .container {
-    background-color: #ffffff; /* White card background */
+    background-color: #ffffff; 
     padding: 35px 45px;
     border-radius: 12px;
-    /* Main green for a subtle, brand-aligned shadow */
+   
     box-shadow: 0 10px 20px rgba(46, 139, 87, 0.2); 
     max-width: 380px;
     width: 90%;
@@ -27,18 +27,18 @@ body {
 }
 
 .container:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px); 
 }
 
 /* --- Heading --- */
 .container h2 {
-    color: #2e8b57; /* Medium Sea Green (Primary Green) */
+    color: #2e8b57; 
     margin-bottom: 30px;
     font-size: 2em;
     font-weight: 700;
 }
 
-/* --- Form Group & Labels --- */
+
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -48,16 +48,16 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #388e3c; /* Darker Green for labels */
+    color: #388e3c; 
     font-size: 0.95em;
 }
 
-/* --- Input Fields --- */
+
 input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #c8e6c9; /* Light green border */
+    border: 1px solid #c8e6c9; 
     border-radius: 8px;
     box-sizing: border-box; 
     font-size: 1em;
@@ -65,16 +65,16 @@ input[type="password"] {
 }
 
 input:focus {
-    border-color: #3cb371; /* Highlight border on focus */
+    border-color: #3cb371; 
     outline: none;
-    box-shadow: 0 0 8px rgba(60, 179, 113, 0.4); /* Green glow on focus */
+    box-shadow: 0 0 8px rgba(60, 179, 113, 0.4); 
 }
 
-/* --- Button (The CTA) --- */
+
 .btn {
     width: 100%;
     padding: 14px;
-    background-color: #2e8b57; /* Primary Green for the main action */
+    background-color: #2e8b57; 
     color: white;
     border: none;
     border-radius: 8px;
@@ -87,23 +87,23 @@ input:focus {
 }
 
 .btn:hover {
-    background-color: #3cb371; /* Brighter Green on hover */
+    background-color: #3cb371; 
 }
 
 .btn:active {
-    transform: scale(0.99); /* Press effect */
+    transform: scale(0.99); 
 }
 
-/* --- Links Section --- */
+
 .links {
     margin-top: 25px;
     padding-top: 15px;
-    border-top: 1px solid #e0f2f1; /* Very subtle top border to separate links */
+    border-top: 1px solid #e0f2f1; 
     font-size: 0.9em;
 }
 
 .links a {
-    color: #2e8b57; /* Green link text */
+    color: #2e8b57; 
     text-decoration: none;
     font-weight: 500;
     margin: 0 5px;
@@ -111,6 +111,6 @@ input:focus {
 }
 
 .links a:hover {
-    color: #1b5e20; /* Dark green on hover */
+    color: #1b5e20; 
     text-decoration: underline;
 }

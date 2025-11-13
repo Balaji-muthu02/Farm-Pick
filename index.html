@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Organic Products Grid</title>
-    <link rel="stylesheet" href="/styles/shop.css" />
+    <title>FarmPick</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -26,7 +26,7 @@
             class="search-input"
             placeholder="Search organic products..."
           />
-          <button class="icon-btn">👤</button>
+          <button class="icon-btn"><a href="/pages/sign-in.html">👤</a></button>
           <button class="icon-btn">
             <img
               src="https://cdn-icons-png.flaticon.com/128/8170/8170675.png"
@@ -39,21 +39,83 @@
       </div>
     </nav>
 
+    <section class="second">
+      <div class="container">
+        <div class="content">
+          <div class="main">
+            <h1 class="title">
+              Buy Organic.<br />
+              <span class="green">Direct From the<br />Source.</span>
+            </h1>
+            <p class="main-description">
+              Connect directly with organic farmers and producers. Get the
+              freshest, most authentic organic products delivered straight to
+              your door.
+            </p>
+            <div class="two-buttons">
+              <a href="/pages/Shop.html"><button class="btn btn-one" type="button">Shop Now</button></a>
+              <a href="/pages/Become-a-seller.html"><button class="btn btn-two">Sell With Us</button></a>
+            </div>
+            <div class="main-features">
+              <div class="feature">
+                <span class="tick">✓</span>
+                <span>No Middlemen</span>
+              </div>
+              <div class="feature">
+                <span class="tick">✓</span>
+                <span>Farm Fresh</span>
+              </div>
+              <div class="feature">
+                <span class="tick">✓</span>
+                <span>Fair Prices</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="vegetables-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSH-j-YJf88B94jYV3qpKtFEvuccxE62YygA&s"
+                alt="vegetables img"
+                class="veg-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search">
+      <div class="container">
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search for organic fresh vegetables..."
+          />
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+      </div>
+    </section>
+
     <div class="product-grid">
       <div class="card">
-        <a href="/pages/cart.html"
-          ><img
-            src="https://static.vecteezy.com/system/resources/thumbnails/027/142/813/small/red-tomato-isolated-on-white-background-generative-ai-photo.jpg"
-            alt="Organic Sweet Potatoes"
+        <a href="/pages/cart.html">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/027/142/813/small/red-tomato-isolated-on-white-background-generative-ai-photo.jpg"
+          alt="Organic Sweet Potatoes"
         /></a>
-        <!-- <a href="/cart.html" class="buy-btn">Buy Now</a> -->
-         <button  type="button" class="buy-btn">Buy Now</button>
+        <button class="buy-btn">Buy Now</button>
         <div class="card-content">
           <h3>Organic Red-Tomato</h3>
           <p>Orange Harvest Farm</p>
           <div class="rating">⭐ <span>4.7</span> (167)</div>
           <div class="price">$12.75</div>
-          <button class="cart-btn">🛒</a></button>
+          <button class="cart-btn">🛒</button>
         </div>
       </div>
 
@@ -63,9 +125,7 @@
           src="https://static.vecteezy.com/system/resources/thumbnails/054/233/926/small/freshly-harvested-potatoes-nestled-in-rich-soil-among-vibrant-green-spinach-leaves-in-a-sunny-garden-setting-free-photo.jpeg"
           alt="Organic Bell Peppers Mix"
         /></a>
-        <a href="./potato.html">
-        <button  type="button" class="buy-btn">Buy Now</button>
-        </a>
+        <button class="buy-btn">Buy Now</button>
         <div class="card-content">
           <h3>Organic Potato</h3>
           <p>Rainbow Harvest Co.</p>
@@ -88,7 +148,7 @@
           <div class="rating">⭐ <span>4.7</span> (156)</div>
           <div class="price">$6.75</div>
           <button class="cart-btn">🛒</button>
-        </div>
+        </div>  
       </div>
 
       <div class="card">
@@ -186,55 +246,265 @@
           <button class="cart-btn">🛒</button>
         </div>
       </div>
-
-      <div class="card">
-        <a href="/pages/Pumpkin.html">
-        <img
-          src="https://5.imimg.com/data5/IG/CK/MY-5553683/fresh-pumpkin-500x500.jpg"
-          alt="Fresh Asparagus Spears"
-        /></a>
-        <button class="buy-btn">Buy Now</button>
-        <div class="card-content">
-          <h3>Fresh Pumpkin</h3>
-          <p>Spring Valley Farm</p>
-          <div class="rating">⭐ <span>4.8</span> (124)</div>
-          <div class="price">$14.50</div>
-          <button class="cart-btn">🛒</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <a href="/pages/cauli-flower.html">
-        <img
-          src="https://thumbs.dreamstime.com/b/cauliflower-broccoli-17064295.jpg"
-          alt="Fresh Asparagus Spears"
-        /></a>
-        <button class="buy-btn">Buy Now</button>
-        <div class="card-content">
-          <h3>Fresh Cauliflower</h3>
-          <p>Spring Valley Farm</p>
-          <div class="rating">⭐ <span>4.8</span> (124)</div>
-          <div class="price">$14.50</div>
-          <button class="cart-btn">🛒</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <a href="/pages/pumpkin-2.html">
-        <img
-          src="https://i2.pickpik.com/photos/475/350/386/pumpkin-pumpkins-squash-gourd-thumb.jpg"
-          alt="Fresh Asparagus Spears"
-        /></a>
-        <button class="buy-btn">Buy Now</button>
-        <div class="card-content">
-          <h3>Fresh Pumpkin</h3>
-          <p>Spring Valley Farm</p>
-          <div class="rating">⭐ <span>4.8</span> (124)</div>
-          <div class="price">$14.50</div>
-          <button class="cart-btn">🛒</button>
-        </div>
-      </div>
     </div>
+
+    <section class="shopping-features-section">
+      <div class="shopping-features-container">
+        <div class="shopping-header-wrapper">
+          <h2 class="shopping-main-title">Shopping Made Simple</h2>
+          <p class="shopping-main-subtitle">
+            Multiple ways to shop and buy products that work best for your
+            needs. From quick purchases to bulk orders.
+          </p>
+        </div>
+        <div class="shopping-features-grid">
+          <!-- Add to Cart -->
+          <div class="feature-box green-box">
+            <div class="feature-box-header">
+              <img src="cart-icon.png" alt="Cart" class="feature-box-icon" />
+              <h3 class="feature-box-title green-title">Add to Cart</h3>
+            </div>
+            <p class="feature-box-description green-text">
+              Add items to your cart and continue shopping. Review your order
+              before checkout.
+            </p>
+            <ul class="feature-box-list">
+              <li class="green-list-item">
+                <img
+                  src="check-green.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Keep shopping
+              </li>
+              <li class="green-list-item">
+                <img
+                  src="check-green.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Review quantities
+              </li>
+              <li class="green-list-item">
+                <img
+                  src="check-green.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Apply coupons
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Buy -->
+          <div class="feature-box blue-box">
+            <div class="feature-box-header">
+              <img
+                src="lightning-icon.png"
+                alt="Quick Buy"
+                class="feature-box-icon"
+              />
+              <h3 class="feature-box-title blue-title">Quick Buy</h3>
+            </div>
+            <p class="feature-box-description blue-text">
+              Skip the cart and go directly to checkout for fast one-click
+              purchasing.
+            </p>
+            <ul class="feature-box-list">
+              <li class="blue-list-item">
+                <img
+                  src="check-blue.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Instant checkout
+              </li>
+              <li class="blue-list-item">
+                <img
+                  src="check-blue.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Save time
+              </li>
+              <li class="blue-list-item">
+                <img
+                  src="check-blue.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Perfect for regular items
+              </li>
+            </ul>
+          </div>
+
+          <!-- Save for Later -->
+          <div class="feature-box red-box">
+            <div class="feature-box-header">
+              <img
+                src="heart-icon-red.png"
+                alt="Save"
+                class="feature-box-icon"
+              />
+              <h3 class="feature-box-title red-title">Save for Later</h3>
+            </div>
+            <p class="feature-box-description red-text">
+              Bookmark items to your wishlist for future purchases or to track
+              favorites.
+            </p>
+            <ul class="feature-box-list">
+              <li class="red-list-item">
+                <img
+                  src="check-red.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Track favorites
+              </li>
+              <li class="red-list-item">
+                <img
+                  src="check-red.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Price alerts
+              </li>
+              <li class="red-list-item">
+                <img
+                  src="check-red.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Share with family
+              </li>
+            </ul>
+          </div>
+
+          <!-- Bulk Orders -->
+          <div class="feature-box purple-box">
+            <div class="feature-box-header">
+              <img
+                src="box-icon.png"
+                alt="Bulk Orders"
+                class="feature-box-icon"
+              />
+              <h3 class="feature-box-title purple-title">Bulk Orders</h3>
+            </div>
+            <p class="feature-box-description purple-text">
+              Order larger quantities with special bulk pricing and discounts.
+            </p>
+            <ul class="feature-box-list">
+              <li class="purple-list-item">
+                <img
+                  src="check-purple.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Volume discounts
+              </li>
+              <li class="purple-list-item">
+                <img
+                  src="check-purple.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Restaurant/business orders
+              </li>
+              <li class="purple-list-item">
+                <img
+                  src="check-purple.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Family meal planning
+              </li>
+            </ul>
+          </div>
+
+          <!-- Product Comparison -->
+          <div class="feature-box orange-box">
+            <div class="feature-box-header">
+              <img
+                src="compare-icon.png"
+                alt="Compare"
+                class="feature-box-icon"
+              />
+              <h3 class="feature-box-title orange-title">Product Comparison</h3>
+            </div>
+            <p class="feature-box-description orange-text">
+              Compare up to 4 products side-by-side to make informed decisions.
+            </p>
+            <ul class="feature-box-list">
+              <li class="orange-list-item">
+                <img
+                  src="check-orange.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Compare prices
+              </li>
+              <li class="orange-list-item">
+                <img
+                  src="check-orange.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Nutrition facts
+              </li>
+              <li class="orange-list-item">
+                <img
+                  src="check-orange.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Seller ratings
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick View -->
+          <div class="feature-box yellow-box">
+            <div class="feature-box-header">
+              <img
+                src="eye-icon.png"
+                alt="Quick View"
+                class="feature-box-icon"
+              />
+              <h3 class="feature-box-title gray-title">Quick View</h3>
+            </div>
+            <p class="feature-box-description gray-text">
+              Get detailed product information without leaving the current page.
+            </p>
+            <ul class="feature-box-list">
+              <li class="gray-list-item">
+                <img
+                  src="check-gray.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Stay on page
+              </li>
+              <li class="gray-list-item">
+                <img
+                  src="check-gray.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Quick details
+              </li>
+              <li class="gray-list-item">
+                <img
+                  src="check-gray.png"
+                  alt="Check"
+                  class="feature-check-icon"
+                />
+                Fast browsing
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <div class="site-footer-container">
