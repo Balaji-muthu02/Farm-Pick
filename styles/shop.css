@@ -442,28 +442,4 @@ body {
     color: #22c55e;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .site-footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 
-@media (max-width: 640px) {
-    .site-footer-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-bottom-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .footer-payment-section {
-        justify-content: center;
-    }
-    
-    .footer-security-section {
-        justify-content: center;
-    }
-}

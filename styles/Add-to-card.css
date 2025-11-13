@@ -87,6 +87,13 @@ a {
   margin: 40px auto;
   padding: 0 20px;
 }
+.white{
+  color: white;
+}
+.option-group-delivery-option-checked{
+  background-color: white;
+}
+
 .page-title {
   font-size: 36px;
   color: #2D2D2D;
@@ -98,6 +105,7 @@ a {
   font-size: 14px;
   margin-bottom: 40px;
 }
+
 .breadcrumb a {
   color: #C44569;
   text-decoration: none;
