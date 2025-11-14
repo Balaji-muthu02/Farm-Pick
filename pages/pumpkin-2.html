@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/eggplanet.css" />
-    <title>Document</title>
+    <title>OrganicDirect Checkout</title>
+    <link rel="stylesheet" href="/styles/Buy-page.css" />
   </head>
   <body>
+    <!-- Header -->
     <header>
       <div class="logo color-primary">
-        Organic<span class="color-dark">Direct</span>
+        Farm<span class="color-dark">Pick</span>
       </div>
     </header>
 
@@ -18,19 +19,7 @@
       <!-- Back Link and Main Title -->
       <a href="/pages/Shop.html" class="back-link">
         <!-- Chevron Left Icon (SVG) -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="m15 18-6-6 6-6" />
-        </svg>
+     
         Back to Cart
       </a>
       <h1>Checkout</h1>
@@ -43,11 +32,11 @@
         <div class="form-group-row form-group-row-2">
           <div>
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" value="John" />
+            <input type="text" id="firstName" placeholder="Enter First name"  />
           </div>
           <div>
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" value="Doe" />
+            <input type="text" id="lastName" placeholder="Enter Last name" />
           </div>
         </div>
 
@@ -55,34 +44,34 @@
         <div class="form-group-row form-group-row-2">
           <div>
             <label for="email">Email</label>
-            <input type="email" id="email" value="john@example.com" />
+            <input type="email" id="email" placeholder="Enter your Email" />
           </div>
           <div>
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" value="(555) 123-4567" />
+            <input type="tel" id="phone" placeholder="Enter you number"  />
           </div>
         </div>
 
         <label for="address">Address</label>
-        <input type="text" id="address" value="123 Main Street" />
+        <input type="text" id="address" placeholder="Address"  />
 
         <!-- City / State / ZIP Row -->
         <div class="form-group-row form-group-row-3">
           <div>
             <label for="city">City</label>
-            <input type="text" id="city" value="San Francisco" />
+            <input type="text" id="city" placeholder="Enter your city" />
           </div>
           <div>
             <label for="state">State</label>
             <select id="state">
-              <option>Select State</option>
-              <option selected>California</option>
-              <option>New York</option>
+              <option>Kerala</option>
+              <option selected>Tamilnadu</option>
+              <option>Anthra Pradesh</option>
             </select>
           </div>
           <div>
             <label for="zip">ZIP</label>
-            <input type="text" id="zip" value="94102" />
+            <input type="text" id="zip" placeholder="Enter your Zip Code" />
           </div>
         </div>
       </form>
@@ -100,8 +89,8 @@
               id="delivery-standard"
               checked
             />
-            <div class="option-text-container">
-              <span style="font-weight: bold">Standard Delivery</span>
+            <div class="option-text-container ">
+              <span style="font-weight: bold " ">Standard Delivery</span>
               <span style="font-size: 0.85rem; color: #4b5563"
                 >(5–7 business days)</span
               >
@@ -162,21 +151,21 @@
 
       <form>
         <label for="cardNumber">Card Number</label>
-        <input type="text" id="cardNumber" value="1234 5678 9012 3456" />
+        <input type="text" id="cardNumber" placeholder="Enter your card number" />
 
         <div class="form-group-row form-group-row-2">
           <div>
             <label for="expiryDate">Expiry Date</label>
-            <input type="text" id="expiryDate" value="MM/YY" />
+            <input type="text" id="expiryDate" placeholder="DD/MM/YYYY" />
           </div>
           <div>
             <label for="cvv">CVV</label>
-            <input type="text" id="cvv" value="123" />
+            <input type="text" id="cvv" placeholder="Cvv point" />
           </div>
         </div>
 
         <label for="nameOnCard">Name on Card</label>
-        <input type="text" id="nameOnCard" value="John Doe" />
+        <input type="text" id="nameOnCard" placeholder="Enter your name"/>
 
         <label class="option-label" for="saveCard" style="margin-top: 10px">
           <input type="checkbox" id="saveCard" /> Save this card for future
@@ -185,12 +174,17 @@
       </form>
 
       <!-- Place Order Button -->
-      <a href="/pages/Order-confirm.html">
+       <a href="/pages/Order-confirm.html">
         <button class="btn" type="button">Place Order</button>
-      </a>
+        </a>
       <!-- <div class="btn-container">
         <button class="btn">Place Order</button>
       </div> -->
     </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 OrganicDirect. All rights reserved.</p>
+    </footer>
   </body>
 </html>

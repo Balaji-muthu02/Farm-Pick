@@ -337,11 +337,7 @@ body {
 }
 
 
-/* ============================
-   SHOPPING FEATURES SECTION
-   ISOLATED - NO CONFLICTS
-   FULL GRID LAYOUT
-   ============================ */
+
 
 .shopping-features-section {
     padding: 80px 20px;
@@ -412,7 +408,7 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Color Variations */
+
 .green-box {
     background-color: #f0fdf4;
     border-color: #bbf7d0;
