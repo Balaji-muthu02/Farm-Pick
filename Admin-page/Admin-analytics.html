@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin-Style/Admin-analytics.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <div>
+          <div class="logo-text">FarmConnect</div>
+          <div class="admin-badge">Admin Panel</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-dashboard.html" class="menu-link">
+            <span class="menu-icon">📊</span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-manage-user.html" class="menu-link">
+            <span class="menu-icon">👥</span>
+            <span>Manage Users</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-approve-seller.html" class="menu-link">
+            <span class="menu-icon">✅</span>
+            <span>Approve Sellers</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-manage-product.html" class="menu-link">
+            <span class="menu-icon">📦</span>
+            <span>Manage Products</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-order.html" class="menu-link">
+            <span class="menu-icon">🛒</span>
+            <span>Orders</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-analytics.html" class="menu-link active">
+            <span class="menu-icon">📈</span>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#settings" class="menu-link">
+            <span class="menu-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <div class="top-header">
+        <div class="header-left">
+          <h1>Analytics & Reports</h1>
+          <p class="header-subtitle">
+            Comprehensive platform insights and performance metrics
+          </p>
+        </div>
+        <div class="header-right">
+          <button class="date-range-btn">📅 Last 30 Days</button>
+          <div class="admin-profile">
+            <div class="profile-avatar">A</div>
+            <div class="profile-info">
+              <div class="profile-name">Admin User</div>
+              <div class="profile-role">Super Admin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <section class="content-section">
+        <!-- Revenue Cards -->
+        <div class="revenue-grid">
+          <div class="revenue-card">
+            <div class="revenue-label">Total Platform Revenue</div>
+            <div class="revenue-amount">₹45,67,890</div>
+            <div class="revenue-change">↑ 28.5% from last month</div>
+          </div>
+
+          <div class="revenue-card">
+            <div class="revenue-label">Commission Earned</div>
+            <div class="revenue-amount">₹4,56,789</div>
+            <div class="revenue-change">↑ 23.4% from last month</div>
+          </div>
+
+          <div class="revenue-card">
+            <div class="revenue-label">Average Order Value</div>
+            <div class="revenue-amount">₹5,121</div>
+            <div class="revenue-change">↑ 12.8% from last month</div>
+          </div>
+        </div>
+
+        <!-- Analytics Grid -->
+        <div class="analytics-grid">
+          <!-- Platform Metrics -->
+          <div class="analytics-card">
+            <div class="card-header">
+              <h2 class="card-title">Platform Metrics</h2>
+              <button class="view-btn">Export Report</button>
+            </div>
+
+            <div class="metrics-list">
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon blue">📊</div>
+                  <div class="metric-details">
+                    <h4>Total Orders</h4>
+                    <div class="metric-value">8,923</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 15.2%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon green">✅</div>
+                  <div class="metric-details">
+                    <h4>Success Rate</h4>
+                    <div class="metric-value">87.9%</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 3.2%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon orange">👥</div>
+                  <div class="metric-details">
+                    <h4>Active Users</h4>
+                    <div class="metric-value">4,567</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 8.7%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon purple">🏪</div>
+                  <div class="metric-details">
+                    <h4>Active Sellers</h4>
+                    <div class="metric-value">892</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 6.4%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Performers -->
+          <div class="analytics-card">
+            <div class="card-header">
+              <h2 class="card-title">Top Sellers</h2>
+              <button class="view-btn">View All</button>
+            </div>
+
+            <div class="performers-list">
+              <div class="performer-item">
+                <div class="performer-rank">1</div>
+                <div class="performer-info">
+                  <div class="performer-name">Tech Store India</div>
+                  <div class="performer-type">Electronics</div>
+                </div>
+                <div class="performer-revenue">₹8.2L</div>
+              </div>
+
+              <div class="performer-item">
+                <div class="performer-rank">2</div>
+                <div class="performer-info">
+                  <div class="performer-name">Fashion Hub</div>
+                  <div class="performer-type">Fashion</div>
+                </div>
+                <div class="performer-revenue">₹6.8L</div>
+              </div>
+
+              <div class="performer-item">
+                <div class="performer-rank">3</div>
+                <div class="performer-info">
+                  <div class="performer-name">Home Decor Pro</div>
+                  <div class="performer-type">Home & Living</div>
+                </div>
+                <div class="performer-revenue">₹5.4L</div>
+              </div>
+
+              <div class="performer-item">
+                <div class="performer-rank">4</div>
+                <div class="performer-info">
+                  <div class="performer-name">Organic Farm</div>
+                  <div class="performer-type">Organic Food</div>
+                </div>
+                <div class="performer-revenue">₹4.9L</div>
+              </div>
+
+              <div class="performer-item">
+                <div class="performer-rank">5</div>
+                <div class="performer-info">
+                  <div class="performer-name">Fresh Grocers</div>
+                  <div class="performer-type">Groceries</div>
+                </div>
+                <div class="performer-revenue">₹4.2L</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Grid -->
+        <div class="bottom-grid">
+          <!-- Category Performance -->
+          <div class="analytics-card">
+            <div class="card-header">
+              <h2 class="card-title">Category Performance</h2>
+            </div>
+
+            <div class="metrics-list">
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon green">🥬</div>
+                  <div class="metric-details">
+                    <h4>Vegetables</h4>
+                    <div class="metric-value">₹12.4L</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 18%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon orange">🍎</div>
+                  <div class="metric-details">
+                    <h4>Fruits</h4>
+                    <div class="metric-value">₹8.9L</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 12%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon blue">🌾</div>
+                  <div class="metric-details">
+                    <h4>Grains</h4>
+                    <div class="metric-value">₹6.2L</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-down">↓ 3%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Growth -->
+          <div class="analytics-card">
+            <div class="card-header">
+              <h2 class="card-title">User Growth</h2>
+            </div>
+
+            <div class="metrics-list">
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon blue">👤</div>
+                  <div class="metric-details">
+                    <h4>New Users</h4>
+                    <div class="metric-value">1,234</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 22%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon green">🔄</div>
+                  <div class="metric-details">
+                    <h4>Returning Users</h4>
+                    <div class="metric-value">3,456</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 8%</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-info">
+                  <div class="metric-icon purple">📱</div>
+                  <div class="metric-details">
+                    <h4>Mobile Users</h4>
+                    <div class="metric-value">67%</div>
+                  </div>
+                </div>
+                <div class="metric-trend trend-up">↑ 5%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+</body>
+</html>

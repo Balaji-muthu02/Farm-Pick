@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Admin-Style/Admin-approve-seller.css">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <div>
+          <div class="logo-text">FarmConnect</div>
+          <div class="admin-badge">Admin Panel</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-dashboard.html" class="menu-link">
+            <span class="menu-icon">📊</span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-manage-user.html" class="menu-link">
+            <span class="menu-icon">👥</span>
+            <span>Manage Users</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-approve-seller.html" class="menu-link active">
+            <span class="menu-icon">✅</span>
+            <span>Approve Sellers</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-manage-product.html" class="menu-link">
+            <span class="menu-icon">📦</span>
+            <span>Manage Products</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-order.html" class="menu-link">
+            <span class="menu-icon">🛒</span>
+            <span>Orders</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Admin-page/Admin-analytics.html" class="menu-link">
+            <span class="menu-icon">📈</span>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#settings" class="menu-link">
+            <span class="menu-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <div class="top-header">
+        <div class="header-left">
+          <h1>Approve Sellers</h1>
+          <p class="header-subtitle">
+            Review and approve new seller applications
+          </p>
+        </div>
+        <div class="header-right">
+          <div class="pending-badge">45 Pending</div>
+          <div class="admin-profile">
+            <div class="profile-avatar">A</div>
+            <div class="profile-info">
+              <div class="profile-name">Admin User</div>
+              <div class="profile-role">Super Admin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <section class="content-section">
+        <!-- Tabs -->
+        <div class="tabs-container">
+          <button class="tab-btn active">Pending (45)</button>
+          <button class="tab-btn">Approved (892)</button>
+          <button class="tab-btn">Rejected (123)</button>
+        </div>
+
+        <!-- Sellers Grid -->
+        <div class="sellers-grid">
+          <!-- Seller Card 1 - Pending -->
+          <div class="seller-card">
+            <div class="seller-header">
+              <div class="seller-avatar">TS</div>
+              <div class="seller-info">
+                <h3>Tech Store India</h3>
+                <div class="seller-owner">Suresh Reddy</div>
+                <span class="status-badge status-pending">Pending</span>
+              </div>
+            </div>
+
+            <div class="seller-details">
+              <div class="detail-row">
+                <span class="detail-icon">📧</span>
+                <span class="detail-text">suresh@techstore.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📞</span>
+                <span class="detail-text">+91 9988776655</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Bangalore, Karnataka</span>
+              </div>
+            </div>
+
+            <div class="applied-date">Applied on: Nov 13, 2025</div>
+
+            <div class="action-buttons">
+              <button class="action-btn btn-view">View</button>
+              <button class="action-btn btn-approve">Approve</button>
+              <button class="action-btn btn-reject">Reject</button>
+            </div>
+          </div>
+
+          <!-- Seller Card 2 - Pending -->
+          <div class="seller-card">
+            <div class="seller-header">
+              <div class="seller-avatar alt1">FH</div>
+              <div class="seller-info">
+                <h3>Fashion Hub</h3>
+                <div class="seller-owner">Kavya Nair</div>
+                <span class="status-badge status-pending">Pending</span>
+              </div>
+            </div>
+
+            <div class="seller-details">
+              <div class="detail-row">
+                <span class="detail-icon">📧</span>
+                <span class="detail-text">kavya@fashionhub.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📞</span>
+                <span class="detail-text">+91 8877665544</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Mumbai, Maharashtra</span>
+              </div>
+            </div>
+
+            <div class="applied-date">Applied on: Nov 13, 2025</div>
+
+            <div class="action-buttons">
+              <button class="action-btn btn-view">View</button>
+              <button class="action-btn btn-approve">Approve</button>
+              <button class="action-btn btn-reject">Reject</button>
+            </div>
+          </div>
+
+          <!-- Seller Card 3 - Approved -->
+          <div class="seller-card">
+            <div class="seller-header">
+              <div class="seller-avatar alt2">HD</div>
+              <div class="seller-info">
+                <h3>Home Decor Pro</h3>
+                <div class="seller-owner">Vikram Singh</div>
+                <span class="status-badge status-approved">Approved</span>
+              </div>
+            </div>
+
+            <div class="seller-details">
+              <div class="detail-row">
+                <span class="detail-icon">📧</span>
+                <span class="detail-text">vikram@homedecor.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📞</span>
+                <span class="detail-text">+91 7766554433</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Delhi, NCR</span>
+              </div>
+            </div>
+
+            <div class="applied-date">Approved on: Nov 14, 2025</div>
+
+            <div class="action-buttons">
+              <button class="action-btn btn-view">View</button>
+              <button class="action-btn btn-revoke">Revoke</button>
+            </div>
+          </div>
+
+          <!-- Seller Card 4 - Pending -->
+          <div class="seller-card">
+            <div class="seller-header">
+              <div class="seller-avatar alt3">OF</div>
+              <div class="seller-info">
+                <h3>Organic Farm</h3>
+                <div class="seller-owner">Anita Desai</div>
+                <span class="status-badge status-pending">Pending</span>
+              </div>
+            </div>
+
+            <div class="seller-details">
+              <div class="detail-row">
+                <span class="detail-icon">📧</span>
+                <span class="detail-text">anita@organicfarm.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📞</span>
+                <span class="detail-text">+91 6655443322</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text">Pune, Maharashtra</span>
+              </div>
+            </div>
+
+            <div class="applied-date">Applied on: Nov 15, 2025</div>
+
+            <div class="action-buttons">
+              <button class="action-btn btn-view">View</button>
+              <button class="action-btn btn-approve">Approve</button>
+              <button class="action-btn btn-reject">Reject</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+</body>
+</html>
