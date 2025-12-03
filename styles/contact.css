@@ -273,10 +273,10 @@ body {
     padding-right: 40px;
 }
 
-.contact-form-textarea {
+/* .contact-form-textarea {
     resize: vertical;
     min-height: 120px;
-}
+} */
 
 .contact-submit-btn {
     display: flex;
