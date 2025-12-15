@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Farmer-Style/Farmer-earning-page.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <div class="logo-icon">🏠</div>
+        <div class="logo-text">FarmConnect</div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-item">
+          <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
+            <span class="menu-icon">🏠</span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
+            <span class="menu-icon">📦</span>
+            <span>Products</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
+            <span class="menu-icon">🛒</span>
+            <span>Orders</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link active">
+            <span class="menu-icon">💰</span>
+            <span>Earnings</span>
+          </a>
+        </li>
+        <!-- <li class="menu-item">
+          <a href="#chat" class="menu-link">
+            <span class="menu-icon">💬</span>
+            <span>Chat</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#reviews" class="menu-link">
+            <span class="menu-icon">⭐</span>
+            <span>Reviews</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#settings" class="menu-link">
+            <span class="menu-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#logout" class="menu-link">
+            <span class="menu-icon">🚪</span>
+            <span>Logout</span>
+          </a>
+        </li> -->
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <div class="top-header">
+        <span class="breadcrumb-icon">☰</span>
+        <span class="breadcrumb-text">Seller Dashboard</span>
+      </div>
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>Earnings & Wallet</h1>
+        <p>Track your earnings and manage withdrawals</p>
+      </div>
+
+      <!-- Content Section -->
+      <section class="content-section">
+        <!-- Earnings Cards Grid -->
+        <div class="earnings-grid">
+          <!-- Today's Earnings -->
+          <div class="earnings-card">
+            <div class="earnings-info">
+              <h3>Today's Earnings</h3>
+              <div class="earnings-value">₹1250</div>
+            </div>
+            <div class="earnings-icon icon-green">📈</div>
+          </div>
+
+          <!-- This Week -->
+          <div class="earnings-card">
+            <div class="earnings-info">
+              <h3>This Week</h3>
+              <div class="earnings-value">₹8450</div>
+            </div>
+            <div class="earnings-icon icon-blue">📈</div>
+          </div>
+
+          <!-- This Month -->
+          <div class="earnings-card">
+            <div class="earnings-info">
+              <h3>This Month</h3>
+              <div class="earnings-value">₹32800</div>
+            </div>
+            <div class="earnings-icon icon-purple">📈</div>
+          </div>
+
+          <!-- Total Earnings -->
+          <div class="earnings-card">
+            <div class="earnings-info">
+              <h3>Total Earnings</h3>
+              <div class="earnings-value">₹124500</div>
+            </div>
+            <div class="earnings-icon icon-orange">💰</div>
+          </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+          <!-- Wallet Balance Section -->
+          <div class="section-card">
+            <h2 class="section-title">Wallet Balance</h2>
+
+            <div class="wallet-balance">
+              <div class="balance-label">Available Balance</div>
+              <div class="balance-amount">₹30460</div>
+              <div class="pending-amount">Pending: ₹2340</div>
+            </div>
+
+            <button class="withdraw-btn">Request Withdrawal</button>
+          </div>
+
+          <!-- Quick Stats Section -->
+          <div class="section-card">
+            <h2 class="section-title">Quick Stats</h2>
+
+            <div class="stat-item">
+              <div class="stat-label">Total Orders</div>
+              <div class="stat-value">
+                156
+                <span class="trend-icon">↗</span>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-label">Average Order Value</div>
+              <div class="stat-value">
+                ₹798
+                <span class="trend-icon">↗</span>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-label">Commission Rate</div>
+              <div class="stat-value">10%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Farmer-Style/Farmer-dashboard.css">
+    <title>Document</title>
+</head>
+<body>
+     <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🌾</div>
+            <div class="logo-text">FarmConnect</div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link active">
+                    <span class="menu-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
+                    <span class="menu-icon">📦</span>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
+                    <span class="menu-icon">🛒</span>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
+                    <span class="menu-icon">💰</span>
+                    <span>Earnings</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#settings" class="menu-link">
+                    <span class="menu-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="welcome-section">
+                <h1>Welcome back, Farmer! 👋</h1>
+                <p>Here's what's happening with your farm today</p>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">
+                    🔔
+                    <span class="notification-badge"></span>
+                </button>
+                <div class="profile-section">
+                    <div class="profile-avatar">F</div>
+                    <div class="profile-info">
+                        <div class="profile-name">Farm Name</div>
+                        <div class="profile-role">Seller</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-info">
+                            <h3>Total Products</h3>
+                            <div class="stat-value">24</div>
+                            <div class="stat-change">↑ 4 new this week</div>
+                        </div>
+                        <div class="stat-icon">📦</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-info">
+                            <h3>Today's Orders</h3>
+                            <div class="stat-value">8</div>
+                            <div class="stat-change">↑ 2 from yesterday</div>
+                        </div>
+                        <div class="stat-icon">🛒</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-info">
+                            <h3>Total Earnings</h3>
+                            <div class="stat-value">₹12,450</div>
+                            <div class="stat-change">↑ 15% this month</div>
+                        </div>
+                        <div class="stat-icon">💰</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-info">
+                            <h3>Pending Orders</h3>
+                            <div class="stat-value">3</div>
+                            <div class="stat-change">Need attention</div>
+                        </div>
+                        <div class="stat-icon">⚠️</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Recent Orders -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Recent Orders</h2>
+                        <a href="#" class="view-all-link">View All →</a>
+                    </div>
+
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-id">#ORD-1234</span>
+                                <span class="order-amount">₹450</span>
+                            </div>
+                            <div class="order-customer">Rajesh Kumar</div>
+                            <div class="order-product">Organic Tomatoes - 5kg</div>
+                            <span class="order-status status-pending">pending</span>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-id">#ORD-1235</span>
+                                <span class="order-amount">₹200</span>
+                            </div>
+                            <div class="order-customer">Priya Sharma</div>
+                            <div class="order-product">Fresh Spinach - 2kg</div>
+                            <span class="order-status status-packed">packed</span>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-id">#ORD-1236</span>
+                                <span class="order-amount">₹350</span>
+                            </div>
+                            <div class="order-customer">Amit Patel</div>
+                            <div class="order-product">Organic Potatoes - 3kg</div>
+                            <span class="order-status status-ready">ready</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Alerts</h2>
+                    </div>
+
+                    <div class="alerts-list">
+                        <div class="alert-box alert-warning">
+                            <div class="alert-header">
+                                ⚠️ Low Stock Alert
+                            </div>
+                            <div class="alert-content">
+                                <div class="stock-item">
+                                    <span class="stock-name">Organic Tomatoes</span>
+                                    <span class="stock-value">5 kg</span>
+                                </div>
+                                <div class="stock-item">
+                                    <span class="stock-name">Fresh Carrots</span>
+                                    <span class="stock-value">3 kg</span>
+                                </div>
+                                <div class="stock-item">
+                                    <span class="stock-name">Green Chillies</span>
+                                    <span class="stock-value">2 kg</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert-box alert-info">
+                            <div class="alert-header">
+                                🛒 3 new orders
+                            </div>
+                            <div class="alert-content">
+                                You have 3 new orders waiting to be processed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
