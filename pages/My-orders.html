@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - FarmPick</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/navbar-shared.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        .orders-wrapper {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+            border-color: #22c55e;
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.1);
+        }
+
+        .order-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background: #22c55e;
+            opacity: 0.7;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f0fdf4;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-id {
+            font-weight: 800;
+            color: #111827;
+            font-size: 18px;
+        }
+
+        .order-status {
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-pending {
+            background: #fef9c3;
+            color: #854d0e;
+            border: 1px solid #fde047;
+        }
+
+        .status-shipped {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .status-delivered {
+            background: #22c55e;
+            color: white;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+        }
+
+        .order-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .address-box h4 {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .address-box p {
+            color: #1f2937;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .price-box {
+            text-align: right;
+        }
+
+        .total-label {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .total-amount {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            color: #22c55e;
+            margin-top: 5px;
+        }
+
+        .empty-orders {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .empty-orders img {
+            width: 150px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        .items-list {
+            margin-top: 20px;
+            border-top: 1px solid #f9fafb;
+            padding-top: 15px;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #065f46;
+        }
+
+        .item-qty {
+            color: #166534;
+            font-size: 11px;
+            font-weight: 700;
+            background: #f0fdf4;
+            padding: 2px 10px;
+            border: 1px solid #bbf7d0;
+            border-radius: 20px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .status-tag {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="first">
+            <a href="/index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text"><span class="green">Farm</span>Pick</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/Shop.html">Shop</a></li>
+                <li><a href="/pages/About.html">About Us</a></li>
+                <li><a href="/pages/Become-a-seller.html">Become a Seller</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons" id="nav-icons-container">
+                <button class="icon-btn user-btn">
+                    <a href="/pages/login.html"><i class="fa-solid fa-user"></i></a>
+                </button>
+                <button class="icon-btn cart-btn">
+                    <a href="/pages/Add-to-card.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge" style="display: none;">0</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="orders-wrapper">
+        <h1 style="font-size: 32px; font-weight: 800; margin-bottom: 30px; color: #1f2937;">My Order History</h1>
+        <div id="orders-container">
+            <p>Loading your orders...</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import apiRequest from '/js/api.js';
+        import { getCurrentUser } from '/js/auth.js';
+
+        async function loadOrders() {
+            const user = getCurrentUser();
+            if (!user) {
+                window.location.href = '/pages/login.html';
+                return;
+            }
+
+            try {
+                const orders = await apiRequest(`/orders/user/${user.id}`, 'GET');
+                renderOrders(orders);
+            } catch (err) {
+                console.error(err);
+                document.getElementById('orders-container').innerHTML = '<p>Failed to load orders.</p>';
+            }
+        }
+
+        function renderOrders(orders) {
+            const container = document.getElementById('orders-container');
+            if (orders.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-orders">
+                        <img src="https://cdn-icons-png.flaticon.com/128/10433/10433100.png" alt="No Orders">
+                        <h2 style="color: #6b7280;">No orders found</h2>
+                        <p style="margin-top: 10px; color: #9ca3af;">Start shopping to see your orders here!</p>
+                        <a href="/pages/Shop.html" class="btn btn-one" style="display: inline-block; margin-top: 20px; text-decoration: none;">Go to Shop</a>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = orders.reverse().map(order => `
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <span class="order-id">Order #${order.id}</span>
+                            <div style="font-size: 12px; color: #9ca3af; margin-top: 4px;">
+                                ${new Date(order.order_date).toLocaleDateString()}
+                            </div>
+                        </div>
+                        <span class="order-status status-${(order.status || 'pending').toLowerCase()}">${order.status || 'pending'}</span>
+                    </div>
+                    
+                    <div class="items-list">
+                        <h4 style="font-size: 13px; color: #9ca3af; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Products</h4>
+                        ${order.items.map(item => `
+                            <div class="item-row">
+                                <div class="item-info">
+                                    <span class="item-name">${item.product_name || 'Product'}</span>
+                                    <span class="item-qty">x${item.quantity}</span>
+                                </div>
+                                <span class="item-price">₹${parseFloat(item.price).toFixed(2)}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="order-details" style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #f0f0f0;">
+                        <div class="address-box">
+                            <h4>Delivery Address</h4>
+                            <p>${order.delivery_address || 'N/A'}</p>
+                        </div>
+                        <div class="price-box">
+                            <span class="total-label">Total Amount</span>
+                            <span class="total-amount">₹${parseFloat(order.total_amount).toFixed(2)}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        loadOrders();
+    </script>
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

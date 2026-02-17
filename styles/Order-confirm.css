@@ -1,7 +1,4 @@
-/* ============================
-   ORDER CONFIRMATION PAGE
-   ISOLATED - NO CONFLICTS
-   ============================ */
+
 a{
     text-decoration: none;
     color: #16a34a;
@@ -16,6 +13,8 @@ a{
     padding: 60px 20px;
     background-color: #f9fafb;
     box-sizing: border-box;
+    border: none;
+    /* box-shadow: 0 40px 60px rgb(24, 186, 24); */
 }
 
 .order-confirm-container {
@@ -23,6 +22,12 @@ a{
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+     border: none;
+    /* box-shadow: 0 40px 60px rgb(130, 231, 130); */
+}
+.order-confirm-container:hover {
+    box-shadow: 0 20px 40px rgb(0, 0, 0,0.4);
+    border-top: #16a34a 5px solid;
 }
 
 .order-confirm-content {
@@ -99,13 +104,18 @@ a{
 }
 
 .continue-shopping-btn {
-    background-color: white;
-    color: #1a1a1a;
+    background-color: rgb(24, 186, 24);
+    color: #ffff;
     border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
 }
 
 .continue-shopping-btn:hover {
-    background-color: #f9fafb;
-    border-color: #d1d5db;
+    /* background-color: #8ea78e; */
+    
+    /* border-top: 2px solid #1a1a1a; */
+    transform: translateY(-5px);
 }
+
+
 

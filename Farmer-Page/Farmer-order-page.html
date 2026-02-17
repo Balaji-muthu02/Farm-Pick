@@ -1,254 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Farmer-Style/Farmer-order-page.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Farmer-Style/Farmer-order-page.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Orders - FarmPick</title>
 </head>
+
 <body>
-    <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="logo">
-        <div class="logo-icon">🏠</div>
-        <div class="logo-text">FarmConnect</div>
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+      <div class="logo-text">FarmConnect</div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-chart-pie"></i></span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-box-open"></i></span>
+          <span>Products</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link active">
+          <span class="menu-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-wallet"></i></span>
+          <span>Earnings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#settings" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-gear"></i></span>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link" onclick="logout()">
+          <span class="menu-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Header -->
+    <div class="top-header">
+      <span class="breadcrumb-icon"><i class="fa-solid fa-bars-staggered"></i></span>
+      <span class="breadcrumb-text">Seller Dashboard</span>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Orders</h1>
+      <p>Manage and track your customer orders</p>
+    </div>
+
+    <!-- Orders Section -->
+    <section class="orders-section">
+      <div class="orders-grid" id="orders-grid">
+        <!-- Orders will be loaded here dynamically -->
       </div>
+    </section>
+  </main>
 
-      <ul class="sidebar-menu">
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
-            <span class="menu-icon">🏠</span>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
-            <span class="menu-icon">📦</span>
-            <span>Products</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link active">
-            <span class="menu-icon">🛒</span>
-            <span>Orders</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
-            <span class="menu-icon">💰</span>
-            <span>Earnings</span>
-          </a>
-        </li>
-        <!-- <li class="menu-item">
-          <a href="#chat" class="menu-link">
-            <span class="menu-icon">💬</span>
-            <span>Chat</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#reviews" class="menu-link">
-            <span class="menu-icon">⭐</span>
-            <span>Reviews</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#settings" class="menu-link">
-            <span class="menu-icon">⚙️</span>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#logout" class="menu-link">
-            <span class="menu-icon">🚪</span>
-            <span>Logout</span>
-          </a>
-        </li> -->
-      </ul>
-    </aside>
+  <script type="module">
+    import apiRequest from "/js/api.js";
+    import { getCurrentUser, logout } from "/js/auth.js";
+    import { showToast } from "/js/notifications.js";
+    window.logout = logout;
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Top Header -->
-      <div class="top-header">
-        <span class="breadcrumb-icon">☰</span>
-        <span class="breadcrumb-text">Seller Dashboard</span>
-      </div>
-
-      <!-- Page Header -->
-      <div class="page-header">
-        <h1>Orders</h1>
-        <p>Manage and track your customer orders</p>
-      </div>
-
-      <!-- Orders Section -->
-      <section class="orders-section">
-        <div class="orders-grid">
-          <!-- Order Card 1 - Pending -->
-          <div class="order-card">
-            <div class="order-header">
-              <div>
-                <div class="order-id">#ORD-1234</div>
-                <div class="order-date">2025-11-15 10:30 AM</div>
-              </div>
-              <span class="status-badge status-pending">pending</span>
-            </div>
-
-            <div class="order-details">
-              <div class="detail-row">
-                <span class="detail-icon">📦</span>
-                <span>2 item(s)</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📞</span>
-                <span>Rajesh Kumar</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📍</span>
-                <span>Home Delivery</span>
-              </div>
-            </div>
-
-            <div class="order-total">Total: ₹480</div>
-
-            <div class="status-update">
-              <label class="status-update-label">Update Order Status</label>
-              <select class="status-select">
-                <option value="pending" selected>Pending</option>
-                <option value="packed">Packed</option>
-                <option value="ready">Ready</option>
-                <option value="completed">Completed</option>
-              </select>
-              <button class="update-btn">Update Status</button>
-            </div>
-          </div>
-
-          <!-- Order Card 2 - Packed -->
-          <div class="order-card">
-            <div class="order-header">
-              <div>
-                <div class="order-id">#ORD-1235</div>
-                <div class="order-date">2025-11-15 11:00 AM</div>
-              </div>
-              <span class="status-badge status-packed">packed</span>
-            </div>
-
-            <div class="order-details">
-              <div class="detail-row">
-                <span class="detail-icon">📦</span>
-                <span>1 item(s)</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📞</span>
-                <span>Priya Sharma</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📍</span>
-                <span>Self Pickup</span>
-              </div>
-            </div>
-
-            <div class="order-total">Total: ₹180</div>
-
-            <div class="status-update">
-              <label class="status-update-label">Update Order Status</label>
-              <select class="status-select">
-                <option value="pending">Pending</option>
-                <option value="packed" selected>Packed</option>
-                <option value="ready">Ready</option>
-                <option value="completed">Completed</option>
-              </select>
-              <button class="update-btn">Update Status</button>
-            </div>
-          </div>
-
-          <!-- Order Card 3 - Ready -->
-          <div class="order-card">
-            <div class="order-header">
-              <div>
-                <div class="order-id">#ORD-1236</div>
-                <div class="order-date">2025-11-15 09:15 AM</div>
-              </div>
-              <span class="status-badge status-ready">ready</span>
-            </div>
-
-            <div class="order-details">
-              <div class="detail-row">
-                <span class="detail-icon">📦</span>
-                <span>1 item(s)</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📞</span>
-                <span>Amit Patel</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📍</span>
-                <span>Home Delivery</span>
-              </div>
-            </div>
-
-            <div class="order-total">Total: ₹350</div>
-
-            <div class="status-update">
-              <label class="status-update-label">Update Order Status</label>
-              <select class="status-select">
-                <option value="pending">Pending</option>
-                <option value="packed">Packed</option>
-                <option value="ready" selected>Ready</option>
-                <option value="completed">Completed</option>
-              </select>
-              <button class="update-btn">Update Status</button>
-            </div>
-          </div>
-
-          <!-- Order Card 4 - Completed -->
-          <div class="order-card">
-            <div class="order-header">
-              <div>
-                <div class="order-id">#ORD-1237</div>
-                <div class="order-date">2025-11-14 03:30 PM</div>
-              </div>
-              <span class="status-badge status-completed">completed</span>
-            </div>
-
-            <div class="order-details">
-              <div class="detail-row">
-                <span class="detail-icon">📦</span>
-                <span>2 item(s)</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📞</span>
-                <span>Sunita Reddy</span>
-              </div>
-              <div class="detail-row">
-                <span class="detail-icon">📍</span>
-                <span>Home Delivery</span>
-              </div>
-            </div>
-
-            <div class="order-total">Total: ₹440</div>
-
-            <div class="status-update">
-              <label class="status-update-label">Update Order Status</label>
-              <select class="status-select">
-                <option value="pending">Pending</option>
-                <option value="packed">Packed</option>
-                <option value="ready">Ready</option>
-                <option value="completed" selected>Completed</option>
-              </select>
-              <button class="update-btn">Update Status</button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle("active");
+    async function loadOrders() {
+      const user = getCurrentUser();
+      if (!user || user.role !== 'farmer') {
+        window.location.href = '/pages/login.html';
+        return;
       }
-    </script>
+
+      try {
+        const orders = await apiRequest(`/orders/farmer/${user.farmer_id}`, 'GET');
+        const grid = document.getElementById('orders-grid');
+
+        if (orders.length === 0) {
+          grid.innerHTML = '<p>No orders received yet.</p>';
+          return;
+        }
+
+        grid.innerHTML = orders.map(order => `
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <div class="order-id">#ORD-${order.id}</div>
+                            <div class="order-date">${new Date(order.order_date || Date.now()).toLocaleString()}</div>
+                        </div>
+                        <span class="status-badge status-${order.status}">${order.status}</span>
+                    </div>
+
+                    <div class="order-details">
+                        <div class="detail-row">
+                            <span class="detail-icon"><i class="fa-solid fa-user"></i></span>
+                            <span><strong>${order.customer_name}</strong></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <span>${order.customer_email}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <span>${order.delivery_address || 'Home Delivery'}</span>
+                        </div>
+                    </div>
+
+                    <div class="products-section">
+                        <h4 style="margin: 10px 0; font-size: 14px; color: #666;">Products Ordered:</h4>
+                        ${order.items && order.items.length > 0 ? order.items.map(item => `
+                            <div class="product-item" style="background: #f8f9fa; padding: 10px; margin: 5px 0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-weight: 600; color: #2d3748;">${item.product_name}</div>
+                                    <div style="font-size: 13px; color: #718096;">Qty: ${item.quantity} × ₹${item.price}</div>
+                                </div>
+                                <div style="font-weight: 700; color: #38a169;">₹${item.subtotal}</div>
+                            </div>
+                        `).join('') : '<p style="color: #999;">No product details available</p>'}
+                    </div>
+
+                    <div class="order-total">Total: ₹${order.total_amount}</div>
+
+                    <div class="status-update">
+                        <label class="status-update-label">Update Order Status</label>
+                        <select class="status-select" id="status-${order.id}">
+                            <option value="pending" ${order.status === 'pending' ? 'selected' : ''}>Pending</option>
+                            <option value="shipped" ${order.status === 'shipped' ? 'selected' : ''}>Shipped</option>
+                            <option value="delivered" ${order.status === 'delivered' ? 'selected' : ''}>Delivered</option>
+                            <option value="cancelled" ${order.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                        </select>
+                        <button class="update-btn" onclick="updateStatus(${order.id})">Update Status</button>
+                    </div>
+                </div>
+            `).join('');
+
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    window.updateStatus = async (orderId) => {
+      const newStatus = document.getElementById(`status-${orderId}`).value;
+      try {
+        await apiRequest(`/orders/${orderId}/status`, 'PUT', { status: newStatus });
+        showToast('Order status updated!', 'success');
+        loadOrders(); // Refresh
+      } catch (err) {
+        showToast('Failed to update status', 'error');
+      }
+    };
+
+    loadOrders();
+
+    window.toggleSidebar = () => {
+      document.getElementById("sidebar").classList.toggle("active");
+    };
+  </script>
 </body>
+
 </html>

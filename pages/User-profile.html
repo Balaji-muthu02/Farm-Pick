@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - FarmPick</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styles/navbar-shared.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        :root {
+            --primary-green: #22c55e;
+            --dark-green: #16a34a;
+            --light-green: #f0fdf4;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-white: #ffffff;
+            --bg-gray: #f9fafb;
+        }
+
+        body {
+            background-color: var(--bg-gray);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: var(--bg-white);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-cover {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-green), #10b981);
+            position: relative;
+        }
+
+        .profile-header {
+            padding: 0 40px 40px;
+            position: relative;
+            margin-top: -60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 25px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .profile-avatar-wrapper {
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            border: 5px solid var(--bg-white);
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .profile-info h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            color: var(--text-gray);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-badge {
+            background: var(--light-green);
+            color: var(--dark-green);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .profile-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .info-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            background: var(--bg-gray);
+            padding: 15px 20px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background: var(--light-green);
+            transform: translateX(5px);
+        }
+
+        .info-label {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            border: 2px solid #f3f4f6;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary-green);
+            background: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-dark);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .actions-section {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-profile {
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .btn-edit {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background: var(--dark-green);
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-logout {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .btn-logout:hover {
+            background: #fecaca;
+        }
+
+        @media (max-width: 768px) {
+            .profile-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0 20px 30px;
+            }
+
+            .profile-avatar {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="first">
+            <a href="/index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text"><span class="green">Farm</span>Pick</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/Shop.html">Shop</a></li>
+                <li><a href="/pages/About.html">About Us</a></li>
+                <li id="become-seller-link"><a href="/pages/Become-a-seller.html">Become a Seller</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons" id="nav-icons-container">
+                <button class="icon-btn user-btn">
+                    <a href="/pages/login.html"><i class="fa-solid fa-user"></i></a>
+                </button>
+                <button class="icon-btn cart-btn">
+                    <a href="/pages/Add-to-card.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge" style="display: none;">0</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-cover"></div>
+            <div class="profile-header">
+                <div class="profile-avatar-wrapper">
+                    <img id="user-avatar"
+                        src="https://ui-avatars.com/api/?name=User&background=22c55e&color=fff&size=200" alt="Profile"
+                        class="profile-avatar">
+                </div>
+                <div class="profile-info">
+                    <h1 id="user-name">Loading...</h1>
+                    <p>
+                        <span id="user-role-badge" class="role-badge">Customer</span>
+                        <span id="user-email-header">loading@example.com</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="info-section">
+                    <h3><i class="fa-solid fa-address-card"></i> Personal Info</h3>
+                    <div class="info-grid" id="view-mode">
+                        <div class="info-item">
+                            <span class="info-label">Full Name</span>
+                            <span id="display-name" class="info-value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email Address</span>
+                            <span id="display-email" class="info-value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Account Role</span>
+                            <span id="display-role" class="info-value" style="text-transform: capitalize;">-</span>
+                        </div>
+                    </div>
+
+                    <div class="info-grid" id="edit-mode" style="display: none;">
+                        <div class="info-item">
+                            <label class="info-label" for="edit-name">Full Name</label>
+                            <input type="text" id="edit-name" class="info-value"
+                                style="width: 100%; border: 1px solid #ddd; padding: 5px 10px; border-radius: 8px; outline: none;">
+                        </div>
+                        <div class="info-item">
+                            <label class="info-label" for="edit-email">Email Address</label>
+                            <input type="email" id="edit-email" class="info-value"
+                                style="width: 100%; border: 1px solid #ddd; padding: 5px 10px; border-radius: 8px; outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="actions-section" id="profile-actions">
+                        <button class="btn-profile btn-edit" id="edit-btn" onclick="toggleEditMode()">
+                            <i class="fa-solid fa-user-pen"></i> Edit Profile
+                        </button>
+                        <button class="btn-profile btn-logout" onclick="handleLogout()">
+                            <i class="fa-solid fa-right-from-bracket"></i> Logout
+                        </button>
+                    </div>
+                    <div class="actions-section" id="edit-actions" style="display: none;">
+                        <button class="btn-profile btn-edit" onclick="saveProfile()">
+                            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+                        </button>
+                        <button class="btn-profile btn-logout" style="background: #f3f4f6; color: #4b5563;"
+                            onclick="toggleEditMode()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
+                    <div class="stats-grid">
+                        <a href="/pages/My-orders.html" class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-box"></i></div>
+                            <span class="stat-value" id="order-count">0</span>
+                            <span class="stat-label">Total Orders</span>
+                        </a>
+                        <a href="/pages/Add-to-card.html" class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <span class="stat-value" id="cart-count">0</span>
+                            <span class="stat-label">Items in Cart</span>
+                        </a>
+                        <a href="/pages/Shop.html" class="stat-card" style="grid-column: span 2;">
+                            <div class="stat-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <span class="stat-value">Continue Shopping</span>
+                            <span class="stat-label">Explore Fresh Organic Products</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { getCurrentUser, logout } from '/js/auth.js';
+        import apiRequest from '/js/api.js';
+        import { showToast } from '/js/notifications.js';
+
+        let isEditMode = false;
+
+        async function initProfile() {
+            const user = getCurrentUser();
+            if (!user) {
+                window.location.href = '/pages/login.html';
+                return;
+            }
+
+            // Update UI with basic user info
+            document.getElementById('user-name').innerText = user.name;
+            document.getElementById('display-name').innerText = user.name;
+            document.getElementById('user-email-header').innerText = user.email;
+            document.getElementById('display-email').innerText = user.email;
+            document.getElementById('user-role-badge').innerText = user.role;
+            document.getElementById('display-role').innerText = user.role;
+            document.getElementById('user-avatar').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=22c55e&color=fff&size=200&bold=true`;
+
+            // Prepare edit fields
+            document.getElementById('edit-name').value = user.name;
+            document.getElementById('edit-email').value = user.email;
+
+            try {
+                // Fetch dynamic stats
+                const cart = await apiRequest(`/cart/${user.id}`, 'GET');
+                if (cart && cart.items) {
+                    document.getElementById('cart-count').innerText = cart.items.length;
+                }
+
+                const orders = await apiRequest(`/orders/user/${user.id}`, 'GET');
+                if (orders) {
+                    document.getElementById('order-count').innerText = Array.isArray(orders) ? orders.length : 0;
+                }
+            } catch (err) {
+                console.error("Failed to load profile stats:", err);
+            }
+        }
+
+        window.toggleEditMode = () => {
+            isEditMode = !isEditMode;
+            document.getElementById('view-mode').style.display = isEditMode ? 'none' : 'flex';
+            document.getElementById('edit-mode').style.display = isEditMode ? 'flex' : 'none';
+            document.getElementById('profile-actions').style.display = isEditMode ? 'none' : 'flex';
+            document.getElementById('edit-actions').style.display = isEditMode ? 'flex' : 'none';
+        }
+
+        window.saveProfile = async () => {
+            const user = getCurrentUser();
+            const newName = document.getElementById('edit-name').value.trim();
+            const newEmail = document.getElementById('edit-email').value.trim();
+
+            if (!newName || !newEmail) {
+                showToast('Name and Email cannot be empty!', 'error');
+                return;
+            }
+
+            try {
+                const updatedUser = await apiRequest(`/users/${user.id}`, 'PUT', {
+                    name: newName,
+                    email: newEmail
+                });
+
+                if (updatedUser) {
+                    // Update local storage
+                    const fullUserData = { ...user, name: updatedUser.name, email: updatedUser.email };
+                    localStorage.setItem('user', JSON.stringify(fullUserData));
+
+                    showToast('Profile updated successfully! ✨', 'success');
+
+                    // Refresh UI
+                    initProfile();
+                    toggleEditMode();
+
+                    // Sync with other parts of the app (like Navbar)
+                    if (window.updateNavbar) window.updateNavbar();
+                }
+            } catch (err) {
+                showToast('Failed to update profile: ' + err.message, 'error');
+            }
+        }
+
+        window.handleLogout = () => {
+            logout();
+        }
+
+        document.addEventListener('DOMContentLoaded', initProfile);
+    </script>
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

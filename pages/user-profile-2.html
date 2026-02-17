@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/styles/user-profile-2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <h1>Edit profile</h1>
+            <div class="header-icons">
+                
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Profile" class="header-profile-img">
+            </div>
+        </div>
+
+        <div class="main-profile-section">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Profile" class="main-profile-img">
+        </div>
+
+        <form class="profile-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="Mehrab" value="Mehrab">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Bozorgi" value="Bozorgi">
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="email">Email</label>
+                <div class="input-with-icon">
+                    <input type="email" id="email" placeholder="Mehrabbozorgi.business@gmail.com" value="Mehrabbozorgi.business@gmail.com">
+                    
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="33062 Zboncak Isle" value="33062 Zboncak Isle">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="contact">Contact Number</label>
+                <input type="text" id="contact" placeholder="58077.79" value="58077.79">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select id="city">
+                        <option>Mehrab</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state">
+                        <option>Bozorgi</option>
+                        <option>Maharashtra</option>
+                        <option>Karnataka</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="password">Password</label>
+                <div class="input-with-icon">
+                    <input type="password" id="password" placeholder="sbdfbnd65sfdvb s" value="sbdfbnd65sfdvbs">
+                    
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

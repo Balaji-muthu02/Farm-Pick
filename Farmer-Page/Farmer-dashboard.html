@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Farmer-Style/Farmer-dashboard.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Farmer Dashboard - FarmPick</title>
 </head>
-<body>
-     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-    <!-- Sidebar -->
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+
     <aside class="sidebar" id="sidebar">
         <div class="logo">
-            <div class="logo-icon">🌾</div>
+            <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
             <div class="logo-text">FarmConnect</div>
         </div>
 
         <ul class="sidebar-menu">
             <li class="menu-item">
                 <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link active">
-                    <span class="menu-icon">🏠</span>
+                    <span class="menu-icon"><i class="fa-solid fa-chart-pie"></i></span>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
-                    <span class="menu-icon">📦</span>
+                    <span class="menu-icon"><i class="fa-solid fa-box-open"></i></span>
                     <span>Products</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
-                    <span class="menu-icon">🛒</span>
+                    <span class="menu-icon"><i class="fa-solid fa-cart-shopping"></i></span>
                     <span>Orders</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
-                    <span class="menu-icon">💰</span>
+                    <span class="menu-icon"><i class="fa-solid fa-wallet"></i></span>
                     <span>Earnings</span>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="#settings" class="menu-link">
-                    <span class="menu-icon">⚙️</span>
+                    <span class="menu-icon"><i class="fa-solid fa-gear"></i></span>
                     <span>Settings</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" onclick="logout()">
+                    <span class="menu-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                    <span>Logout</span>
                 </a>
             </li>
         </ul>
@@ -61,7 +69,7 @@
             </div>
             <div class="header-right">
                 <button class="notification-btn">
-                    🔔
+                    <i class="fa-solid fa-bell"></i>
                     <span class="notification-badge"></span>
                 </button>
                 <div class="profile-section">
@@ -82,10 +90,10 @@
                     <div class="stat-header">
                         <div class="stat-info">
                             <h3>Total Products</h3>
-                            <div class="stat-value">24</div>
+                            <div class="stat-value" id="stat-products">0</div>
                             <div class="stat-change">↑ 4 new this week</div>
                         </div>
-                        <div class="stat-icon">📦</div>
+                        <div class="stat-icon"><i class="fa-solid fa-box"></i></div>
                     </div>
                 </div>
 
@@ -93,10 +101,10 @@
                     <div class="stat-header">
                         <div class="stat-info">
                             <h3>Today's Orders</h3>
-                            <div class="stat-value">8</div>
+                            <div class="stat-value" id="stat-orders">0</div>
                             <div class="stat-change">↑ 2 from yesterday</div>
                         </div>
-                        <div class="stat-icon">🛒</div>
+                        <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
                     </div>
                 </div>
 
@@ -104,10 +112,10 @@
                     <div class="stat-header">
                         <div class="stat-info">
                             <h3>Total Earnings</h3>
-                            <div class="stat-value">₹12,450</div>
+                            <div class="stat-value" id="stat-earnings">₹0</div>
                             <div class="stat-change">↑ 15% this month</div>
                         </div>
-                        <div class="stat-icon">💰</div>
+                        <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
                     </div>
                 </div>
 
@@ -118,7 +126,7 @@
                             <div class="stat-value">3</div>
                             <div class="stat-change">Need attention</div>
                         </div>
-                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
                     </div>
                 </div>
             </div>
@@ -133,35 +141,7 @@
                     </div>
 
                     <div class="orders-list">
-                        <div class="order-item">
-                            <div class="order-header">
-                                <span class="order-id">#ORD-1234</span>
-                                <span class="order-amount">₹450</span>
-                            </div>
-                            <div class="order-customer">Rajesh Kumar</div>
-                            <div class="order-product">Organic Tomatoes - 5kg</div>
-                            <span class="order-status status-pending">pending</span>
-                        </div>
-
-                        <div class="order-item">
-                            <div class="order-header">
-                                <span class="order-id">#ORD-1235</span>
-                                <span class="order-amount">₹200</span>
-                            </div>
-                            <div class="order-customer">Priya Sharma</div>
-                            <div class="order-product">Fresh Spinach - 2kg</div>
-                            <span class="order-status status-packed">packed</span>
-                        </div>
-
-                        <div class="order-item">
-                            <div class="order-header">
-                                <span class="order-id">#ORD-1236</span>
-                                <span class="order-amount">₹350</span>
-                            </div>
-                            <div class="order-customer">Amit Patel</div>
-                            <div class="order-product">Organic Potatoes - 3kg</div>
-                            <span class="order-status status-ready">ready</span>
-                        </div>
+                        <p>Loading orders...</p>
                     </div>
                 </div>
 
@@ -174,7 +154,7 @@
                     <div class="alerts-list">
                         <div class="alert-box alert-warning">
                             <div class="alert-header">
-                                ⚠️ Low Stock Alert
+                                <i class="fa-solid fa-triangle-exclamation"></i> Low Stock Alert
                             </div>
                             <div class="alert-content">
                                 <div class="stock-item">
@@ -194,7 +174,7 @@
 
                         <div class="alert-box alert-info">
                             <div class="alert-header">
-                                🛒 3 new orders
+                                <i class="fa-solid fa-cart-shopping"></i> 3 new orders
                             </div>
                             <div class="alert-content">
                                 You have 3 new orders waiting to be processed
@@ -206,10 +186,66 @@
         </section>
     </main>
 
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
+    <script type="module">
+        import apiRequest from "/js/api.js";
+        import { getCurrentUser, logout } from "/js/auth.js";
+        import { showToast } from "/js/notifications.js";
+
+        window.logout = logout;
+
+        async function loadDashboard() {
+            const user = getCurrentUser();
+            if (!user || user.role !== 'farmer' || !user.farmer_id) {
+                showToast('Access denied. Only approved farmers can access this page.', 'error');
+                window.location.href = '/pages/login.html';
+                return;
+            }
+
+            // Update profile name
+            document.querySelector('.profile-name').innerText = user.name;
+
+            const farmerId = user.farmer_id;
+            try {
+                // 1. Load Stats
+                const products = await apiRequest(`/products/farmer/${farmerId}`, 'GET');
+                document.getElementById('stat-products').innerText = products.length;
+
+                const orders = await apiRequest(`/orders/farmer/${farmerId}`, 'GET');
+                document.getElementById('stat-orders').innerText = orders.length;
+
+                const earnings = orders.reduce((sum, o) => sum + (o.total_amount || 0), 0);
+                document.getElementById('stat-earnings').innerText = `₹${earnings.toFixed(2)}`;
+
+                // 2. Load Recent Orders
+                const ordersList = document.querySelector('.orders-list');
+                const recentOrders = orders.slice(0, 5);
+
+                if (recentOrders.length === 0) {
+                    ordersList.innerHTML = '<p style="padding: 20px;">No orders yet.</p>';
+                } else {
+                    ordersList.innerHTML = recentOrders.map(o => `
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-id">#ORD-${o.id}</span>
+                                <span class="order-amount">₹${o.total_amount}</span>
+                            </div>
+                            <div class="order-customer">User ID: ${o.user_id}</div>
+                             <span class="order-status status-${o.status}">${o.status}</span>
+                        </div>
+                    `).join('');
+                }
+
+            } catch (err) {
+                console.error("Dashboard error:", err);
+            }
         }
+
+        loadDashboard();
+
+        window.toggleSidebar = () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        };
     </script>
 </body>
+
 </html>

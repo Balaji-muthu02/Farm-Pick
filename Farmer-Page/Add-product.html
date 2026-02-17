@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Farmer-Style/Add-product.css">
+    <link rel="stylesheet" href="/styles/navbar-shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Add Product - FarmPick</title>
+</head>
+
+<body>
+    <!-- Removed user navbar for cleaner dashboard view -->
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+            <div class="logo-text">FarmConnect</div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
+                    <span class="menu-icon"><i class="fa-solid fa-chart-pie"></i></span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link active">
+                    <span class="menu-icon"><i class="fa-solid fa-box-open"></i></span>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
+                    <span class="menu-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
+                    <span class="menu-icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span>Earnings</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#settings" class="menu-link">
+                    <span class="menu-icon"><i class="fa-solid fa-gear"></i></span>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" onclick="logout()">
+                    <span class="menu-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <div class="top-header">
+            <h1>Add New Product</h1>
+            <p>List a new product in your store</p>
+        </div>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <div class="form-container">
+                <div class="form-card">
+                    <form>
+                        <!-- Basic Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Basic Information</h3>
+
+                            <div class="form-group">
+                                <label>Product Name <span class="required">*</span></label>
+                                <input type="text" id="p-name" placeholder="e.g., Organic Tomatoes" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Product Description <span class="required">*</span></label>
+                                <textarea id="p-desc" placeholder="Describe your product in detail..."
+                                    required></textarea>
+                                <p class="helper-text">Include details about quality, farming method, taste, etc.</p>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Category <span class="required">*</span></label>
+                                    <select id="p-category" required>
+                                        <option value="">Select Category</option>
+                                        <!-- Categories will be loaded here -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sub-Category</label>
+                                    <input type="text" placeholder="e.g., Red Tomatoes">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing & Stock -->
+                        <div class="form-section">
+                            <h3 class="section-title">Pricing & Stock</h3>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Price per Unit (₹) <span class="required">*</span></label>
+                                    <input type="number" id="p-price" placeholder="999" min="0" step="0.01" required>
+                                    <p class="helper-text">Price per kg, piece, liter, etc.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Unit Type <span class="required">*</span></label>
+                                    <select required>
+                                        <option value="">Select Unit</option>
+                                        <option>Kilogram (kg)</option>
+                                        <option>Gram (g)</option>
+                                        <option>Liter (L)</option>
+                                        <option>Piece</option>
+                                        <option>Dozen</option>
+                                        <option>Bunch</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Available Stock <span class="required">*</span></label>
+                                    <input type="number" id="p-qty" placeholder="100" min="0" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Minimum Order Quantity</label>
+                                    <input type="number" placeholder="1" min="1" value="1">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Discount Percentage (%)</label>
+                                    <input type="number" placeholder="10" min="0" max="100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Final Price (Auto-calculated)</label>
+                                    <input type="text" placeholder="₹899" readonly style="background: #f3f4f6;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="form-section">
+                            <h3 class="section-title">Product Details</h3>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Harvest Date</label>
+                                    <input type="date">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Expiry/Best Before</label>
+                                    <input type="date">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <input type="text" id="p-image" placeholder="https://example.com/image.jpg">
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="organic">
+                                <label for="organic" class="checkbox-label">✅ This product is Organic Certified</label>
+                            </div>
+                        </div>
+
+                        <!-- Product Images -->
+                        <div class="form-section">
+                            <h3 class="section-title">Product Images</h3>
+
+                            <div class="file-upload-area" onclick="document.getElementById('productImages').click()">
+                                <div class="file-upload-icon">📸</div>
+                                <div class="file-upload-text">Click to upload product images</div>
+                                <div class="file-upload-hint">PNG, JPG up to 5MB each (Max 5 images)</div>
+                            </div>
+                            <input type="file" id="productImages" accept="image/*" multiple>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary"
+                                onclick="window.location.href='/Farmer-Page/Farmer-product-page.html'">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Add Product</button>
+                        </div>
+                    </form>
+                    <script type="module">
+                        import apiRequest from '/js/api.js';
+                        import { getCurrentUser, logout } from '/js/auth.js';
+                        import { showToast } from '/js/notifications.js';
+
+                        window.logout = logout;
+                        window.toggleSidebar = () => {
+                            document.getElementById('sidebar').classList.toggle('active');
+                        };
+
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const productId = urlParams.get('id');
+                        const formTitle = document.querySelector('.top-header h1');
+                        const formSubtitle = document.querySelector('.top-header p');
+                        const submitBtn = document.querySelector('button[type="submit"]');
+
+                        if (productId) {
+                            formTitle.innerText = 'Edit Product';
+                            formSubtitle.innerText = 'Update your product details';
+                            submitBtn.innerText = 'Update Product';
+                        }
+
+                        async function loadCategories(selectedId) {
+                            const categories = await apiRequest('/categories/', 'GET');
+                            const select = document.getElementById('p-category');
+                            select.innerHTML = '<option value="">Select Category</option>';
+                            categories.forEach(cat => {
+                                const opt = document.createElement('option');
+                                opt.value = cat.id;
+                                opt.textContent = cat.name;
+                                if (selectedId && cat.id == selectedId) opt.selected = true;
+                                select.appendChild(opt);
+                            });
+                        }
+
+                        async function loadProductDetails() {
+                            if (!productId) {
+                                loadCategories();
+                                return;
+                            }
+
+                            try {
+                                const product = await apiRequest(`/products/${productId}`, 'GET');
+
+                                // Populate fields
+                                document.getElementById('p-name').value = product.name;
+                                document.getElementById('p-desc').value = product.description || '';
+                                document.getElementById('p-price').value = product.price;
+                                document.getElementById('p-qty').value = product.quantity;
+                                document.getElementById('p-image').value = product.image_url || '';
+
+                                // Load categories and select the current one
+                                loadCategories(product.category_id);
+
+                            } catch (error) {
+                                console.error('Error loading product:', error);
+                                showToast('Failed to load product details.', 'error');
+                            }
+                        }
+
+                        document.querySelector('form').addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            const user = getCurrentUser();
+                            if (!user || user.role !== 'farmer') {
+                                showToast('Only farmers can perform this action', 'error');
+                                return;
+                            }
+
+                            const productData = {
+                                farmer_id: user.farmer_id,
+                                category_id: parseInt(document.getElementById('p-category').value),
+                                name: document.getElementById('p-name').value,
+                                price: parseFloat(document.getElementById('p-price').value),
+                                quantity: parseInt(document.getElementById('p-qty').value),
+                                description: document.getElementById('p-desc').value,
+                                image_url: document.getElementById('p-image').value || null,
+                                is_active: true
+                            };
+
+                            try {
+                                if (productId) {
+                                    // Update existing product
+                                    await apiRequest(`/products/${productId}`, 'PUT', productData);
+                                    showToast('Product updated successfully!', 'success');
+                                } else {
+                                    // Create new product
+                                    await apiRequest('/products/', 'POST', productData);
+                                    showToast('Product added successfully!', 'success');
+                                }
+                                window.location.href = '/Farmer-Page/Farmer-product-page.html';
+                            } catch (err) {
+                                showToast('Error saving product: ' + err.message, 'error');
+                            }
+                        });
+
+                        loadProductDetails();
+                    </script>
+                    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

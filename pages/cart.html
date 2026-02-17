@@ -1,190 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OrganicDirect Checkout</title>
-    <link rel="stylesheet" href="/styles/Buy-page.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="logo color-primary">
-        Farm<span class="color-dark">Pick</span>
-      </div>
-    </header>
 
-  
-    <div class="container">
-      
-      <a href="/pages/Shop.html" class="back-link">
-        <!-- Chevron Left Icon (SVG) -->
-      
-        Back to Cart
-      </a>
-      <h1>Checkout</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FarmPick</title>
+    <link rel="stylesheet" href="../styles/Buy-page.css">
+</head>
 
-      <!-- 1. SHIPPING INFORMATION SECTION -->
-      <h2>Shipping Information</h2>
+<body>
 
-      <form>
-        <!-- First Name / Last Name Row -->
-        <div class="form-group-row form-group-row-2">
-          <div>
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="Enter First name"  />
-          </div>
-          <div>
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" placeholder="Enter Last name" />
-          </div>
-        </div>
 
-        <!-- Email / Phone Row -->
-        <div class="form-group-row form-group-row-2">
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your Email" />
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" placeholder="Enter you number"  />
-          </div>
-        </div>
 
-        <label for="address">Address</label>
-        <input type="text" id="address" placeholder="Address"  />
 
-        <!-- City / State / ZIP Row -->
-        <div class="form-group-row form-group-row-3">
-          <div>
-            <label for="city">City</label>
-            <input type="text" id="city" placeholder="Enter your city" />
-          </div>
-          <div>
-            <label for="state">State</label>
-            <select id="state">
-              <option>Kerala</option>
-              <option selected>Tamilnadu</option>
-              <option>Anthra Pradesh</option>
-            </select>
-          </div>
-          <div>
-            <label for="zip">ZIP</label>
-            <input type="text" id="zip" placeholder="Enter your Zip Code" />
-          </div>
-        </div>
-      </form>
 
-      <!-- 2. DELIVERY OPTIONS SECTION -->
-      <h2>Delivery Options</h2>
-
-      <!-- Option 1: Standard Delivery (Checked State) -->
-      <div class="option-group delivery-option-checked" style="background-color: white;">
-        <label class="option-label delivery-option" for="delivery-standard">
-          <div class="delivery-option-info">
-            <input
-              type="radio"
-              name="delivery"
-              id="delivery-standard"
-              checked
-            />
-            <div class="option-text-container ">
-              <span style="font-weight: bold " ">Standard Delivery</span>
-              <span style="font-size: 0.85rem; color: #4b5563"
-                >(5–7 business days)</span
-              >
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span><span class="green">Farm</span>Pick</span>
             </div>
-          </div>
-          <span style="font-weight: bold" class="price">$9.99</span>
-        </label>
-      </div>
-
-      <!-- Option 2: Express Delivery -->
-      <div class="option-group">
-        <label class="option-label delivery-option" for="delivery-express">
-          <div class="delivery-option-info">
-            <input type="radio" name="delivery" id="delivery-express" />
-            <div class="option-text-container">
-              <span style="font-weight: bold">Express Delivery</span>
-              <span style="font-size: 0.85rem; color: #4b5563"
-                >(2–3 business days)</span
-              >
+            <div style="font-size: 14px; color: #6b7280;">
+                Secure Checkout
             </div>
-          </div>
-          <span style="font-weight: bold" class="price">$14.99</span>
-        </label>
-      </div>
-
-      <!-- Option 3: Overnight -->
-      <div class="option-group">
-        <label class="option-label delivery-option" for="delivery-overnight">
-          <div class="delivery-option-info">
-            <input type="radio" name="delivery" id="delivery-overnight" />
-            <div class="option-text-container">
-              <span style="font-weight: bold">Overnight Delivery</span>
-              <span style="font-size: 0.85rem; color: #4b5563"
-                >(Next business day)</span
-              >
-            </div>
-          </div>
-          <span style="font-weight: bold" class="price">$24.99</span>
-        </label>
-      </div>
-
-      <!-- 3. PAYMENT INFORMATION SECTION -->
-      <h2>Payment Information</h2>
-
-      <div style="margin-bottom: 25px">
-        <label
-          class="option-label"
-          for="payment-card"
-          style="margin-bottom: 15px"
-        >
-          <input type="radio" name="payment" id="payment-card" checked /> Credit
-          / Debit Card
-        </label>
-        <label class="option-label" for="payment-paypal">
-          <input type="radio" name="payment" id="payment-paypal" /> PayPal
-        </label>
-      </div>
-
-      <form>
-        <label for="cardNumber">Card Number</label>
-        <input type="text" id="cardNumber" placeholder="Enter your card number" />
-
-        <div class="form-group-row form-group-row-2">
-          <div>
-            <label for="expiryDate">Expiry Date</label>
-            <input type="text" id="expiryDate" placeholder="DD/MM/YYYY" />
-          </div>
-          <div>
-            <label for="cvv">CVV</label>
-            <input type="text" id="cvv" placeholder="Cvv point" />
-          </div>
         </div>
+    </nav>
 
-        <label for="nameOnCard">Name on Card</label>
-        <input type="text" id="nameOnCard" placeholder="Enter your name"/>
-
-        <label class="option-label" for="saveCard" style="margin-top: 10px">
-          <input type="checkbox" id="saveCard" /> Save this card for future
-          orders
-        </label>
-      </form>
-
-      <!-- Place Order Button -->
-       <a href="/pages/Order-confirm.html">
-        <button class="btn" type="button">Place Order</button>
-        </a>
-      <!-- <div class="btn-container">
-        <button class="btn">Place Order</button>
-      </div> -->
+    <div class="back" style="text-decoration: none;" style="color: #6b7280;"><a href="/pages/Shop.html">Back to shop</a>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <p>© 2023 FarmPick. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- Main Content -->
+    <div class="checkout-container">
+        <h1 class="page-title">Checkout</h1>
+        <p class="page-subtitle">Complete your order in just a few steps</p>
+
+        <div class="checkout-grid">
+            <!-- Left Side - Forms -->
+            <div class="checkout-left">
+                <!-- Step 1: Delivery Information -->
+                <div class="checkout-card">
+                    <h2 class="card-title">
+                        <span class="step-number">1</span>
+                        Delivery Information
+                    </h2>
+
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-input" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-input" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Delivery Address *</label>
+                            <input type="text" class="form-input" placeholder="House/Flat No, Street Name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">City *</label>
+                                <input type="text" class="form-input" placeholder="Chennai" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Pincode *</label>
+                                <input type="text" class="form-input" placeholder="600001" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Landmark (Optional)</label>
+                            <input type="text" class="form-input" placeholder="Near Temple">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 2: Delivery Method -->
+                <div class="checkout-card">
+                    <h2 class="card-title">
+                        <span class="step-number">2</span>
+                        Delivery Method
+                    </h2>
+
+                    <div class="delivery-options">
+                        <div class="delivery-option" style="border-color: #22c55e; background: #f0fdf4;">
+                            <div class="delivery-icon"></div>
+                            <div class="delivery-name">Home Delivery</div>
+                            <div class="delivery-time">2-3 Business Days</div>
+                        </div>
+
+                        <div class="delivery-option">
+                            <div class="delivery-icon"></div>
+                            <div class="delivery-name">Self Pickup</div>
+                            <div class="delivery-time">Same Day Available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Payment Method -->
+                <div class="checkout-card">
+                    <h2 class="card-title">
+                        <span class="step-number">3</span>
+                        Payment Method
+                    </h2>
+
+                    <div class="payment-methods">
+                        <label class="payment-method" style="border-color: #22c55e; background: #f0fdf4;">
+                            <input type="radio" name="payment" checked>
+                            <div class="payment-icon"></div>
+                            <div class="payment-details">
+                                <div class="payment-name">Credit/Debit Card</div>
+                                <div class="payment-desc">Visa, MasterCard, RuPay</div>
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <input type="radio" name="payment">
+                            <div class="payment-icon"></div>
+                            <div class="payment-details">
+                                <div class="payment-name">UPI Payment</div>
+                                <div class="payment-desc">GPay, PhonePe, Paytm</div>
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <input type="radio" name="payment">
+                            <div class="payment-icon"></div>
+                            <div class="payment-details">
+                                <div class="payment-name">Cash on Delivery</div>
+                                <div class="payment-desc">Pay when you receive</div>
+                            </div>
+                        </label>
+
+                        <label class="payment-method">
+                            <input type="radio" name="payment">
+                            <div class="payment-icon"></div>
+                            <div class="payment-details">
+                                <div class="payment-name">Net Banking</div>
+                                <div class="payment-desc">All major banks supported</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Order Summary -->
+            <div class="checkout-right">
+                <div class="order-summary">
+                    <h2 class="summary-title">Order Summary</h2>
+
+                    <div class="cart-items">
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/027/142/813/small/red-tomato-isolated-on-white-background-generative-ai-photo.jpg"
+                                alt="Tomato" class="item-image">
+                            <div class="item-details">
+                                <div class="item-name">Organic Red Tomato</div>
+                                <div class="item-quantity">Qty: 5 kg</div>
+                            </div>
+                            <div class="item-price">₹400</div>
+                        </div>
+
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item">
+                            <img src="https://www.shutterstock.com/image-photo/pile-fresh-ripe-carrots-on-600nw-1502024084.jpg"
+                                alt="Carrot" class="item-image">
+                            <div class="item-details">
+                                <div class="item-name">Fresh Organic Carrot</div>
+                                <div class="item-quantity">Qty: 2 kg</div>
+                            </div>
+                            <div class="item-price">₹135</div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="cart-item">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/054/233/926/small/freshly-harvested-potatoes-nestled-in-rich-soil-among-vibrant-green-spinach-leaves-in-a-sunny-garden-setting-free-photo.jpeg"
+                                alt="Potato" class="item-image">
+                            <div class="item-details">
+                                <div class="item-name">Organic Potato</div>
+                                <div class="item-quantity">Qty: 3 kg</div>
+                            </div>
+                            <div class="item-price">₹250</div>
+                        </div>
+                    </div>
+
+                    <!-- Price Summary -->
+                    <div class="price-summary">
+                        <div class="price-row">
+                            <span class="price-label">Subtotal (3 items)</span>
+                            <span class="price-value">₹785</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">Delivery Charges</span>
+                            <span class="price-value" style="color: #22c55e;">FREE</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">Discount</span>
+                            <span class="price-value" style="color: #22c55e;">-₹50</span>
+                        </div>
+
+                        <div class="total-row">
+                            <span class="total-label">Total Amount</span>
+                            <span class="total-value">₹735</span>
+                        </div>
+                    </div>
+
+                    <!-- Place Order Button -->
+                    <button class="place-order-btn" onclick="placeOrder()" type="button">
+                        Place Order
+                    </button>
+                    <div class="secure-checkout">
+                        Secure Checkout | SSL Encrypted
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { showToast } from '/js/notifications.js';
+        window.placeOrder = function () {
+            showToast('Order placed successfully! 🎉\nOrder ID: ORD-' + Math.floor(Math.random() * 10000), 'success');
+
+            // Wait for user to see toast
+            setTimeout(() => {
+                window.location.href = '/index.html';
+            }, 3000);
+        }
+    </script>
+</body>
+
 </html>

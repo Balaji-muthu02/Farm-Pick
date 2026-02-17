@@ -1,177 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Farmer-Style/Farmer-earning-page.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Farmer-Style/Farmer-earning-page.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Earnings & Wallet - FarmPick</title>
 </head>
+
 <body>
-    <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="logo">
-        <div class="logo-icon">🏠</div>
-        <div class="logo-text">FarmConnect</div>
-      </div>
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+      <div class="logo-text">FarmConnect</div>
+    </div>
 
-      <ul class="sidebar-menu">
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
-            <span class="menu-icon">🏠</span>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
-            <span class="menu-icon">📦</span>
-            <span>Products</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
-            <span class="menu-icon">🛒</span>
-            <span>Orders</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link active">
-            <span class="menu-icon">💰</span>
-            <span>Earnings</span>
-          </a>
-        </li>
-        <!-- <li class="menu-item">
-          <a href="#chat" class="menu-link">
-            <span class="menu-icon">💬</span>
-            <span>Chat</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#reviews" class="menu-link">
-            <span class="menu-icon">⭐</span>
-            <span>Reviews</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#settings" class="menu-link">
-            <span class="menu-icon">⚙️</span>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#logout" class="menu-link">
-            <span class="menu-icon">🚪</span>
-            <span>Logout</span>
-          </a>
-        </li> -->
-      </ul>
-    </aside>
+    <ul class="sidebar-menu">
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-chart-pie"></i></span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-box-open"></i></span>
+          <span>Products</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link active">
+          <span class="menu-icon"><i class="fa-solid fa-wallet"></i></span>
+          <span>Earnings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#settings" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-gear"></i></span>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link" onclick="logout()">
+          <span class="menu-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Top Header -->
-      <div class="top-header">
-        <span class="breadcrumb-icon">☰</span>
-        <span class="breadcrumb-text">Seller Dashboard</span>
-      </div>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Header -->
+    <div class="top-header">
+      <span class="breadcrumb-icon"><i class="fa-solid fa-bars-staggered"></i></span>
+      <span class="breadcrumb-text">Seller Dashboard</span>
+    </div>
 
-      <!-- Page Header -->
-      <div class="page-header">
-        <h1>Earnings & Wallet</h1>
-        <p>Track your earnings and manage withdrawals</p>
-      </div>
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Earnings & Wallet</h1>
+      <p>Track your earnings and manage withdrawals</p>
+    </div>
 
-      <!-- Content Section -->
-      <section class="content-section">
-        <!-- Earnings Cards Grid -->
-        <div class="earnings-grid">
-          <!-- Today's Earnings -->
-          <div class="earnings-card">
-            <div class="earnings-info">
-              <h3>Today's Earnings</h3>
-              <div class="earnings-value">₹1250</div>
-            </div>
-            <div class="earnings-icon icon-green">📈</div>
+    <!-- Content Section -->
+    <section class="content-section">
+      <!-- Earnings Cards Grid -->
+      <div class="earnings-grid">
+        <!-- Today's Earnings -->
+        <div class="earnings-card">
+          <div class="earnings-info">
+            <h3>Today's Earnings</h3>
+            <div class="earnings-value" id="today-earnings">₹0</div>
           </div>
-
-          <!-- This Week -->
-          <div class="earnings-card">
-            <div class="earnings-info">
-              <h3>This Week</h3>
-              <div class="earnings-value">₹8450</div>
-            </div>
-            <div class="earnings-icon icon-blue">📈</div>
-          </div>
-
-          <!-- This Month -->
-          <div class="earnings-card">
-            <div class="earnings-info">
-              <h3>This Month</h3>
-              <div class="earnings-value">₹32800</div>
-            </div>
-            <div class="earnings-icon icon-purple">📈</div>
-          </div>
-
-          <!-- Total Earnings -->
-          <div class="earnings-card">
-            <div class="earnings-info">
-              <h3>Total Earnings</h3>
-              <div class="earnings-value">₹124500</div>
-            </div>
-            <div class="earnings-icon icon-orange">💰</div>
-          </div>
+          <div class="earnings-icon icon-green"><i class="fa-solid fa-chart-line"></i></div>
         </div>
 
-        <!-- Main Grid -->
-        <div class="main-grid">
-          <!-- Wallet Balance Section -->
-          <div class="section-card">
-            <h2 class="section-title">Wallet Balance</h2>
+        <!-- This Week -->
+        <div class="earnings-card">
+          <div class="earnings-info">
+            <h3>This Week</h3>
+            <div class="earnings-value">₹0</div>
+          </div>
+          <div class="earnings-icon icon-blue"><i class="fa-solid fa-chart-bar"></i></div>
+        </div>
 
-            <div class="wallet-balance">
-              <div class="balance-label">Available Balance</div>
-              <div class="balance-amount">₹30460</div>
-              <div class="pending-amount">Pending: ₹2340</div>
-            </div>
+        <!-- This Month -->
+        <div class="earnings-card">
+          <div class="earnings-info">
+            <h3>This Month</h3>
+            <div class="earnings-value">₹0</div>
+          </div>
+          <div class="earnings-icon icon-purple"><i class="fa-solid fa-calendar-check"></i></div>
+        </div>
 
-            <button class="withdraw-btn">Request Withdrawal</button>
+        <!-- Total Earnings -->
+        <div class="earnings-card">
+          <div class="earnings-info">
+            <h3>Total Earnings</h3>
+            <div class="earnings-value" id="total-earnings">₹0</div>
+          </div>
+          <div class="earnings-icon icon-orange"><i class="fa-solid fa-sack-dollar"></i></div>
+        </div>
+      </div>
+
+      <!-- Main Grid -->
+      <div class="main-grid">
+        <!-- Wallet Balance Section -->
+        <div class="section-card">
+          <h2 class="section-title">Wallet Balance</h2>
+
+          <div class="wallet-balance">
+            <div class="balance-label">Available Balance</div>
+            <div class="balance-amount" id="wallet-balance">₹0</div>
+            <div class="pending-amount">Pending: ₹0</div>
           </div>
 
-          <!-- Quick Stats Section -->
-          <div class="section-card">
-            <h2 class="section-title">Quick Stats</h2>
+          <button class="withdraw-btn">Request Withdrawal</button>
+        </div>
 
-            <div class="stat-item">
-              <div class="stat-label">Total Orders</div>
-              <div class="stat-value">
-                156
-                <span class="trend-icon">↗</span>
-              </div>
-            </div>
+        <!-- Quick Stats Section -->
+        <div class="section-card">
+          <h2 class="section-title">Quick Stats</h2>
 
-            <div class="stat-item">
-              <div class="stat-label">Average Order Value</div>
-              <div class="stat-value">
-                ₹798
-                <span class="trend-icon">↗</span>
-              </div>
+          <div class="stat-item">
+            <div class="stat-label">Total Orders</div>
+            <div class="stat-value" id="total-orders-count">
+              0
+              <span class="trend-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
             </div>
+          </div>
 
-            <div class="stat-item">
-              <div class="stat-label">Commission Rate</div>
-              <div class="stat-value">10%</div>
+          <div class="stat-item">
+            <div class="stat-label">Average Order Value</div>
+            <div class="stat-value" id="avg-order-value">
+              ₹0
+              <span class="trend-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
             </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">Commission Rate</div>
+            <div class="stat-value">10%</div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <script>
-      function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle("active");
+  <script type="module">
+    import apiRequest from "/js/api.js";
+    import { getCurrentUser, logout } from "/js/auth.js";
+    window.logout = logout;
+
+    async function loadEarnings() {
+      const user = getCurrentUser();
+      if (!user || user.role !== 'farmer') {
+        window.location.href = '/pages/login.html';
+        return;
       }
-    </script>
+
+      try {
+        const orders = await apiRequest(`/orders/farmer/${user.farmer_id}`, 'GET');
+
+        const totalRevenue = orders.reduce((sum, o) => sum + (o.total_amount || 0), 0);
+        const orderCount = orders.length;
+
+        // Update UI
+        document.getElementById('total-earnings').innerText = `₹${totalRevenue.toFixed(2)}`;
+        document.getElementById('today-earnings').innerText = `₹${(totalRevenue * 0.1).toFixed(0)}`; // Mock today value
+
+        // Wallet (Mock calculation: Total - 10% commission)
+        const wallet = totalRevenue * 0.9;
+        document.getElementById('wallet-balance').innerText = `₹${wallet.toFixed(2)}`;
+
+        document.getElementById('total-orders-count').innerHTML = `${orderCount} <span class="trend-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>`;
+
+        const avg = orderCount > 0 ? (totalRevenue / orderCount) : 0;
+        document.getElementById('avg-order-value').innerHTML = `₹${avg.toFixed(0)} <span class="trend-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>`;
+
+      } catch (err) {
+        console.error("Error loading earnings:", err);
+      }
+    }
+
+    loadEarnings();
+
+    window.toggleSidebar = () => {
+      document.getElementById("sidebar").classList.toggle("active");
+    };
+  </script>
 </body>
+
 </html>

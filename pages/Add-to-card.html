@@ -1,29 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="/styles/Add-to-card.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="empty-cart-container">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/8170/8170675.png"
-          alt="add to card"
-          width="200px"
-          height="200px"
-        />
 
-        <h2 class="empty-cart-title">Your Cart is Empty</h2>
-        <p class="empty-cart-text">
-          Looks like you haven't added anything to your cart yet.<br />
-          Start shopping and discover our amazing products!
-        </p>
-        <a href="/pages/Shop.html" class="shop-now-btn">Start Shopping</a>
-        <a href=""></a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - FarmPick</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/navbar-shared.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .cart-wrapper {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .cart-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+    }
+
+    .cart-title {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #1f2937;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #f0f0f0;
+      gap: 20px;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .item-info {
+      flex: 1;
+    }
+
+    .item-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 5px;
+    }
+
+    .item-price {
+      color: #22c55e;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .item-qty {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .qty-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background: white;
+      cursor: pointer;
+    }
+
+    .remove-btn {
+      color: #ef4444;
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .cart-summary {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #f0f0f0;
+      text-align: right;
+    }
+
+    .total-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 20px;
+    }
+
+    .checkout-btn {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .checkout-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .empty-cart img {
+      width: 150px;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="first">
+      <a href="/index.html" class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="logo-text"><span class="green">Farm</span>Pick</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/Shop.html">Shop</a></li>
+        <li><a href="/pages/About.html">About Us</a></li>
+        <li><a href="/pages/Become-a-seller.html">Become a Seller</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-icons" id="nav-icons-container">
+        <button class="icon-btn user-btn">
+          <a href="/pages/login.html"><i class="fa-solid fa-user"></i></a>
+        </button>
+        <button class="icon-btn cart-btn">
+          <a href="/pages/Add-to-card.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display: none;">0</span>
+          </a>
+        </button>
       </div>
     </div>
-  </body>
+  </nav>
+
+  <div class="cart-wrapper">
+    <div class="cart-card" id="cart-content">
+      <h1 class="cart-title">Your Cart</h1>
+      <p>Loading items...</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { fetchCart, renderCart } from '/js/cart.js';
+    import { getCurrentUser } from '/js/auth.js';
+
+    async function loadCart() {
+      const user = getCurrentUser();
+      if (!user) {
+        window.location.href = '/pages/login.html';
+        return;
+      }
+      try {
+        const cart = await fetchCart(user.id);
+        renderCart(cart, 'cart-content');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    loadCart();
+  </script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+
 </html>

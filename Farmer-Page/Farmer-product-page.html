@@ -1,247 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Farmer-Style/Farmer-product-page.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Farmer-Style/Farmer-product-page.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Manage Products - FarmPick</title>
 </head>
+
 <body>
-     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
 
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="logo">
-        <div class="logo-icon">🏠</div>
-        <div class="logo-text">FarmConnect</div>
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+      <div class="logo-text">FarmConnect</div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-chart-pie"></i></span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link active">
+          <span class="menu-icon"><i class="fa-solid fa-box-open"></i></span>
+          <span>Products</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-wallet"></i></span>
+          <span>Earnings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#settings" class="menu-link">
+          <span class="menu-icon"><i class="fa-solid fa-gear"></i></span>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link" onclick="logout()">
+          <span class="menu-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Header -->
+    <div class="top-header">
+      <span class="breadcrumb-icon"><i class="fa-solid fa-bars-staggered"></i></span>
+      <span class="breadcrumb-text">Seller Dashboard</span>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="header-top">
+        <div class="header-content">
+          <h1>Manage Products</h1>
+          <p>Add, edit, or remove your farm products</p>
+        </div>
+        <button class="add-product-btn" onclick="location.href='/Farmer-Page/Add-product.html'">
+          <span><i class="fa-solid fa-plus"></i></span>
+          <span>Add Product</span>
+        </button>
       </div>
 
-      <ul class="sidebar-menu">
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-dashboard.html" class="menu-link">
-            <span class="menu-icon">🏠</span>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-product-page.html" class="menu-link active">
-            <span class="menu-icon">📦</span>
-            <span>Products</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-order-page.html" class="menu-link">
-            <span class="menu-icon">🛒</span>
-            <span>Orders</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="/Farmer-Page/Farmer-earning-page.html" class="menu-link">
-            <span class="menu-icon">💰</span>
-            <span>Earnings</span>
-          </a>
-        </li>
-        <!-- <li class="menu-item">
-          <a href="#chat" class="menu-link">
-            <span class="menu-icon">💬</span>
-            <span>Chat</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#reviews" class="menu-link">
-            <span class="menu-icon">⭐</span>
-            <span>Reviews</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#settings" class="menu-link">
-            <span class="menu-icon">⚙️</span>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#logout" class="menu-link">
-            <span class="menu-icon">🚪</span>
-            <span>Logout</span>
-          </a>
-        </li> -->
-      </ul>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Top Header -->
-      <div class="top-header">
-        <span class="breadcrumb-icon">☰</span>
-        <span class="breadcrumb-text">Seller Dashboard</span>
+      <div class="search-container">
+        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" class="search-input" placeholder="Search products..." id="search-products" />
       </div>
+    </div>
 
-      <!-- Page Header -->
-      <div class="page-header">
-        <div class="header-top">
-          <div class="header-content">
-            <h1>Manage Products</h1>
-            <p>Add, edit, or remove your farm products</p>
-          </div>
-          <button class="add-product-btn">
-            <span>+</span>
-            <span>Add Product</span>
-          </button>
-        </div>
-
-        <div class="search-container">
-          <span class="search-icon">🔍</span>
-          <input
-            type="text"
-            class="search-input"
-            placeholder="Search products..."
-          />
-        </div>
+    <!-- Products Grid -->
+    <section class="products-section">
+      <div class="products-grid" id="p-grid">
+        <!-- Products will be loaded here dynamically -->
       </div>
+    </section>
+  </main>
 
-      <!-- Products Grid -->
-      <section class="products-section">
-        <div class="products-grid">
-          <!-- Product Card 1 - Organic Tomatoes -->
-          <div class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=600&h=400&fit=crop"
-              alt="Organic Tomatoes"
-              class="product-image"
-            />
-            <div class="product-content">
-              <div class="product-header">
-                <div>
-                  <h3 class="product-title">Organic Tomatoes</h3>
-                  <p class="product-category">Vegetables</p>
-                </div>
-                <span class="stock-badge badge-in-stock">In Stock</span>
-              </div>
+  <script type="module">
+    import apiRequest from "/js/api.js";
+    import { getCurrentUser, logout } from "/js/auth.js";
+    import { showToast } from "/js/notifications.js";
+    window.logout = logout;
 
-              <div class="product-details">
-                <div class="detail-row">
-                  <span class="detail-label">Price:</span>
-                  <span class="detail-value">₹80/kg</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Quantity:</span>
-                  <span class="detail-value">50 kg</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Harvest:</span>
-                  <span class="detail-value">11/10/2025</span>
-                </div>
-              </div>
-
-              <span class="certified-badge">Organic Certified</span>
-
-              <div class="product-actions">
-                <button class="action-btn">
-                  <span>✏️</span>
-                  <span>Edit</span>
-                </button>
-                <button class="mark-btn">Mark Out</button>
-                <button class="delete-btn">🗑️</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product Card 2 - Fresh Spinach -->
-          <div class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&h=400&fit=crop"
-              alt="Fresh Spinach"
-              class="product-image"
-            />
-            <div class="product-content">
-              <div class="product-header">
-                <div>
-                  <h3 class="product-title">Fresh Spinach</h3>
-                  <p class="product-category">Leafy Greens</p>
-                </div>
-                <span class="stock-badge badge-in-stock">In Stock</span>
-              </div>
-
-              <div class="product-details">
-                <div class="detail-row">
-                  <span class="detail-label">Price:</span>
-                  <span class="detail-value">₹40/kg</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Quantity:</span>
-                  <span class="detail-value">30 kg</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Harvest:</span>
-                  <span class="detail-value">11/12/2025</span>
-                </div>
-              </div>
-
-              <span class="certified-badge">Organic Certified</span>
-
-              <div class="product-actions">
-                <button class="action-btn">
-                  <span>✏️</span>
-                  <span>Edit</span>
-                </button>
-                <button class="mark-btn">Mark Out</button>
-                <button class="delete-btn">🗑️</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product Card 3 - Organic Potatoes -->
-          <div class="product-card">
-            <img
-              src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
-              alt="Organic Potatoes"
-              class="product-image"
-            />
-            <div class="product-content">
-              <div class="product-header">
-                <div>
-                  <h3 class="product-title">Organic Potatoes</h3>
-                  <p class="product-category">Vegetables</p>
-                </div>
-                <span class="stock-badge badge-out-stock">Out of Stock</span>
-              </div>
-
-              <div class="product-details">
-                <div class="detail-row">
-                  <span class="detail-label">Price:</span>
-                  <span class="detail-value">₹35/kg</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Quantity:</span>
-                  <span class="detail-value">0 kg</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Harvest:</span>
-                  <span class="detail-value">11/8/2025</span>
-                </div>
-              </div>
-
-              <span class="certified-badge">Organic Certified</span>
-
-              <div class="product-actions">
-                <button class="action-btn">
-                  <span>✏️</span>
-                  <span>Edit</span>
-                </button>
-                <button class="mark-btn">Mark In</button>
-                <button class="delete-btn">🗑️</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle("active");
+    async function loadProducts() {
+      const user = getCurrentUser();
+      if (!user || !user.farmer_id) {
+        // If not logged in as farmer, redirect or show empty
+        window.location.href = '/pages/login.html';
+        return;
       }
-    </script>
+
+      try {
+        const products = await apiRequest(`/products/farmer/${user.farmer_id}`, "GET");
+        const grid = document.getElementById("p-grid");
+
+        if (products.length === 0) {
+          grid.innerHTML = "<p>No products added yet.</p>";
+          return;
+        }
+
+        grid.innerHTML = products.map(p => `
+                    <div class="product-card">
+                        <img
+                          src="${p.image_url || 'https://via.placeholder.com/300'}"
+                          alt="${p.name}"
+                          class="product-image"
+                          onerror="this.src='https://via.placeholder.com/300'"
+                        />
+                        <div class="product-content">
+                          <div class="product-header">
+                            <div>
+                              <h3 class="product-title">${p.name}</h3>
+                              <p class="product-category">Category ID: ${p.category_id}</p>
+                            </div>
+                            <span class="stock-badge ${p.quantity > 0 ? 'badge-in-stock' : 'badge-out-stock'}">
+                                ${p.quantity > 0 ? 'In Stock' : 'Out of Stock'}
+                            </span>
+                          </div>
+
+                          <div class="product-details">
+                            <div class="detail-row">
+                              <span class="detail-label">Price:</span>
+                              <span class="detail-value">₹${p.price}</span>
+                            </div>
+                            <div class="detail-row">
+                              <span class="detail-label">Quantity:</span>
+                              <span class="detail-value">${p.quantity}</span>
+                            </div>
+                          </div>
+
+                          <span class="certified-badge">Organic Certified</span>
+
+                          <div class="product-actions">
+                            <button class="action-btn" onclick="window.location.href='/Farmer-Page/Add-product.html?id=${p.id}'">
+                              <span><i class="fa-solid fa-pen"></i></span>
+                              <span>Edit</span>
+                            </button>
+                            <button class="delete-btn" onclick="deleteProduct(${p.id})">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                `).join('');
+
+        // Implement search
+        const searchInput = document.getElementById('search-products');
+        searchInput.addEventListener('input', (e) => {
+          const term = e.target.value.toLowerCase();
+          const cards = document.querySelectorAll('.product-card');
+          cards.forEach(card => {
+            const title = card.querySelector('.product-title').innerText.toLowerCase();
+            if (title.includes(term)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+
+      } catch (err) {
+        console.error("Error loading products:", err);
+      }
+    }
+
+    window.deleteProduct = async (id) => {
+      if (confirm('Are you sure you want to delete this product?')) {
+        try {
+          await apiRequest(`/products/${id}`, 'DELETE');
+          loadProducts(); // Refresh
+        } catch (err) {
+          showToast('Failed to delete product', 'error');
+        }
+      }
+    };
+
+    window.toggleSidebar = () => {
+      document.getElementById("sidebar").classList.toggle("active");
+    };
+
+    loadProducts();
+  </script>
 </body>
+
 </html>

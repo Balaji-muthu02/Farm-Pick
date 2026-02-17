@@ -1,390 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Support - OrganicDirect</title>
-    <link rel="stylesheet" href="/styles/contact.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="first">
-        <div class="logo">
-          <span class="logo-icon">🌱</span>
-          <span class="logo-text"><span class="green">Farm</span>Pick</span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/pages/Shop.html">Shop</a></li>
-          <li><a href="/pages/About.html">About Us</a></li>
-          <li><a href="/pages/Become-a-seller.html">Become a Seller</a></li>
-          <li><a href="/pages/contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-icons">
-          <input
-            type="text"
-            class="search-input"
-            placeholder="Search organic products..."
-          />
-          <button class="icon-btn">👤</button>
-          <button class="icon-btn">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/8170/8170675.png"
-              alt=""
-              width="30px"
-              height="30px"
-            />
-          </button>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Get in Touch | FarmPick</title>
+  <link rel="stylesheet" href="/styles/contact.css" />
+  <link rel="stylesheet" href="/styles/navbar-shared.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar - SYNCED -->
+  <nav class="navbar">
+    <div class="first">
+      <a href="/index.html" class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="logo-text"><span class="green">Farm</span>Pick</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/Shop.html">Shop</a></li>
+        <li><a href="/pages/About.html">About Us</a></li>
+        <li><a href="/pages/Become-a-seller.html">Become a Seller</a></li>
+        <li><a href="/pages/contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-icons" id="nav-icons-container">
+        <button class="icon-btn user-btn">
+          <a href="/pages/login.html"><i class="fa-solid fa-user"></i></a>
+        </button>
+        <button class="icon-btn cart-btn">
+          <a href="/pages/Add-to-card.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display: none;">0</span>
+          </a>
+        </button>
       </div>
-    </nav>
-    <section class="support-section">
-      <h2>How Can We Help?</h2>
-      <p>
-        Choose the best way to reach us. Our dedicated support team is ready to
-        assist you.
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="contact-hero-content">
+      <div class="hero-badge">💬 We're Here to Help</div>
+      <h1 class="contact-hero-title">Get in <span class="gradient-text">Touch</span></h1>
+      <p class="contact-hero-subtitle">
+        Choose the best way to reach us. Our dedicated support team is ready to assist you.
       </p>
+    </div>
+  </section>
 
-      <div class="support-container">
+  <!-- Support Cards Section -->
+  <section class="support-section">
+    <div class="container">
+      <div class="support-grid">
         <div class="support-card">
-          <div class="icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/3916/3916611.png"
-              alt=""
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <h3>Email Support</h3>
-          <p>Get help via email</p>
-          <a href="mailto:support@organicmarket.com" class="contact-link"
-            >FarmPick@gmail.com</a
-          >
-          <span class="time">24/7 Response</span>
+          <div class="support-icon-wrapper email-icon"><i class="fa-solid fa-envelope"></i></div>
+          <h3 class="support-title">Email Support</h3>
+          <p class="support-desc">Direct help via email</p>
+          <a href="mailto:support@farmpick.com" class="support-link">support@farmpick.com</a>
+          <span class="support-time"><i class="fa-solid fa-check"></i> 24/7 Response</span>
         </div>
 
         <div class="support-card">
-          <div class="icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/5070/5070407.png"
-              alt=""
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <h3>Phone Support</h3>
-          <p>Call our support team</p>
-          <a href="tel:+15551234567" class="contact-link">9432403946</a>
-          <span class="time">Mon–Fri 9AM–6PM EST</span>
+          <div class="support-icon-wrapper phone-icon"><i class="fa-solid fa-phone"></i></div>
+          <h3 class="support-title">Phone Support</h3>
+          <p class="support-desc">Call our friendly team</p>
+          <a href="tel:+919432403946" class="support-link">+91 943-240-3946</a>
+          <span class="support-time"><i class="fa-solid fa-check"></i> Mon–Fri 9AM–6PM</span>
         </div>
 
         <div class="support-card">
-          <div class="icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/3916/3916830.png"
-              alt=""
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <h3>Live Chat</h3>
-          <p>Chat with our team</p>
-          <a href="@" class="contact-link">Available on whatsapp</a>
-          <span class="time">Mon–Fri 9AM–6PM EST</span>
+          <div class="support-icon-wrapper chat-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3 class="support-title">Live Chat</h3>
+          <p class="support-desc">Chat via WhatsApp</p>
+          <a href="#" class="support-link">Available on WhatsApp</a>
+          <span class="support-time"><i class="fa-solid fa-check"></i> Mon–Fri 9AM–6PM</span>
         </div>
 
         <div class="support-card">
-          <div class="icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/3916/3916862.png"
-              alt=""
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <h3>Visit Us</h3>
-          <p>Our headquarters</p>
-          <a href="@" class="contact-link">102 veerapandi street,perungudi</a>
-          <span class="time">Mon–Fri 9AM–5PM EST</span>
+          <div class="support-icon-wrapper location-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h3 class="support-title">Visit Us</h3>
+          <p class="support-desc">Our headquarters</p>
+          <a href="#" class="support-link">Perungudi, Chennai</a>
+          <span class="support-time"><i class="fa-solid fa-check"></i> Mon–Fri 9AM–5PM</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact-faq-section">
-      <div class="contact-faq-container">
-        <div class="contact-faq-grid">
-          <!-- Contact Form -->
-          <div class="contact-form-wrapper">
-            <div class="contact-form-header">
-           
-              <h2 class="contact-form-title">Send us a Message</h2>
-            </div>
-
-            <form class="contact-message-form">
-              <div class="contact-form-row">
-                <div class="contact-form-group">
-                  <label class="contact-form-label">Full Name *</label>
-                  <input
-                    type="text"
-                    class="contact-form-input"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div class="contact-form-group">
-                  <label class="contact-form-label">Email Address *</label>
-                  <input
-                    type="email"
-                    class="contact-form-input"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div class="contact-form-group">
-                <label class="contact-form-label">Category</label>
-                <select class="contact-form-select">
-                  <option>Select a category</option>
-                  <option>Order Issues</option>
-                  <option>Product Inquiry</option>
-                  <option>Partnership</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="contact-form-group">
-                <label class="contact-form-label">Subject *</label>
-                <input
-                  type="text"
-                  class="contact-form-input"
-                  placeholder="Brief description of your inquiry"
-                />
-              </div>
-
-              <div class="contact-form-group">
-                <label class="contact-form-label">Message *</label>
-                <textarea
-                  class="contact-form-textarea"
-                  rows="5"
-                  placeholder="Please provide details about your inquiry..."
-                ></textarea>
-              </div>
-
-              <button type="submit" class="contact-submit-btn">
-                
-                Send Message
-              </button>
-            </form>
+  <!-- Contact Form & FAQ Section -->
+  <section class="contact-faq-section">
+    <div class="container">
+      <div class="contact-faq-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <div class="form-header">
+            <div class="form-icon"><i class="fa-solid fa-paper-plane"></i></div>
+            <h2 class="form-title">Send us a Message</h2>
           </div>
 
-          <!-- FAQ Section -->
-          <div class="faq-wrapper">
-            <div class="faq-header">
-              <h2 class="faq-title">Frequently Asked Questions</h2>
+          <form class="contact-form" id="contact-form-action">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="your@email.com" required />
+              </div>
             </div>
 
-            <div class="faq-list">
-              <div class="faq-item">
-                <h3 class="faq-question">How do I track my order?</h3>
-                <p class="faq-answer">
-                  You can track your order by logging into your account and
-                  viewing your order history, or use the tracking link sent to
-                  your email.
-                </p>
-              </div>
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select id="contact-category" class="form-select">
+                <option value="General">Select a category</option>
+                <option value="Order Issues">Order Issues</option>
+                <option value="Product Inquiry">Product Inquiry</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
 
-              <div class="faq-item">
-                <h3 class="faq-question">What is your return policy?</h3>
-                <p class="faq-answer">
-                  We offer a 30-day return policy for all organic products.
-                  Items must be unused and in original packaging.
-                </p>
-              </div>
+            <div class="form-group">
+              <label class="form-label">Subject *</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="Brief description of your inquiry"
+                required />
+            </div>
 
-              <div class="faq-item">
-                <h3 class="faq-question">How do I become a seller?</h3>
-                <p class="faq-answer">
-                  Visit our 'Become a Seller' page to apply. We verify all
-                  farmers and producers to ensure quality standards.
-                </p>
-              </div>
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea id="contact-message" class="form-textarea" rows="5"
+                placeholder="Please provide details about your inquiry..." required></textarea>
+            </div>
 
-              <div class="faq-item">
-                <h3 class="faq-question">
-                  Do you offer organic certification verification?
-                </h3>
-                <p class="faq-answer">
-                  Yes! All our products are verified organic. You can view
-                  certification details on each product page.
-                </p>
-              </div>
+            <button type="submit" class="submit-btn" id="contact-submit-btn">
+              Send Message <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-wrapper">
+          <div class="faq-header">
+            <div class="faq-icon"><i class="fa-solid fa-circle-question"></i></div>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3 class="faq-question">How do I track my order?</h3>
+              <p class="faq-answer">Log in and visit 'My Orders' to track real-time status or use the link in your
+                email.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3 class="faq-question">What is your return policy?</h3>
+              <p class="faq-answer">We offer a 7-day freshness guarantee return policy for organic produce.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3 class="faq-question">How do I become a seller?</h3>
+              <p class="faq-answer">Go to 'Become a Seller' page, fill the 4-step form, and wait for admin approval.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3 class="faq-question">Are the products certified organic?</h3>
+              <p class="faq-answer">Yes, we directly visit farms to verify organic practices before onboarding sellers.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="support-actions-section">
-      <div class="support-actions-container">
-        <div class="support-actions-grid">
-          <!-- Left Box - Support Hours -->
-          <div class="support-box">
-            <div class="support-box-header">
-              <!-- <img src="clock-icon.png" alt="Clock" class="support-box-icon"> -->
-              <h3 class="support-box-title">Support Hours</h3>
-            </div>
-
-            <div class="support-schedule">
-              <div class="schedule-row">
-                <span class="schedule-day">Monday - Friday</span>
-                <span class="schedule-time">9:00 AM - 6:00 PM EST</span>
-              </div>
-              <div class="schedule-row">
-                <span class="schedule-day">Saturday</span>
-                <span class="schedule-time">10:00 AM - 4:00 PM EST</span>
-              </div>
-              <div class="schedule-row">
-                <span class="schedule-day">Sunday</span>
-                <span class="schedule-time">Email support only</span>
-              </div>
-            </div>
-
-            <div class="email-support-banner">
-              <strong>Email support:</strong> Available 24/7 with responses
-              within 24 hours
-            </div>
+  <!-- Support Hours & Quick Actions -->
+  <section class="support-info-section">
+    <div class="container">
+      <div class="support-info-grid">
+        <!-- Support Hours -->
+        <div class="info-card hours-card">
+          <div class="info-card-header">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3 class="info-title">Support Hours</h3>
           </div>
+          <div class="schedule-list">
+            <div class="schedule-item"><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></div>
+            <div class="schedule-item"><span>Saturday</span><span>10:00 AM - 4:00 PM</span></div>
+            <div class="schedule-item"><span>Sunday</span><span>Support via Email</span></div>
+          </div>
+        </div>
 
-          <!-- Right Box - Quick Actions -->
-          <div class="actions-box">
-            <div class="actions-box-header">
-              <h3 class="actions-box-title">Quick Actions</h3>
-            </div>
-
-            <div class="actions-list">
-              <a href="#" class="action-item">
-                <span class="action-text">My Account</span>
-              </a>
-              <a href="/pages/Become-a-seller.html" class="action-item">
-                <span class="action-text">Become a Seller</span>
-              </a>
-              <a href="/pages/Shop.html" class="action-item">
-                <span class="action-text">Browse Products</span>
-              </a>
-            </div>
+        <!-- Quick Actions -->
+        <div class="info-card actions-card">
+          <div class="info-card-header">
+            <div class="info-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3 class="info-title">Quick Actions</h3>
+          </div>
+          <div class="actions-list">
+            <a href="/pages/login.html" class="action-link">
+              <i class="fa-solid fa-user"></i> <span>My Account</span> <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="/pages/Become-a-seller.html" class="action-link">
+              <i class="fa-solid fa-wheat-awn"></i> <span>Become a Seller</span> <i
+                class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="/pages/Shop.html" class="action-link">
+              <i class="fa-solid fa-cart-shopping"></i> <span>Browse Products</span> <i
+                class="fa-solid fa-chevron-right arrow"></i>
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <div class="site-footer-container">
-        <div class="site-footer-grid">
-          <!-- Column 1 - Brand -->
-          <div class="footer-brand-column">
-            <div class="footer-logo">
-              <span class="footer-logo-text">FarmPick</span>
-            </div>
-            <p class="footer-brand-desc">
-              Connecting you directly with organic farmers and producers for the
-              freshest, most authentic organic products.
-            </p>
+  <!-- Footer - SYNCED -->
+  <footer class="site-footer">
+    <div class="site-footer-container">
+      <div class="site-footer-grid">
+        <div class="footer-brand-column">
+          <div class="footer-logo">
+            <span class="footer-logo-icon">🌱</span>
+            <span class="footer-logo-text">FarmPick</span>
           </div>
-
-          <!-- Column 2 - Quick Links -->
-          <div class="footer-links-column">
-            <h3 class="footer-column-title">Quick Links</h3>
-            <ul class="footer-links-list">
-              <li>
-                <a href="/pages/About.html" class="footer-link-item"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a href="/pages/Shop.html" class="footer-link-item">Shop</a>
-              </li>
-              <li>
-                <a href="/pages/Become-a-seller.html" class="footer-link-item"
-                  >Become a Seller</a
-                >
-              </li>
-              
-            </ul>
-          </div>
-
-          <!-- Column 3 - Customer Support -->
-          <div class="footer-links-column">
-            <h3 class="footer-column-title">Customer Support</h3>
-            <ul class="footer-links-list">
-              <li>
-                <a href="/pages/contact.html" class="footer-link-item"
-                  >Help Center</a
-                >
-              </li>
-              <li>
-                <a href="/pages/contact.html" class="footer-link-item"
-                  >Contact Us</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 4 - Get in Touch -->
-          <div class="footer-contact-column">
-            <h3 class="footer-column-title">Get in Touch</h3>
-            <div class="footer-contact-list">
-              <div class="footer-contact-item">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3916/3916611.png"
-                  alt="Email"
-                  class="footer-contact-icon"
-                />
-                <span class="footer-contact-text">hello@organicdirect.com</span>
-              </div>
-              <div class="footer-contact-item">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/5070/5070407.png"
-                  alt="Phone"
-                  class="footer-contact-icon"
-                />
-                <span class="footer-contact-text">1-800-ORGANIC</span>
-              </div>
-              <div class="footer-contact-item">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3916/3916830.png"
-                  alt="Location"
-                  class="footer-contact-icon"
-                />
-                <span class="footer-contact-text">Available Nationwide</span>
-              </div>
-            </div>
-          </div>
+          <p class="footer-brand-desc">Bridging the gap between conscious eaters and organic farmers. Fresh, Honest,
+            Direct.</p>
         </div>
-
-        <!-- Bottom Section -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-grid">
-            <div class="footer-payment-section">
-              <span class="footer-payment-label">We Accept:</span>
-
-              <span class="footer-payment-text"
-                >Visa, MasterCard, PayPal, Apple Pay</span
-              >
-            </div>
-            <div class="footer-security-section">
-              <span class="footer-security-text">SSL Secured</span>
-            </div>
-          </div>
+        <div class="footer-links-column">
+          <h3 class="footer-column-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="/pages/About.html" class="footer-link-item">About Us</a></li>
+            <li><a href="/pages/Shop.html" class="footer-link-item">Shop</a></li>
+            <li><a href="/pages/Become-a-seller.html" class="footer-link-item">Become a Seller</a></li>
+          </ul>
         </div>
-
-        <!-- Copyright -->
-        <div class="footer-copyright">
-          <p class="footer-copyright-text">
-            © 2024 OrganicDirect. All rights reserved. |
-            <a href="#" class="footer-copyright-link">Privacy Policy</a> |
-            <a href="#" class="footer-copyright-link">Terms of Service</a>
-          </p>
+        <div class="footer-contact-column">
+          <h3 class="footer-column-title">Support</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i> help@farmpick.com</div>
+            <div class="footer-contact-item"><i class="fa-solid fa-phone"></i> 1-800-FARM-PICK</div>
+          </div>
         </div>
       </div>
-    </footer>
-  </body>
+      <div class="footer-copyright">
+        <p>© 2024 FarmPick Community. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/contact.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+
 </html>

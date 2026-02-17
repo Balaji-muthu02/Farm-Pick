@@ -1,388 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Become a Seller</title>
-    <link rel="stylesheet" href="/styles/seller.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="first">
-        <div class="logo">
-          <span class="logo-icon">🌱</span>
-          <span class="logo-text"><span class="green">Farm</span>Pick</span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/pages/Shop.html">Shop</a></li>
-          <li><a href="/pages/About.html">About Us</a></li>
-          <li><a href="/pages/Become-a-seller.html">Become a Seller</a></li>
-          <li><a href="/pages/contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-icons">
-          <input
-            type="text"
-            class="search-input"
-            placeholder="Search organic products..."
-          />
-          <button class="icon-btn">👤</button>
-          <button class="icon-btn">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/8170/8170675.png"
-              alt=""
-              width="30px"
-              height="30px"
-            />
-          </button>
-        </div>
-      </div>
-    </nav>
 
-    <main class="main-content">
-      <section class="why-sell">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Seller - Join FarmPick</title>
+  <link rel="stylesheet" href="/styles/seller.css" />
+  <link rel="stylesheet" href="/styles/navbar-shared.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar - SYNCED WITH HOME & SHOP -->
+  <nav class="navbar">
+    <div class="first">
+      <a href="/index.html" class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="logo-text"><span class="green">Farm</span>Pick</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pages/Shop.html">Shop</a></li>
+        <li><a href="/pages/About.html">About Us</a></li>
+        <li><a href="/pages/Become-a-seller.html" class="active">Become a Seller</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-icons" id="nav-icons-container">
+        <button class="icon-btn user-btn">
+          <a href="/pages/login.html"><i class="fa-solid fa-user"></i></a>
+        </button>
+        <button class="icon-btn cart-btn">
+          <a href="/pages/Add-to-card.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display: none;">0</span>
+          </a>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="seller-hero">
+    <div class="seller-hero-content">
+      <div class="hero-badge">🌾 Become Our Partner</div>
+      <h1 class="hero-title">Sell Your <span class="gradient-text">Organic Produce</span></h1>
+      <p class="hero-subtitle">
+        Join 1000+ farmers and reach conscious customers directly. Easy verification, fair prices.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary"
+          onclick="document.getElementById('application-section').scrollIntoView({behavior: 'smooth'})">
+          Start Application <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn btn-secondary"
+          onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">
+          How it Works
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <!-- Why Sell Section -->
+    <section class="why-sell">
+      <div class="container">
         <h2 class="section-title">Why Sell With Us?</h2>
-        <p class="section-subtitle">
-          Join a marketplace designed by farmers, for farmers. We provide the
-          tools and support you need to succeed.
-        </p>
+        <p class="section-subtitle">A marketplace built for farmers. We take care of the tech, you take care of the
+          soil.</p>
 
         <div class="benefits-grid">
           <div class="benefit-card">
-            <div class="icon-circle">$</div>
-            <h3>Higher Profits</h3>
-            <p>
-              Keep 85% of your sales revenue with our low commission structure
-            </p>
+            <div class="icon-wrapper green-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <h3>Better Earnings</h3>
+            <p>Direct-to-customer model means you keep more profit from every sale.</p>
           </div>
 
           <div class="benefit-card">
-            <div class="icon-circle">👥</div>
-            <h3>Direct Customer Access</h3>
-            <p>
-              Connect directly with customers who value organic, local produce
-            </p>
+            <div class="icon-wrapper blue-icon"><i class="fa-solid fa-users"></i></div>
+            <h3>Direct Access</h3>
+            <p>Connect with a growing community of organic food lovers across India.</p>
           </div>
 
           <div class="benefit-card">
-            <div class="icon-circle">📈</div>
-            <h3>Business Growth</h3>
-            <p>Access analytics and tools to grow your business online</p>
+            <div class="icon-wrapper purple-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Data Insights</h3>
+            <p>Understand which products are in high demand and grow accordingly.</p>
           </div>
 
           <div class="benefit-card">
-            <div class="icon-circle">🛡️</div>
-            <h3>Trusted Platform</h3>
-            <p>Join a verified marketplace with built-in trust and security</p>
+            <div class="icon-wrapper orange-icon"><i class="fa-solid fa-shield-check"></i></div>
+            <h3>Trusted Brand</h3>
+            <p>Benefit from FarmPick's reputation for authenticity and quality.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="how-it-works">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Get started in 4 simple steps</p>
+    <!-- How It Works Section -->
+    <!-- (Updating with the simple 4-step idea we discussed) -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">Common Sense Process</h2>
+        <p class="section-subtitle">We don't need high-level documents. Just your identity and passion.</p>
 
         <div class="steps-grid">
           <div class="step-card">
             <div class="step-number">1</div>
-            <h3>Apply</h3>
-            <p>
-              Submit your application with business details and certifications
-            </p>
-            <div class="arrow">➤</div>
+            <h3>Bio Info</h3>
+            <p>Enter your basic farm and contact details to get started.</p>
+            <div class="step-arrow">→</div>
           </div>
 
           <div class="step-card">
             <div class="step-number">2</div>
-            <h3>Review</h3>
-            <p>
-              Our team reviews your application and verifies your credentials
-            </p>
-            <div class="arrow">➤</div>
+            <h3>Identity</h3>
+            <p>Just provide your Aadhaar or Voter ID for simple verification.</p>
+            <div class="step-arrow">→</div>
           </div>
 
           <div class="step-card">
             <div class="step-number">3</div>
-            <h3>Setup</h3>
-            <p>Set up your seller profile and upload your first products</p>
-            <div class="arrow">➤</div>
+            <h3>Farm Intro</h3>
+            <p>Upload a few photos of your farm or workspace to show us your field.</p>
+            <div class="step-arrow">→</div>
           </div>
 
           <div class="step-card">
             <div class="step-number">4</div>
-            <h3>Launch</h3>
-            <p>Start selling to thousands of organic food enthusiasts</p>
+            <h3>Go Live</h3>
+            <p>Our team will call you back, verify, and activate your dashboard.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="requirements-section">
-        <div class="requirements-text">
-          <div class="line">
-            <h2 class="reg">Requirements</h2>
-            <p>
-              To maintain our quality standards and customer trust, we have the
-              following requirements for sellers:
-            </p>
-            <ul>
-              <li>✅ Valid business license or farming permit</li>
-              <li>✅ Organic certification (USDA Organic or equivalent)</li>
-              <li>✅ Proof of insurance for your products</li>
-              <li>✅ Quality product photos and descriptions</li>
-              <li>✅ Commitment to sustainable farming practices</li>
-              <li>✅ Ability to fulfill orders within 2–3 business days</li>
-            </ul>
+    <!-- Application Form Section -->
+    <section class="application-section" id="application-section">
+      <div class="container">
+        <div class="application-header">
+          <h2 class="section-title">Seller Application</h2>
+          <p class="section-subtitle">Complete these 4 simple steps to join us</p>
+        </div>
+
+        <!-- Step Indicators -->
+        <div class="step-indicators">
+          <div class="step-indicator active" id="indicator1">
+            <div class="indicator-circle">1</div>
+            <div class="indicator-label">Bio Info</div>
+          </div>
+          <div class="step-indicator" id="indicator2">
+            <div class="indicator-circle">2</div>
+            <div class="indicator-label">Identity</div>
+          </div>
+          <div class="step-indicator" id="indicator3">
+            <div class="indicator-circle">3</div>
+            <div class="indicator-label">Farm Intro</div>
+          </div>
+          <div class="step-indicator" id="indicator4">
+            <div class="indicator-circle">4</div>
+            <div class="indicator-label">Finalize</div>
           </div>
         </div>
 
-        <div class="requirements-image">
-          <img
-            src="https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?cs=srgb&dl=pexels-nc-farm-bureau-mark-2255935.jpg&fm=jpg"
-            alt="Garlic Image"
-            height="100px"
-            width="50px"
-          />
-        </div>
-      </section>
+        <!-- Status Screens (Hidden by default) -->
+        <div id="status-container" style="display: none; padding: 40px 0;">
+          <div id="pending-screen" class="form-card" style="display: none; text-align: center;">
+            <div class="icon-wrapper orange-icon" style="margin: 0 auto 24px;"><i
+                class="fa-solid fa-hourglass-half"></i></div>
+            <h3 class="form-title">Application Under Review</h3>
+            <p class="form-subtitle">Thank you for applying! Our admin team is currently verifying your details. We will
+              notify you once your account is active.</p>
+            <button class="btn btn-secondary" onclick="window.location.href='/index.html'">Back to Home</button>
+          </div>
 
-      <!-- Step Control Radios -->
-      <input type="radio" name="step" id="step1" checked hidden />
-      <input type="radio" name="step" id="step2" hidden />
-      <input type="radio" name="step" id="step3" hidden />
-      <input type="radio" name="step" id="step4" hidden />
-
-      <!-- Step 1 -->
-      <div class="step" id="form1">
-        <h2>Seller Application - Step 1 of 4</h2>
-        <div class="form-group">
-          <label>Business/Farm Name</label>
-          <input type="text" placeholder="Your farm or business name" />
-        </div>
-        <div class="form-group">
-          <label>Contact Person</label>
-          <input type="text" placeholder="Primary contact name" />
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="business@example.com" />
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+1 (555) 123-4567" />
-        </div>
-        <div class="form-group">
-          <label>Business Location</label>
-          <input type="text" placeholder="City, State, Country" />
-        </div>
-        <div class="nav-buttons">
-          <label for="step2" class="btn">Next</label>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="step" id="form2">
-        <h2>Seller Application - Step 2 of 4</h2>
-        <div class="form-group">
-          <label>Tell us about your business</label>
-          <textarea
-            placeholder="Describe your farm, products, and farming practices"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label>What certifications do you have?</label><br />
-          <label><input type="checkbox" /> USDA Organic</label><br />
-          <label><input type="checkbox" /> Fair Trade</label><br />
-          <label><input type="checkbox" /> Biodynamic</label><br />
-          <label><input type="checkbox" /> Non-GMO</label><br />
-          <label><input type="checkbox" /> Rainforest Alliance</label><br />
-          <label><input type="checkbox" /> Local Organic</label>
-        </div>
-        <div class="nav-buttons">
-          <label for="step1" class="btn">Previous</label>
-          <label for="step3" class="btn">Next</label>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="step" id="form3">
-        <h2>Seller Application - Step 3 of 4</h2>
-        <div class="form-group">
-          <label>Upload Business License</label>
-          <input type="file" />
-        </div>
-        <div class="form-group">
-          <label>Upload Organic Certification</label>
-          <input type="file" />
-        </div>
-        <div class="form-group">
-          <label>Upload Insurance Certificate</label>
-          <input type="file" />
-        </div>
-        <div class="form-group">
-          <label>Upload high-quality photos of products</label>
-          <input type="file" multiple />
-        </div>
-        <div class="photo-tips">
-          <strong>Photo Tips:</strong>
-          <ul>
-            <li>Use natural lighting</li>
-            <li>Show product clearly</li>
-            <li>Include your farm/workspace</li>
-            <li>Avoid heavy filters</li>
-          </ul>
-        </div>
-        <div class="nav-buttons">
-          <label for="step2" class="btn">Previous</label>
-          <label for="step4" class="btn">Next</label>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="step" id="form4">
-        <h2>Seller Application - Step 4 of 4</h2>
-        <div class="agreement-summary">
-          <ul>
-            <li>Commission: 15% on all sales (industry-leading low rate)</li>
-            <li>Payment: Weekly payments via bank transfer</li>
-            <li>Quality Standards: Maintain a 4-star rating</li>
-            <li>Shipping: Orders must be fulfilled within 2–3 business days</li>
-            <li>Returns: Accept returns for damaged or incorrect items</li>
-            <li>
-              Communication: Respond to customer inquiries within 24 hours
-            </li>
-            <li>
-              Organic Standards: All products must maintain organic
-              certification
-            </li>
-          </ul>
-        </div>
-        <label
-          ><input type="checkbox" /> I agree to the Terms of Service and Seller
-          Agreement</label
-        >
-        <p>
-          I understand that my application will be reviewed and I will be
-          contacted within 2–3 business days.
-        </p>
-        <div class="nav-buttons">
-          <label for="step3" class="btn">Previous</label>
-          <button type="submit" class="btn submit">Submit Application</button>
-        </div>
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer-container">
-        <div class="site-footer-grid">
-          <!-- Column 1 - Brand -->
-          <div class="footer-brand-column">
-            <div class="footer-logo">
-              <!-- <img src="leaf-logo.png" alt="Logo" class="footer-logo-icon"> -->
-              <span class="footer-logo-text">FarmPick</span>
+          <div id="approved-screen" class="form-card" style="display: none; text-align: center;">
+            <div class="icon-wrapper green-icon" style="margin: 0 auto 24px;"><i class="fa-solid fa-circle-check"></i>
             </div>
-            <p class="footer-brand-desc">
-              Connecting you directly with organic farmers and producers for the
-              freshest, most authentic organic products.
-            </p>
+            <h3 class="form-title">You're a Verified Seller!</h3>
+            <p class="form-subtitle">Mass news! Your application has been approved. You can now manage your produce and
+              start selling.</p>
+            <button class="btn btn-primary" onclick="window.location.href='/Farmer-Page/Farmer-dashboard.html'"
+              style="width:100%; justify-content:center;">Go to Farmer Dashboard <i
+                class="fa-solid fa-arrow-right"></i></button>
           </div>
+        </div>
 
-          <!-- Column 2 - Quick Links -->
-          <div class="footer-links-column">
-            <h3 class="footer-column-title">Quick Links</h3>
-            <ul class="footer-links-list">
-              <li>
-                <a href="/pages/About.html" class="footer-link-item"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a href="/pages/Shop.html" class="footer-link-item">Shop</a>
-              </li>
-              <li>
-                <a href="/pages/Become-a-seller.html" class="footer-link-item"
-                  >Become a Seller</a
-                >
-              </li>
-              <!-- <li><a href="#" class="footer-link-item">Blog</a></li>
-                        <li><a href="#" class="footer-link-item">FAQ</a></li> -->
-            </ul>
-          </div>
-
-          <!-- Column 3 - Customer Support -->
-          <div class="footer-links-column">
-            <h3 class="footer-column-title">Customer Support</h3>
-            <ul class="footer-links-list">
-              <li>
-                <a href="/pages/contact.html" class="footer-link-item"
-                  >Help Center</a
-                >
-              </li>
-              
-              <li>
-                <a href="/pages/contact.html" class="footer-link-item"
-                  >Contact Us</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 4 - Get in Touch -->
-          <div class="footer-contact-column">
-            <h3 class="footer-column-title">Get in Touch</h3>
-            <div class="footer-contact-list">
-              <div class="footer-contact-item">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3916/3916611.png"
-                  alt="Email"
-                  class="footer-contact-icon"
-                />
-                <span class="footer-contact-text">hello@organicdirect.com</span>
+        <!-- Form Content -->
+        <div class="form-container" id="main-form-container">
+          <!-- Step 1 Form -->
+          <div class="step-form active" id="form-step-1">
+            <div class="form-card">
+              <h3 class="form-title">Step 1: Basic Information</h3>
+              <div class="form-group">
+                <label>Business/Farm Name</label>
+                <input type="text" id="farm-name" placeholder="E.g., Green Valley Organic Farm" required />
               </div>
-              <div class="footer-contact-item">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/5070/5070407.png"
-                  alt="Phone"
-                  class="footer-contact-icon"
-                />
-                <span class="footer-contact-text">1-800-ORGANIC</span>
+              <div class="form-group">
+                <label>Location (Place/Village)</label>
+                <input type="text" id="farm-location" placeholder="E.g., Coimbatore, Tamil Nadu" required />
               </div>
-              <div class="footer-contact-item">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3916/3916830.png"
-                  alt="Location"
-                  class="footer-contact-icon"
-                />
-                <span class="footer-contact-text">Available Nationwide</span>
+              <div class="form-group">
+                <label>Phone Number (WhatsApp Preferred)</label>
+                <input type="tel" id="farm-phone" placeholder="+91 98765 43210" required />
+              </div>
+              <div class="nav-buttons">
+                <button class="btn btn-primary" onclick="nextStep(2)">Next: Identity <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 Form -->
+          <div class="step-form" id="form-step-2">
+            <div class="form-card">
+              <h3 class="form-title">Step 2: Identity Proof</h3>
+              <p class="form-subtitle">We need a government ID for trust and verification.</p>
+              <div class="form-group">
+                <label>Aadhaar Card Number</label>
+                <input type="text" id="aadhar-num" placeholder="12-digit Aadhaar Number" />
+              </div>
+              <div class="form-group">
+                <label>Upload ID Photo (Optional - You can also show during callback)</label>
+                <input type="file" id="id-photo" />
+              </div>
+              <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="nextStep(1)">Back</button>
+                <button class="btn btn-primary" onclick="nextStep(3)">Next: Farm Photos <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 Form -->
+          <div class="step-form" id="form-step-3">
+            <div class="form-card">
+              <h3 class="form-title">Step 3: Farm Introduction</h3>
+              <p class="form-subtitle">Show us where the magic happens! Photos help build trust.</p>
+              <div class="form-group">
+                <label>Upload Farm/Field Photo</label>
+                <input type="file" id="farm-photo-input" />
+              </div>
+              <div class="form-group">
+                <label>Briefly describe your products (E.g. Onions, Tomato, etc.)</label>
+                <textarea id="farm-desc" placeholder="What do you grow?"></textarea>
+              </div>
+              <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="nextStep(2)">Back</button>
+                <button class="btn btn-primary" onclick="nextStep(4)">Next: Agreement <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 Form -->
+          <div class="step-form" id="form-step-4">
+            <div class="form-card">
+              <h3 class="form-title">Step 4: Finalize & Submit</h3>
+              <div class="agreement-box">
+                <h4>Seller Agreement</h4>
+                <p>1. Our team will call you within 24 hours to verify details.</p>
+                <p>2. We follow a 15% commission model for platform maintenance.</p>
+                <p>3. Payments are processed weekly directly to your bank.</p>
+              </div>
+              <label class="checkbox-label">
+                <input type="checkbox" id="agree-terms" required />
+                <span>I agree to join FarmPick as a verified seller.</span>
+              </label>
+              <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="nextStep(3)">Back</button>
+                <button class="btn btn-success" id="submit-btn" onclick="handleSubmit()">Submit Application <i
+                    class="fa-solid fa-check"></i></button>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <!-- Bottom Section -->
-        <div class="footer-bottom">
-          <div class="footer-bottom-grid">
-            <div class="footer-payment-section">
-              <span class="footer-payment-label">We Accept:</span>
-              <!-- <img src="card-icon.png" alt="Cards" class="footer-payment-icon"> -->
-              <span class="footer-payment-text"
-                >Visa, MasterCard, PayPal, Apple Pay</span
-              >
-            </div>
-            <div class="footer-security-section">
-              <span class="footer-security-text">SSL Secured</span>
-            </div>
+  <!-- Footer - SYNCED -->
+  <footer class="site-footer">
+    <div class="site-footer-container">
+      <div class="site-footer-grid">
+        <div class="footer-brand-column">
+          <div class="footer-logo">
+            <span class="footer-logo-icon">🌱</span>
+            <span class="footer-logo-text">FarmPick</span>
           </div>
-        </div>
-
-        <!-- Copyright -->
-        <div class="footer-copyright">
-          <p class="footer-copyright-text">
-            © 2024 OrganicDirect. All rights reserved. |
-            <a href="#" class="footer-copyright-link">Privacy Policy</a> |
-            <a href="#" class="footer-copyright-link">Terms of Service</a>
+          <p class="footer-brand-desc">
+            Bridging the gap between conscious eaters and organic farmers. Fresh, Honest, Direct.
           </p>
         </div>
+        <div class="footer-links-column">
+          <h3 class="footer-column-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="/pages/About.html" class="footer-link-item">About Us</a></li>
+            <li><a href="/pages/Shop.html" class="footer-link-item">Shop</a></li>
+            <li><a href="/pages/Become-a-seller.html" class="footer-link-item">Become a Seller</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-column">
+          <h3 class="footer-column-title">Support</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i> help@farmpick.com</div>
+            <div class="footer-contact-item"><i class="fa-solid fa-phone"></i> 1-800-FARM-PICK</div>
+          </div>
+        </div>
       </div>
-    </footer>
-  </body>
+      <div class="footer-copyright">
+        <p>© 2024 FarmPick Community. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { submitSellerApplication } from '/js/seller.js';
+    import { getCurrentUser } from '/js/auth.js';
+    import apiRequest from '/js/api.js';
+    import { showToast } from '/js/notifications.js';
+
+    // Check application status on load
+    async function checkStatus() {
+      const user = getCurrentUser();
+      if (!user) return;
+
+      try {
+        const farmer = await apiRequest(`/farmers/user/${user.id}`, 'GET');
+        if (farmer) {
+          // Hide form and indicators
+          document.getElementById('main-form-container').style.display = 'none';
+          document.querySelector('.step-indicators').style.display = 'none';
+          document.getElementById('status-container').style.display = 'block';
+
+          if (farmer.is_approved) {
+            document.getElementById('approved-screen').style.display = 'block';
+          } else {
+            document.getElementById('pending-screen').style.display = 'block';
+          }
+        }
+      } catch (err) {
+        // If 404, it means they haven't applied yet, so we stay on the form
+        console.log("No existing application found.");
+      }
+    }
+
+    checkStatus();
+
+    // Step navigation logic
+    window.nextStep = (stepNum) => {
+      // Hide all forms
+      document.querySelectorAll('.step-form').forEach(f => f.classList.remove('active'));
+      // Show target form
+      document.getElementById(`form-step-${stepNum}`).classList.add('active');
+
+      // Update indicators
+      document.querySelectorAll('.step-indicator').forEach((ind, index) => {
+        if (index < stepNum) ind.classList.add('active');
+        else ind.classList.remove('active');
+      });
+    };
+
+    // Submission logic
+    window.handleSubmit = async () => {
+      const user = getCurrentUser();
+      if (!user) {
+        showToast('Please login first to apply as a seller.', 'error');
+        window.location.href = '/pages/login.html';
+        return;
+      }
+
+      const checkbox = document.getElementById('agree-terms');
+      if (!checkbox.checked) {
+        showToast('Please agree to the terms.', 'error');
+        return;
+      }
+
+      const applicationData = {
+        name: document.getElementById('farm-name').value,
+        location: document.getElementById('farm-location').value,
+        phone: document.getElementById('farm-phone').value,
+        aadhar_number: document.getElementById('aadhar-num').value,
+        // Intha photo link thaan admin-ku show aagum. Ippo current-ah static sample image anupuroam.
+        farm_image_url: 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg',
+        user_id: user.id
+      };
+
+      if (!applicationData.name || !applicationData.phone) {
+        showToast('Please fill at least the basic details in Step 1.', 'error');
+        nextStep(1);
+        return;
+      }
+
+      await submitSellerApplication(applicationData);
+    };
+  </script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+
 </html>
