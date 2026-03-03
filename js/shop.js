@@ -26,13 +26,23 @@ export function renderProducts(products, containerId) {
     }
 
     // Build the grid of product cards using HTML template
-    container.innerHTML = products.map(product => `
-        <div class="card">
+    container.innerHTML = products.map(product => {
+        const inStock = product.quantity > 0;
+        const stockClass = inStock ? 'in-stock' : 'out-of-stock';
+        const stockLabel = inStock ? `✅ In Stock (${product.quantity} kg)` : '❌ Out of Stock';
+        const disabledAttr = inStock ? '' : 'disabled';
+        const outOfStockClick = inStock ? '' : `onclick="showOutOfStockMsg(event)"`;
+        const cartClick = inStock ? `onclick="addToCart(${product.id})"` : `onclick="showOutOfStockMsg(event)"`;
+        const buyClick = inStock ? `onclick="buyNow(${product.id})"` : `onclick="showOutOfStockMsg(event)"`;
+
+        return `
+        <div class="card ${!inStock ? 'card-out-of-stock' : ''}">
             <a href="#" class="card-image-link">
                 <!-- Product Image -->
                 <img src="${product.image_url || 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=500'}" 
                      alt="${product.name}" 
-                     onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?w=500'">
+                     onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?w=500'"
+                     style="${!inStock ? 'filter: grayscale(60%); opacity: 0.75;' : ''}">
             </a>
             <div class="card-content">
                 <!-- Product Name and Farmer Info -->
@@ -41,7 +51,7 @@ export function renderProducts(products, containerId) {
                 
                 <div class="card-middle">
                     <!-- Stock status badge -->
-                    <div class="stock-badge in-stock">${product.quantity > 0 ? 'In Stock' : 'Out of Stock'}</div>
+                    <div class="stock-badge ${stockClass}">${stockLabel}</div>
                 </div>
 
                 <div class="card-bottom">
@@ -52,13 +62,16 @@ export function renderProducts(products, containerId) {
                     </div>
                     <!-- Action buttons (Add to Cart and Buy Now) -->
                     <div class="action-btns">
-                        <button class="add-cart-btn" onclick="addToCart(${product.id})" title="Add to Cart">🛒</button>
-                        <button class="buy-now-btn" onclick="buyNow(${product.id})">Buy Now</button>
+                        <button class="add-cart-btn" ${cartClick} ${disabledAttr} title="${inStock ? 'Add to Cart' : 'Out of Stock'}" 
+                            style="${!inStock ? 'opacity:0.5; cursor:not-allowed;' : ''}">🛒</button>
+                        <button class="buy-now-btn" ${buyClick} ${disabledAttr}
+                            style="${!inStock ? 'opacity:0.5; cursor:not-allowed; background: #9ca3af;' : ''}">Buy Now</button>
                     </div>
                 </div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // --- SEARCH FUNCTIONALITY ---
@@ -90,6 +103,13 @@ export function initSearch(allProducts, containerId) {
         renderProducts(filtered, containerId);
     });
 }
+
+// --- OUT OF STOCK MESSAGE ---
+// Shows a friendly toast when user tries to interact with out-of-stock product
+window.showOutOfStockMsg = (event) => {
+    event.preventDefault();
+    showToast('⚠️ This product is Out of Stock. Please check back later!', 'error');
+};
 
 // --- GLOBAL ADD TO CART FUNCTION ---
 // Triggered when a user clicks the 🛒 button.

@@ -5,7 +5,7 @@ import { showToast } from './notifications.js';
 export async function register(userData) {
     try {
         const response = await apiRequest('/users/', 'POST', userData);
-        showToast('Registration successful! Redirecting to login... ✨', 'success');
+        showToast('Registration successful! Redirecting to login... ', 'success');
 
         // Wait for 2 seconds so user can see the toast
         setTimeout(() => {
@@ -25,7 +25,7 @@ export async function login(credentials) {
 
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
-            showToast(`Welcome back, ${user.name.split(' ')[0]}! Logging you in... 🚀`, 'success');
+            showToast(`Welcome back, ${user.name.split(' ')[0]}! Logging you in... `, 'success');
 
             // Wait for 2 seconds so user can see the toast
             setTimeout(() => {

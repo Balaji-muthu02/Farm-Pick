@@ -336,6 +336,20 @@ body {
     color: #065f46;
 }
 
+.stock-badge.out-of-stock {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.card-out-of-stock {
+    border-color: #fecaca;
+}
+
+.card-out-of-stock:hover {
+    border-color: #f87171;
+    box-shadow: 0 25px 50px rgba(239, 68, 68, 0.1);
+}
+
 .card-bottom {
     display: flex;
     justify-content: space-between;

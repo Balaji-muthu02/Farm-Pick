@@ -45,7 +45,7 @@
         </a>
       </li>
       <li class="menu-item">
-        <a href="#settings" class="menu-link">
+        <a href="/Farmer-Page/Farmer-settings.html" class="menu-link">
           <span class="menu-icon"><i class="fa-solid fa-gear"></i></span>
           <span>Settings</span>
         </a>
@@ -90,7 +90,7 @@
         <div class="earnings-card">
           <div class="earnings-info">
             <h3>This Week</h3>
-            <div class="earnings-value">₹0</div>
+            <div class="earnings-value" id="week-earnings">₹0</div>
           </div>
           <div class="earnings-icon icon-blue"><i class="fa-solid fa-chart-bar"></i></div>
         </div>
@@ -99,7 +99,7 @@
         <div class="earnings-card">
           <div class="earnings-info">
             <h3>This Month</h3>
-            <div class="earnings-value">₹0</div>
+            <div class="earnings-value" id="month-earnings">₹0</div>
           </div>
           <div class="earnings-icon icon-purple"><i class="fa-solid fa-calendar-check"></i></div>
         </div>
@@ -173,20 +173,59 @@
       try {
         const orders = await apiRequest(`/orders/farmer/${user.farmer_id}`, 'GET');
 
-        const totalRevenue = orders.reduce((sum, o) => sum + (o.total_amount || 0), 0);
-        const orderCount = orders.length;
+        const now = new Date();
+        const todayStr = now.toISOString().split('T')[0];
+
+        // Start of current week (Sunday)
+        const startOfWeek = new Date(now);
+        startOfWeek.setDate(now.getDate() - now.getDay());
+        startOfWeek.setHours(0, 0, 0, 0);
+
+        // Start of current month
+        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+        let todayEarnings = 0;
+        let weekEarnings = 0;
+        let monthEarnings = 0;
+        let totalEarnings = 0;
+
+        orders.forEach(o => {
+          const amount = parseFloat(o.total_amount || 0);
+          const orderDate = new Date(o.order_date || Date.now());
+
+          // For Total
+          totalEarnings += amount;
+
+          // For Today
+          if (orderDate.toISOString().split('T')[0] === todayStr) {
+            todayEarnings += amount;
+          }
+
+          // For This Week
+          if (orderDate >= startOfWeek) {
+            weekEarnings += amount;
+          }
+
+          // For This Month
+          if (orderDate >= startOfMonth) {
+            monthEarnings += amount;
+          }
+        });
 
         // Update UI
-        document.getElementById('total-earnings').innerText = `₹${totalRevenue.toFixed(2)}`;
-        document.getElementById('today-earnings').innerText = `₹${(totalRevenue * 0.1).toFixed(0)}`; // Mock today value
+        document.getElementById('total-earnings').innerText = `₹${totalEarnings.toFixed(2)}`;
+        document.getElementById('today-earnings').innerText = `₹${todayEarnings.toFixed(2)}`;
+        document.getElementById('week-earnings').innerText = `₹${weekEarnings.toFixed(2)}`;
+        document.getElementById('month-earnings').innerText = `₹${monthEarnings.toFixed(2)}`;
 
-        // Wallet (Mock calculation: Total - 10% commission)
-        const wallet = totalRevenue * 0.9;
+        // Wallet (Total - 10% commission)
+        const wallet = totalEarnings * 0.9;
         document.getElementById('wallet-balance').innerText = `₹${wallet.toFixed(2)}`;
 
+        const orderCount = orders.length;
         document.getElementById('total-orders-count').innerHTML = `${orderCount} <span class="trend-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>`;
 
-        const avg = orderCount > 0 ? (totalRevenue / orderCount) : 0;
+        const avg = orderCount > 0 ? (totalEarnings / orderCount) : 0;
         document.getElementById('avg-order-value').innerHTML = `₹${avg.toFixed(0)} <span class="trend-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>`;
 
       } catch (err) {

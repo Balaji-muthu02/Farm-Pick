@@ -15,7 +15,7 @@ async function syncUserSession() {
             localStorage.setItem('user', JSON.stringify(updatedUser));
 
             if (updatedUser.role === 'farmer') {
-                showToast("🎉 Mass News! Admin approved your Farmer account. Welcome to the community!", 'success');
+                showToast(" Admin approved your Farmer account. Welcome to the community!", 'success');
             }
             window.location.reload(); // Refresh to update everything
         }
@@ -66,11 +66,11 @@ export async function updateNavbar() {
                 farmerLink.innerHTML = `<a href="/Farmer-Page/Farmer-dashboard.html">Farmer Dashboard</a>`;
                 document.querySelector('.nav-links')?.appendChild(farmerLink);
 
-                // Hide "Become a Seller" link for farmers
-                const becomeSellerLink = document.getElementById('become-seller-link');
-                if (becomeSellerLink) {
-                    becomeSellerLink.style.display = 'none';
-                }
+                // Hide ALL "Become a Seller" links for farmers (navbar + footer, all pages)
+                document.querySelectorAll('a[href="/pages/Become-a-seller.html"]').forEach(link => {
+                    const parentLi = link.closest('li');
+                    if (parentLi) parentLi.style.display = 'none';
+                });
             }
 
             // --- LOGOUT BUTTON ---
