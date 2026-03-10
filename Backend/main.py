@@ -21,7 +21,10 @@ import models
 # Add current directory to path for Vercel imports
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-Base.metadata.create_all(bind=engine)
+try:
+    Base.metadata.create_all(bind=engine)
+except Exception as e:
+    print(f"Database sync error: {e}")
 
 app = FastAPI(title="FarmPick API", root_path="/api")
 

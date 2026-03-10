@@ -18,7 +18,14 @@ async function apiRequest(endpoint, method = 'GET', body = null) {
 
     try {
         const response = await fetch(`${BASE_URL}${endpoint}`, options);
-        const data = await response.json();
+
+        let data;
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+            data = await response.json();
+        } else {
+            data = { detail: await response.text() };
+        }
 
         if (!response.ok) {
             throw new Error(data.detail || 'Something went wrong');
