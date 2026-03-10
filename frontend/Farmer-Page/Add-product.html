@@ -286,13 +286,17 @@
                                 if (productId) {
                                     // Update existing product
                                     await apiRequest(`/products/${productId}`, 'PUT', productData);
-                                    showToast('Product updated successfully!', 'success');
+                                    showToast('Product updated successfully! ✨', 'success');
                                 } else {
                                     // Create new product
                                     await apiRequest('/products/', 'POST', productData);
-                                    showToast('Product added successfully!', 'success');
+                                    showToast('Product added successfully! 🌽', 'success');
                                 }
-                                window.location.href = '/frontend/Farmer-Page/Farmer-product-page.html';
+
+                                // Wait 2 seconds so user can see the toast message
+                                setTimeout(() => {
+                                    window.location.href = '/frontend/Farmer-Page/Farmer-product-page.html';
+                                }, 2000);
                             } catch (err) {
                                 showToast('Error saving product: ' + err.message, 'error');
                             }

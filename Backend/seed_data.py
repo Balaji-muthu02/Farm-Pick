@@ -51,7 +51,7 @@ def seed():
 
         # 2. Create users
         test_user = User(name="Test User", email="test@example.com", password="password123", role="customer")
-        admin_user = User(name="Admin Farmer", email="admin@farmpick.com", password="password123", role="farmer", farmer_id=farmer_record.id)
+        admin_user = User(name="Admin Farmer", email="admin@farmpick.com", password="password123", role="admin", farmer_id=farmer_record.id)
         
         db.add_all([test_user, admin_user])
         db.commit()
@@ -74,7 +74,7 @@ def seed():
             Product(name="Fresh Tomatoes", description="Farm fresh organic red tomatoes", price=45.0, quantity=100, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=500"),
             Product(name="Organic Potatoes", description="Earth-grown organic brown potatoes", price=35.0, quantity=200, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500"),
             Product(name="Sweet Carrots", description="Crunchy and sweet organic carrots", price=55.0, quantity=150, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"),
-            Product(name="", description="", price=120.0, quantity=50, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1582722472904-29727494f118?w=500"),
+            Product(name="Fresh Broccoli", description="Farm fresh organic green broccoli", price=120.0, quantity=50, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1582722472904-29727494f118?w=500"),
             Product(name="Organic Onion", description="Sharp and fresh organic red onions", price=40.0, quantity=300, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1508747703725-719777637510?w=500"),
             Product(name="Fresh Bell Peppers", description="Colorful and crunchy mix of bell peppers", price=90.0, quantity=80, category_id=veg.id, farmer_id=farmer_record.id, image_url="https://images.unsplash.com/photo-1566842600175-97dca489844f?w=500")
         ]
