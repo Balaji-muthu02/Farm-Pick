@@ -1,3 +1,5 @@
+import os
+import sys
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database.session import Base, engine
@@ -16,9 +18,12 @@ from routers import cart as cart_router
 import models
 
 
+# Add current directory to path for Vercel imports
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="FarmPick API")
+app = FastAPI(title="FarmPick API", root_path="/api")
 
 # Add CORS middleware
 app.add_middleware(
