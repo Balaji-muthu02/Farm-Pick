@@ -175,25 +175,21 @@
 
                             <div class="form-group">
                                 <label>Image URL</label>
-                                <input type="text" id="p-image" placeholder="https://example.com/image.jpg">
+                                <input type="text" id="p-image"
+                                    placeholder="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=500">
+                                <p class="helper-text">Paste a direct image link from Unsplash, Pexels, etc.</p>
+                                <!-- Image Preview Container -->
+                                <div id="image-preview-container" style="margin-top: 15px; display: none;">
+                                    <p class="helper-text" style="margin-bottom: 5px;">Image Preview:</p>
+                                    <img id="image-preview" src="" alt="Preview"
+                                        style="max-width: 100%; height: 200px; border-radius: 12px; object-fit: cover; border: 2px solid #e5e7eb;">
+                                </div>
                             </div>
 
                             <div class="checkbox-group">
-                                <input type="checkbox" id="organic">
+                                <input type="checkbox" id="organic" checked>
                                 <label for="organic" class="checkbox-label">✅ This product is Organic Certified</label>
                             </div>
-                        </div>
-
-                        <!-- Product Images -->
-                        <div class="form-section">
-                            <h3 class="section-title">Product Images</h3>
-
-                            <div class="file-upload-area" onclick="document.getElementById('productImages').click()">
-                                <div class="file-upload-icon">📸</div>
-                                <div class="file-upload-text">Click to upload product images</div>
-                                <div class="file-upload-hint">PNG, JPG up to 5MB each (Max 5 images)</div>
-                            </div>
-                            <input type="file" id="productImages" accept="image/*" multiple>
                         </div>
 
                         <!-- Form Actions -->
@@ -262,6 +258,27 @@
                                 showToast('Failed to load product details.', 'error');
                             }
                         }
+
+                        // --- IMAGE PREVIEW LOGIC ---
+                        const imageInput = document.getElementById('p-image');
+                        const previewContainer = document.getElementById('image-preview-container');
+                        const previewImg = document.getElementById('image-preview');
+
+                        function updatePreview(url) {
+                            if (url && url.startsWith('http')) {
+                                previewImg.src = url;
+                                previewContainer.style.display = 'block';
+                            } else {
+                                previewContainer.style.display = 'none';
+                            }
+                        }
+
+                        imageInput.addEventListener('input', (e) => updatePreview(e.target.value));
+
+                        // Seed preview if editing
+                        setTimeout(() => {
+                            if (imageInput.value) updatePreview(imageInput.value);
+                        }, 500);
 
                         document.querySelector('form').addEventListener('submit', async (e) => {
                             e.preventDefault();
