@@ -282,9 +282,19 @@
 
                         document.querySelector('form').addEventListener('submit', async (e) => {
                             e.preventDefault();
+
+                            // --- PREVENT DOUBLE CLICKS ---
+                            // 1. Button-ai deactivate panni logic start panroam
+                            submitBtn.disabled = true;
+                            const originalBtnText = submitBtn.innerText;
+                            submitBtn.innerText = '🔄 Saving...';
+
                             const user = getCurrentUser();
                             if (!user || user.role !== 'farmer') {
                                 showToast('Only farmers can perform this action', 'error');
+                                // Role check fail aana thirumba click panna allow panroam
+                                submitBtn.disabled = false;
+                                submitBtn.innerText = originalBtnText;
                                 return;
                             }
 
@@ -316,6 +326,9 @@
                                 }, 2000);
                             } catch (err) {
                                 showToast('Error saving product: ' + err.message, 'error');
+                                // 2. Error vantha mattum thirumba click panna allow panroam
+                                submitBtn.disabled = false;
+                                submitBtn.innerText = originalBtnText;
                             }
                         });
 
