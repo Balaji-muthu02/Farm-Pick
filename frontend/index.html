@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmPick - Fresh From Farm to Your Door</title>
+  <link rel="stylesheet" href="/frontend/style.css" />
+  <link rel="stylesheet" href="/frontend/styles/navbar-shared.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar with Glassmorphism -->
+  <nav class="navbar">
+    <div class="first">
+      <a href="/frontend/index.html" class="logo">
+        <span class="logo-icon">🌱</span>
+        <span class="logo-text"><span class="green">Farm</span>Pick</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/frontend/index.html" class="active">Home</a></li>
+        <li><a href="/frontend/pages/Shop.html">Shop</a></li>
+        <li><a href="/frontend/pages/About.html">About Us</a></li>
+        <li id="become-seller-link"><a href="/frontend/pages/Become-a-seller.html">Become a Seller</a></li>
+        <li><a href="/frontend/pages/contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-icons" id="nav-icons-container">
+        <button class="icon-btn user-btn">
+          <a href="/frontend/pages/login.html"><i class="fa-solid fa-user"></i></a>
+        </button>
+        <button class="icon-btn cart-btn">
+          <a href="/frontend/pages/Add-to-card.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" style="display: none;">0</span>
+          </a>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Enhanced Design -->
+  <section class="second">
+    <div class="hero-background-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container">
+      <div class="content">
+        <div class="main">
+          <div class="badge-premium">🌟 100% Organic Certified</div>
+          <h1 class="title">
+            Buy Organic.<br />
+            <span class="green gradient-text">Direct From the<br />Source.</span>
+          </h1>
+          <p class="main-description">
+            Connect directly with organic farmers and producers. Get the
+            freshest, most authentic organic products delivered straight to
+            your door.
+          </p>
+          <div class="two-buttons">
+            <a href="/frontend/pages/Shop.html">
+              <button class="btn btn-one" type="button">
+                Shop Now
+                <span class="btn-arrow">→</span>
+              </button>
+            </a>
+            <a href="/frontend/pages/Become-a-seller.html">
+              <button class="btn btn-two">
+                Sell With Us
+                <span class="btn-icon">🌾</span>
+              </button>
+            </a>
+          </div>
+          <div class="main-features">
+            <div class="feature">
+              <span class="tick">✓</span>
+              <span>No Middlemen</span>
+            </div>
+            <div class="feature">
+              <span class="tick">✓</span>
+              <span>Farm Fresh</span>
+            </div>
+            <div class="feature">
+              <span class="tick">✓</span>
+              <span>Fair Prices</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="vegetables-image">
+            <div class="image-float-badge badge-1">
+              <span class="badge-emoji">🥬</span>
+              <span>Fresh Daily</span>
+            </div>
+            <div class="image-float-badge badge-2">
+              <span class="badge-emoji">⭐</span>
+              <span>4.9 Rating</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800" alt="fresh vegetables"
+              class="veg-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">5000+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Trusted Farmers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Organic Products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9★</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Features with Modern Design -->
+  <section class="shopping-features-section">
+    <div class="shopping-features-container">
+      <div class="shopping-header-wrapper">
+        <h2 class="shopping-main-title">Shopping Made Simple</h2>
+        <p class="shopping-main-subtitle">
+          Multiple ways to shop and buy products that work best for your
+          needs. From quick purchases to bulk orders.
+        </p>
+      </div>
+      <div class="shopping-features-grid">
+        <div class="feature-box green-box">
+          <div class="feature-icon-wrapper green-icon">🛒</div>
+          <h3 class="feature-box-title">Add to Cart</h3>
+          <p class="feature-box-description">
+            Add items to your cart and continue shopping. Review your order
+            before checkout.
+          </p>
+          <ul class="feature-box-list">
+            <li>✓ Keep shopping</li>
+            <li>✓ Review quantities</li>
+            <li>✓ Apply coupons</li>
+          </ul>
+        </div>
+
+        <div class="feature-box blue-box">
+          <div class="feature-icon-wrapper blue-icon">⚡</div>
+          <h3 class="feature-box-title">Quick Buy</h3>
+          <p class="feature-box-description">
+            Skip the cart and go directly to checkout for fast one-click
+            purchasing.
+          </p>
+          <ul class="feature-box-list">
+            <li>✓ Instant checkout</li>
+            <li>✓ Save time</li>
+            <li>✓ Perfect for regular items</li>
+          </ul>
+        </div>
+
+        <div class="feature-box red-box">
+          <div class="feature-icon-wrapper red-icon">❤️</div>
+          <h3 class="feature-box-title">Save for Later</h3>
+          <p class="feature-box-description">
+            Bookmark items to your wishlist for future purchases or to track
+            favorites.
+          </p>
+          <ul class="feature-box-list">
+            <li>✓ Track favorites</li>
+            <li>✓ Price alerts</li>
+            <li>✓ Share with family</li>
+          </ul>
+        </div>
+
+        <div class="feature-box purple-box">
+          <div class="feature-icon-wrapper purple-icon">📦</div>
+          <h3 class="feature-box-title">Bulk Orders</h3>
+          <p class="feature-box-description">
+            Order larger quantities with special bulk pricing and discounts.
+          </p>
+          <ul class="feature-box-list">
+            <li>✓ Volume discounts</li>
+            <li>✓ Restaurant/business orders</li>
+            <li>✓ Family meal planning</li>
+          </ul>
+        </div>
+
+        <div class="feature-box orange-box">
+          <div class="feature-icon-wrapper orange-icon">⚖️</div>
+          <h3 class="feature-box-title">Product Comparison</h3>
+          <p class="feature-box-description">
+            Compare up to 4 products side-by-side to make informed decisions.
+          </p>
+          <ul class="feature-box-list">
+            <li>✓ Compare prices</li>
+            <li>✓ Nutrition facts</li>
+            <li>✓ Seller ratings</li>
+          </ul>
+        </div>
+
+        <div class="feature-box yellow-box">
+          <div class="feature-icon-wrapper yellow-icon">👁️</div>
+          <h3 class="feature-box-title">Quick View</h3>
+          <p class="feature-box-description">
+            Get detailed product information without leaving the current page.
+          </p>
+          <ul class="feature-box-list">
+            <li>✓ Stay on page</li>
+            <li>✓ Quick details</li>
+            <li>✓ Fast browsing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-container">
+      <div class="site-footer-grid">
+        <div class="footer-brand-column">
+          <div class="footer-logo">
+            <span class="footer-logo-icon">🌱</span>
+            <span class="footer-logo-text">FarmPick</span>
+          </div>
+          <p class="footer-brand-desc">
+            Connecting you directly with organic farmers and producers for the
+            freshest, most authentic organic products.
+          </p>
+        </div>
+
+        <div class="footer-links-column">
+          <h3 class="footer-column-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="/frontend/pages/About.html" class="footer-link-item">About Us</a></li>
+            <li><a href="/frontend/pages/Shop.html" class="footer-link-item">Shop</a></li>
+            <li>
+              <a href="/frontend/pages/Become-a-seller.html" class="footer-link-item">Become a Seller</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-links-column">
+          <h3 class="footer-column-title">Customer Support</h3>
+          <ul class="footer-links-list">
+            <li><a href="/frontend/pages/Contact.html" class="footer-link-item">Help Center</a></li>
+            <li><a href="/frontend/pages/Contact.html" class="footer-link-item">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-column">
+          <h3 class="footer-column-title">Get in Touch</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <span class="footer-contact-emoji">📧</span>
+              <span class="footer-contact-text">hello@farmpick.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-emoji">📱</span>
+              <span class="footer-contact-text">1-800-ORGANIC</span>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-emoji">📍</span>
+              <span class="footer-contact-text">Available Nationwide</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-grid">
+          <div class="footer-payment-section">
+            <span class="footer-payment-label">We Accept:</span>
+            <span class="footer-payment-text">Visa, MasterCard, PayPal, Apple Pay</span>
+          </div>
+          <div class="footer-security-section">
+            <span class="footer-security-icon">🔒</span>
+            <span class="footer-security-text">SSL Secured</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p class="footer-copyright-text">
+          © 2024 FarmPick. All rights reserved. |
+          <a href="#" class="footer-copyright-link">Privacy Policy</a> |
+          <a href="#" class="footer-copyright-link">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/frontend/js/main.js"></script>
+</body>
+
+</html>
