@@ -12,6 +12,7 @@ class OrderItem(Base):
 
     quantity = Column(Integer, nullable=False)
     price = Column(Numeric(10, 2), nullable=False)
+    status = Column(String, default="pending")  # Individual product status
 
     order = relationship("Order", back_populates="items")
     product = relationship("Product")

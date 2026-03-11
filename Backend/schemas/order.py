@@ -35,6 +35,7 @@ class OrderItemOut(BaseModel):
     product_id: int
     quantity: int
     price: Decimal
+    status: str = "pending"
     product_name: Optional[str] = None
 
     class Config:
@@ -46,6 +47,7 @@ class OrderItemDetailOut(BaseModel):
     product_name: str
     quantity: int
     price: float
+    status: str = "pending"
 
     class Config:
         from_attributes = True

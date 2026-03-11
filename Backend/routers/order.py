@@ -133,6 +133,7 @@ def get_farmer_orders(farmer_id: int, db: Session = Depends(get_db)):
                 "product_name": product.name,
                 "quantity": order_item.quantity,
                 "price": float(order_item.price),
+                "status": order_item.status,
                 "subtotal": float(order_item.price * order_item.quantity)
             })
         
@@ -149,8 +150,31 @@ def get_farmer_orders(farmer_id: int, db: Session = Depends(get_db)):
         })
     
     return enriched_orders
+    
 
-
+@router.patch("/farmer/{farmer_id}/order/{order_id}/status")
+def update_farmer_item_status(farmer_id: int, order_id: int, status_update: OrderUpdate, db: Session = Depends(get_db)):
+    """Update status for all items belonging to a farmer in a specific order"""
+    items = (
+        db.query(OrderItem)
+        .join(Product, OrderItem.product_id == Product.id)
+        .filter(OrderItem.order_id == order_id)
+        .filter(Product.farmer_id == farmer_id)
+        .all()
+    )
+    
+    if not items:
+        raise HTTPException(status_code=404, detail="No items found for this farmer in this order")
+        
+    for item in items:
+        item.status = status_update.status
+        
+    db.commit()
+    
+    # Optional: Logic to update the main order status if ALL items are delivered
+    # But for now, we keep it simple as requested.
+    
+    return {"message": f"Updated {len(items)} items to {status_update.status}"}
 
 
 @router.put("/{order_id}/status", response_model=OrderOut)
