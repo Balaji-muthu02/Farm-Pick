@@ -289,20 +289,6 @@
 
     <script type="module" src="/frontend/js/admin.js"></script>
     <script type="module" src="/frontend/js/main.js"></script>
-    <script>
-        function toggleAdminSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-        }
-
-        // Close sidebar when clicking on a nav item (mobile)
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    document.getElementById('sidebar').classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -165,25 +165,7 @@
     </div>
   </div>
 
-  <script type="module">
-    import { fetchCart, renderCart } from '../js/cart.js';
-    import { getCurrentUser } from '../js/auth.js';
-
-    async function loadCart() {
-      const user = getCurrentUser();
-      if (!user) {
-        window.location.href = '/frontend/pages/login.html';
-        return;
-      }
-      try {
-        const cart = await fetchCart(user.id);
-        renderCart(cart, 'cart-content');
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    loadCart();
-  </script>
+  <script type="module" src="/frontend/js/cart-page.js"></script>
   <script type="module" src="/frontend/js/main.js"></script>
 </body>
 

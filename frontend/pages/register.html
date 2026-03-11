@@ -63,20 +63,7 @@
     </div>
   </div>
 
-  <script type="module">
-    import { register } from '../js/auth.js';
-
-    document.getElementById('signup-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const userData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-        role: 'customer'  // Default role for all new registrations
-      };
-      await register(userData);
-    });
-  </script>
+  <script type="module" src="/frontend/js/register-page.js"></script>
 </body>
 
 </html>

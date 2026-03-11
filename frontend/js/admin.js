@@ -10,7 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFarmers();           // 4. Load the full list of verified farmers
     loadUsers();             // 5. Load the full list of platform users
     loadMessages();          // 6. Load customer inquiry messages
+
+    // Close sidebar when clicking on a nav item (mobile)
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.getElementById('sidebar');
+                if(sidebar) sidebar.classList.remove('active');
+            }
+        });
+    });
 });
+
+window.toggleAdminSidebar = () => {
+    const sidebar = document.getElementById('sidebar');
+    if(sidebar) sidebar.classList.toggle('active');
+};
 
 // --- TAB NAVIGATION LOGIC ---
 // This function handles switching between "Dashboard", "Approvals", "Users", etc.
@@ -76,7 +91,7 @@ async function loadDashboardStats() {
 
 // --- LOAD SELLER REQUESTS ---
 // Populates the "Pending Approvals" table
-export async function loadApprovals() {
+async function loadApprovals() {
     const tbody = document.querySelector('#approvals-table tbody');
     tbody.innerHTML = '<tr><td colspan="5">Checking for requests...</td></tr>';
 
@@ -233,3 +248,8 @@ async function loadMessages() {
         console.error("Messages load error:", err);
     }
 }
+
+// Global exports
+window.loadApprovals = loadApprovals;
+window.approveFarmer = approveFarmer;
+window.rejectFarmer = rejectFarmer;

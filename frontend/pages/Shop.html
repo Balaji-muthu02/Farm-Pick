@@ -132,21 +132,7 @@
   </footer>
 
   <script type="module" src="/frontend/js/main.js"></script>
-  <script type="module">
-    import { fetchProducts, renderProducts, initSearch } from '../js/shop.js';
-
-    async function loadShop() {
-      try {
-        const products = await fetchProducts();
-        // Render all products found
-        renderProducts(products, 'shop-product-container');
-        initSearch(products, 'shop-product-container');
-      } catch (err) {
-        console.error("Shop load error:", err);
-      }
-    }
-    loadShop(); 
-  </script>
+  <script type="module" src="/frontend/js/shop-page.js"></script>
 </body>
 
 </html>

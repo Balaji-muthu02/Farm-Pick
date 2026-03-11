@@ -59,18 +59,7 @@
     </div>
   </div>
 
-  <script type="module">
-    import { login } from '../js/auth.js';
-
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const credentials = {
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value
-      };
-      await login(credentials);
-    });
-  </script>
+  <script type="module" src="/frontend/js/login-page.js"></script>
 </body>
 
 </html>
