@@ -89,7 +89,8 @@
 
     async function loadOrders() {
       const user = getCurrentUser();
-      if (!user || user.role !== 'farmer') {
+      const userRole = (user && user.role) ? user.role.toLowerCase() : '';
+      if (!user || userRole !== 'farmer') {
         window.location.href = '/frontend/pages/login.html';
         return;
       }

@@ -111,54 +111,58 @@ def get_orders_by_user(user_id: int, db: Session = Depends(get_db)):
 @router.get("/farmer/{farmer_id}")
 def get_farmer_orders(farmer_id: int, db: Session = Depends(get_db)):
     from models.user import User
+    from fastapi.encoders import jsonable_encoder
     
-    orders = (
-        db.query(Order)
-        .join(OrderItem, Order.id == OrderItem.order_id)
-        .join(Product, OrderItem.product_id == Product.id)
-        .filter(Product.farmer_id == farmer_id)
-        .distinct()
-        .all()
-    )
-    
-    # Enrich orders with customer and product details
-    enriched_orders = []
-    for order in orders:
-        # Get customer details
-        customer = db.query(User).filter(User.id == order.user_id).first()
-        
-        # Get order items with product details
-        order_items = (
-            db.query(OrderItem, Product)
+    try:
+        orders = (
+            db.query(Order)
+            .join(OrderItem, Order.id == OrderItem.order_id)
             .join(Product, OrderItem.product_id == Product.id)
-            .filter(OrderItem.order_id == order.id)
-            .filter(Product.farmer_id == farmer_id)  # Only this farmer's products
+            .filter(Product.farmer_id == farmer_id)
+            .distinct()
             .all()
         )
         
-        items_list = []
-        for order_item, product in order_items:
-            items_list.append({
-                "product_name": product.name,
-                "quantity": order_item.quantity,
-                "price": float(order_item.price),
-                "status": order_item.status,
-                "subtotal": float(order_item.price * order_item.quantity)
+        enriched_orders = []
+        for order in orders:
+            # Get customer details
+            customer = db.query(User).filter(User.id == order.user_id).first()
+            
+            # Get order items for this specific farmer
+            order_items = (
+                db.query(OrderItem, Product)
+                .join(Product, OrderItem.product_id == Product.id)
+                .filter(OrderItem.order_id == order.id)
+                .filter(Product.farmer_id == farmer_id)
+                .all()
+            )
+            
+            items_list = []
+            for order_item, product in order_items:
+                items_list.append({
+                    "product_name": product.name,
+                    "quantity": order_item.quantity,
+                    "price": float(order_item.price),
+                    "status": getattr(order_item, 'status', 'pending') or 'pending',
+                    "subtotal": float(order_item.price * order_item.quantity)
+                })
+            
+            enriched_orders.append({
+                "id": order.id,
+                "order_date": order.order_date,
+                "status": order.status,
+                "total_amount": float(order.total_amount),
+                "delivery_address": order.delivery_address,
+                "customer_name": customer.name if customer else "Unknown",
+                "customer_email": customer.email if customer else "N/A",
+                "user_id": order.user_id,
+                "items": items_list
             })
         
-        enriched_orders.append({
-            "id": order.id,
-            "order_date": order.order_date,
-            "status": order.status,
-            "total_amount": float(order.total_amount),
-            "delivery_address": order.delivery_address,
-            "customer_name": customer.name if customer else "Unknown",
-            "customer_email": customer.email if customer else "N/A",
-            "user_id": order.user_id,
-            "items": items_list
-        })
-    
-    return enriched_orders
+        return jsonable_encoder(enriched_orders)
+    except Exception as e:
+        print(f"Error fetching farmer orders: {e}")
+        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
     
 
 @router.patch("/farmer/{farmer_id}/order/{order_id}/status")
