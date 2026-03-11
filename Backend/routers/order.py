@@ -14,15 +14,15 @@ router = APIRouter(prefix="/orders", tags=["Orders"])
 
 @router.post("/checkout", response_model=OrderOut)
 def checkout(request: CheckoutRequest, db: Session = Depends(get_db)):
-    
+    # 1. Get the active cart
     cart = db.query(Cart).filter(Cart.user_id == request.user_id, Cart.status == "active").first()
     if not cart or not cart.items:
         raise HTTPException(status_code=400, detail="No active cart or cart is empty")
 
-   
+    # 2. Calculate total amount
     total_amount = sum(item.price * item.quantity for item in cart.items)
 
-   
+    # 3. Create the order
     new_order = Order(
         user_id=request.user_id,
         total_amount=total_amount,
@@ -30,24 +30,33 @@ def checkout(request: CheckoutRequest, db: Session = Depends(get_db)):
         delivery_address=request.delivery_address
     )
     db.add(new_order)
-    db.commit()
-    db.refresh(new_order)
+    db.flush()  # Get new_order.id without committing the transaction yet
 
-   
+    # 4. Create order items from cart items
     for cart_item in cart.items:
         order_item = OrderItem(
             order_id=new_order.id,
             product_id=cart_item.product_id,
             quantity=cart_item.quantity,
-            price=cart_item.price
+            price=cart_item.price,
+            status="pending"  # Explicitly set default status
         )
         db.add(order_item)
     
-    
+    # 5. Mark cart as ordered
     cart.status = "ordered"
-    db.commit()
     
-    return new_order
+    # 6. Commit everything once
+    try:
+        db.commit()
+        db.refresh(new_order)
+        # Load items and products for serialization
+        db.query(Order).options(joinedload(Order.items).joinedload(OrderItem.product)).filter(Order.id == new_order.id).first()
+        return new_order
+    except Exception as e:
+        db.rollback()
+        print(f"Checkout error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.get("/", response_model=list[OrderOut])
