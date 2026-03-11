@@ -138,20 +138,24 @@ def get_farmer_orders(farmer_id: int, db: Session = Depends(get_db)):
             )
             
             items_list = []
+            farmer_total = 0.0
             for order_item, product in order_items:
+                subtotal = float(order_item.price * order_item.quantity)
+                farmer_total += subtotal
                 items_list.append({
                     "product_name": product.name,
                     "quantity": order_item.quantity,
                     "price": float(order_item.price),
                     "status": getattr(order_item, 'status', 'pending') or 'pending',
-                    "subtotal": float(order_item.price * order_item.quantity)
+                    "subtotal": subtotal
                 })
             
             enriched_orders.append({
                 "id": order.id,
                 "order_date": order.order_date,
                 "status": order.status,
-                "total_amount": float(order.total_amount),
+                "total_amount": float(order.total_amount), # Global total
+                "farmer_total": farmer_total,           # Only this farmer's share
                 "delivery_address": order.delivery_address,
                 "customer_name": customer.name if customer else "Unknown",
                 "customer_email": customer.email if customer else "N/A",

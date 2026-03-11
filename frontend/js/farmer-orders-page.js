@@ -67,7 +67,7 @@ async function loadOrders() {
                     `).join('') : '<p style="color: #999;">No product details available</p>'}
                 </div>
 
-                <div class="order-total">Total: ₹${order.total_amount}</div>
+                <div class="order-total">Your Earnings: ₹${order.farmer_total.toFixed(2)}</div>
 
                 <div class="status-update">
                     <label class="status-update-label">Update Status for Your Products</label>
