@@ -34,7 +34,7 @@ async function loadEarnings() {
     let totalEarnings = 0;
 
     orders.forEach(o => {
-      const amount = parseFloat(o.total_amount || 0);
+      const amount = parseFloat(o.farmer_total || 0);
       const orderDate = new Date(o.order_date || Date.now());
 
       // For Total

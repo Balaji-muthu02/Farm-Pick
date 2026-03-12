@@ -56,14 +56,14 @@ async function loadDashboard() {
             }
         }
 
-        const earnings = orders.reduce((sum, o) => sum + parseFloat(o.total_amount || 0), 0);
+        const earnings = orders.reduce((sum, o) => sum + parseFloat(o.farmer_total || 0), 0);
         const statEarningsEl = document.getElementById('stat-earnings');
         if(statEarningsEl) statEarningsEl.innerText = `₹${earnings.toFixed(2)}`;
 
         // Optional: Update % change based on this month (just for visual logic)
         const startOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
         const monthEarnings = orders.filter(o => new Date(o.order_date || Date.now()) >= startOfMonth)
-            .reduce((sum, o) => sum + parseFloat(o.total_amount || 0), 0);
+            .reduce((sum, o) => sum + parseFloat(o.farmer_total || 0), 0);
         const percentage = earnings > 0 ? ((monthEarnings / earnings) * 100).toFixed(0) : 0;
         const trendEl = document.querySelector('#stat-earnings + .stat-change');
         if(trendEl) trendEl.innerText = `↑ ${percentage}% this month`;
@@ -80,7 +80,7 @@ async function loadDashboard() {
                     <div class="order-item">
                         <div class="order-header">
                             <span class="order-id">#ORD-${o.id}</span>
-                            <span class="order-amount">₹${o.total_amount}</span>
+                            <span class="order-amount">₹${o.farmer_total}</span>
                         </div>
                         <div class="order-customer">User ID: ${o.user_id}</div>
                          <span class="order-status status-${o.status}">${o.status}</span>
