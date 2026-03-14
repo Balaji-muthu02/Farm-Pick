@@ -76,16 +76,18 @@ async function loadDashboard() {
             if (recentOrders.length === 0) {
                 ordersList.innerHTML = '<p style="padding: 20px;">No orders yet.</p>';
             } else {
-                ordersList.innerHTML = recentOrders.map(o => `
+                ordersList.innerHTML = recentOrders.map(o => {
+                    const displayStatus = (o.items && o.items.length > 0) ? o.items[0].status : o.status;
+                    return `
                     <div class="order-item">
                         <div class="order-header">
                             <span class="order-id">#ORD-${o.id}</span>
                             <span class="order-amount">₹${o.farmer_total}</span>
                         </div>
                         <div class="order-customer">User ID: ${o.user_id}</div>
-                         <span class="order-status status-${o.status}">${o.status}</span>
+                         <span class="order-status status-${displayStatus}">${displayStatus}</span>
                     </div>
-                `).join('');
+                `}).join('');
             }
         }
 

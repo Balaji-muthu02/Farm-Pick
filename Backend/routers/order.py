@@ -185,11 +185,22 @@ def update_farmer_item_status(farmer_id: int, order_id: int, status_update: Orde
         
     for item in items:
         item.status = status_update.status
+    
+    # --- New Logic: Update Main Order Status ---
+    order = db.query(Order).filter(Order.id == order_id).first()
+    if order:
+        all_items = db.query(OrderItem).filter(OrderItem.order_id == order_id).all()
+        statuses = [i.status for i in all_items]
+        
+        if all(s == "delivered" for s in statuses):
+            order.status = "delivered"
+        elif any(s in ["shipped", "delivered"] for s in statuses):
+            order.status = "shipped"
+        elif all(s == "cancelled" for s in statuses):
+            order.status = "cancelled"
+    # ------------------------------------------
         
     db.commit()
-    
-    # Optional: Logic to update the main order status if ALL items are delivered
-    # But for now, we keep it simple as requested.
     
     return {"message": f"Updated {len(items)} items to {status_update.status}"}
 
