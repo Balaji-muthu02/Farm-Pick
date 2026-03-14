@@ -61,6 +61,8 @@ export function renderCart(cart, containerId) {
     `;
 }
 
+
+
 window.removeFromCart = async (itemId) => {
     try {
         await apiRequest(`/cart/remove/${itemId}`, 'DELETE');
@@ -71,6 +73,8 @@ window.removeFromCart = async (itemId) => {
         showToast('Failed to remove item', 'error');
     }
 };
+
+
 
 window.goToCheckout = () => {
     window.location.href = '/frontend/pages/Checkout.html';

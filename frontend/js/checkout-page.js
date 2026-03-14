@@ -34,6 +34,8 @@ window.updateQuantity = (index, delta) => {
     renderItems();
 };
 
+
+
 function renderItems() {
     const container = document.getElementById('summary-items');
     if(!container) return;

@@ -14,6 +14,8 @@ export async function fetchProducts() {
     }
 }
 
+
+
 // --- RENDER PRODUCTS TO THE PAGE ---
 // This function takes a list of products and displays them as beautiful cards on the screen.
 export function renderProducts(products, containerId) {
@@ -74,6 +76,10 @@ export function renderProducts(products, containerId) {
     }).join('');
 }
 
+
+
+
+
 // --- SEARCH FUNCTIONALITY ---
 // This allows users to search for products by their name or farmer's name.
 export function initSearch(allProducts, containerId) {
@@ -104,6 +110,8 @@ export function initSearch(allProducts, containerId) {
     });
 }
 
+
+
 // --- OUT OF STOCK MESSAGE ---
 // Shows a friendly toast when user tries to interact with out-of-stock product
 window.showOutOfStockMsg = (event) => {
@@ -111,8 +119,11 @@ window.showOutOfStockMsg = (event) => {
     showToast('⚠️ This product is Out of Stock. Please check back later!', 'error');
 };
 
+
+
+
 // --- GLOBAL ADD TO CART FUNCTION ---
-// Triggered when a user clicks the 🛒 button.
+// Triggered when a user clicks the add to cart button.
 window.addToCart = async (productId) => {
     // First, check if user is logged in
     const user = JSON.parse(localStorage.getItem('user'));
@@ -137,6 +148,10 @@ window.addToCart = async (productId) => {
         showToast('Failed to add to cart. Please try again.', 'error');
     }
 };
+
+
+
+
 
 // --- GLOBAL BUY NOW FUNCTION ---
 // Redirects user straight to checkout for a quick purchase.

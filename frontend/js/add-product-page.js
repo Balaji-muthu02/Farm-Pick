@@ -73,6 +73,8 @@ async function loadProductDetails() {
     }
 }
 
+
+
 // --- IMAGE PREVIEW LOGIC ---
 function updatePreview(url) {
     const previewContainer = document.getElementById('image-preview-container');
@@ -86,6 +88,8 @@ function updatePreview(url) {
         previewContainer.style.display = 'none';
     }
 }
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const imageInput = document.getElementById('p-image');
