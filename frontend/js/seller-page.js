@@ -64,13 +64,30 @@ window.handleSubmit = async () => {
     return;
   }
 
+  const photoFileInput = document.getElementById('farm-photo-file');
+  let farmImageUrl = 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg'; // default fallback image fallback
+
+  if (photoFileInput && photoFileInput.files && photoFileInput.files.length > 0) {
+    try {
+      farmImageUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target.result);
+        reader.onerror = (e) => reject("Error reading file");
+        reader.readAsDataURL(photoFileInput.files[0]);
+      });
+    } catch (err) {
+      console.error(err);
+      showToast('Error reading the image file. Please try again.', 'error');
+      return;
+    }
+  }
+
   const applicationData = {
     name: document.getElementById('farm-name')?.value,
     location: document.getElementById('farm-location')?.value,
     phone: document.getElementById('farm-phone')?.value,
     aadhar_number: document.getElementById('aadhar-num')?.value,
-    // Using the user-provided URL instead of a hardcoded static image
-    farm_image_url: document.getElementById('farm-photo-url')?.value || 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg',
+    farm_image_url: farmImageUrl,
     user_id: user.id
   };
 
@@ -83,5 +100,28 @@ window.handleSubmit = async () => {
   await submitSellerApplication(applicationData);
 };
 
-// Initial check
-document.addEventListener('DOMContentLoaded', checkStatus);
+// Initial check & Setup
+document.addEventListener('DOMContentLoaded', () => {
+  checkStatus();
+
+  // Photo Preview Logic
+  const fileInput = document.getElementById('farm-photo-file');
+  const previewImg = document.getElementById('farm-photo-preview');
+  
+  if (fileInput && previewImg) {
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          previewImg.src = event.target.result;
+          previewImg.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewImg.style.display = 'none';
+        previewImg.src = '';
+      }
+    });
+  }
+});
