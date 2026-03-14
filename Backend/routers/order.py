@@ -184,13 +184,15 @@ def update_farmer_item_status(farmer_id: int, order_id: int, status_update: Orde
         raise HTTPException(status_code=404, detail="No items found for this farmer in this order")
         
     for item in items:
-        item.status = status_update.status
+        item.status = status_update.status.lower()
+    
+    db.flush()  # Force changes to be visible for the next query
     
     # --- New Logic: Update Main Order Status ---
     order = db.query(Order).filter(Order.id == order_id).first()
     if order:
         all_items = db.query(OrderItem).filter(OrderItem.order_id == order_id).all()
-        statuses = [i.status for i in all_items]
+        statuses = [i.status.lower() for i in all_items if i.status]
         
         if all(s == "delivered" for s in statuses):
             order.status = "delivered"

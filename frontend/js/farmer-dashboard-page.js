@@ -33,8 +33,8 @@ async function loadDashboard() {
 
         // Calculate pending orders
         const pendingOrders = orders.filter(o => {
-            // Check status of individual items or the order as a whole
-            return (o.items && o.items.some(i => i.status === 'pending')) || o.status === 'pending';
+            // Check if any of THIS farmer's items are still pending
+            return o.items && o.items.some(i => i.status.toLowerCase() === 'pending');
         });
         
         const statPendingEl = document.getElementById('stat-pending');
